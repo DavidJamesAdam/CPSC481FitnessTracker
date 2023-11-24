@@ -1,0 +1,122 @@
+.a,
+.b1 {
+  letter-spacing: 0.2em;
+  display: inline-block;
+  width: 57px;
+  height: 50px;
+  -webkit-text-stroke: 1px #000;
+}
+.a {
+  position: relative;
+  flex-shrink: 0;
+}
+.b1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.b {
+  width: 24px;
+  height: 179px;
+}
+.b,
+.c,
+.d,
+.e {
+  position: relative;
+}
+.c {
+  width: 57px;
+  height: 190px;
+}
+.d,
+.e {
+  letter-spacing: 0.2em;
+}
+.d {
+  -webkit-text-stroke: 1px #000;
+}
+.e {
+  display: inline-block;
+  width: 57px;
+  height: 50px;
+  flex-shrink: 0;
+}
+.letters1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.letters {
+  position: absolute;
+  top: 442px;
+  left: 545px;
+  width: 57px;
+  height: 1650px;
+}
+.homeIcon {
+  cursor: pointer;
+}
+.homeIcon,
+.workoutexercisesIcon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.workoutItem {
+  background-color: var(--black);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.vectorIcon,
+.vectorIcon1,
+.vectorIcon2 {
+  position: relative;
+  width: 28.9px;
+  height: 30px;
+  cursor: pointer;
+}
+.vectorIcon1,
+.vectorIcon2 {
+  width: 30px;
+}
+.vectorIcon2 {
+  width: 31.3px;
+  height: 32.7px;
+}
+.bottombar {
+  position: absolute;
+  top: 869px;
+  left: 523px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  width: 393px;
+  height: 69px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-base);
+  box-sizing: border-box;
+}
+.chooseExerciseListView {
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}

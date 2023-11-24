@@ -1,0 +1,339 @@
+.iosstatusBarblack1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+}
+.iosstatusBarblack {
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+}
+.chestDay,
+.yourListAppears {
+  position: absolute;
+  color: var(--white);
+}
+.chestDay {
+  top: 91px;
+  left: 113px;
+  font-size: var(--font-size-13xl);
+  text-decoration: underline;
+}
+.yourListAppears {
+  top: 154px;
+  left: 56px;
+  font-size: var(--font-size-xl);
+}
+.newWorkoutChild,
+.newWorkoutItem {
+  position: absolute;
+  top: 222px;
+  left: 14px;
+  background-color: var(--color-gainsboro);
+  width: 367px;
+  height: 547px;
+}
+.newWorkoutItem {
+  top: 228px;
+  left: 22px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 132px;
+  height: 36px;
+}
+.categories,
+.exercises {
+  position: absolute;
+  top: 232px;
+  left: 26px;
+  font-size: var(--font-size-5xl);
+}
+.exercises {
+  top: 285px;
+  left: 34px;
+  cursor: pointer;
+}
+.newWorkoutChild1,
+.newWorkoutChild2,
+.newWorkoutInner,
+.rectangleDiv {
+  position: absolute;
+  top: 334px;
+  left: 54px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 96px;
+  height: 94px;
+}
+.newWorkoutChild1,
+.newWorkoutChild2,
+.rectangleDiv {
+  left: 150px;
+}
+.newWorkoutChild1,
+.newWorkoutChild2 {
+  left: 246px;
+}
+.newWorkoutChild2 {
+  top: 428px;
+  left: 54px;
+}
+.cardio {
+  position: absolute;
+  top: 432px;
+  left: 76px;
+}
+.newWorkoutChild10,
+.newWorkoutChild3,
+.newWorkoutChild4,
+.newWorkoutChild5,
+.newWorkoutChild6,
+.newWorkoutChild7,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  position: absolute;
+  top: 428px;
+  left: 150px;
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 96px;
+  height: 94px;
+}
+.newWorkoutChild10,
+.newWorkoutChild4,
+.newWorkoutChild5,
+.newWorkoutChild6,
+.newWorkoutChild7,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  left: 246px;
+}
+.newWorkoutChild10,
+.newWorkoutChild5,
+.newWorkoutChild6,
+.newWorkoutChild7,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  top: 522px;
+  left: 54px;
+}
+.newWorkoutChild10,
+.newWorkoutChild6,
+.newWorkoutChild7,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  left: 150px;
+}
+.newWorkoutChild10,
+.newWorkoutChild7,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  left: 246px;
+}
+.newWorkoutChild10,
+.newWorkoutChild8,
+.newWorkoutChild9 {
+  top: 616px;
+  left: 54px;
+}
+.newWorkoutChild10,
+.newWorkoutChild9 {
+  left: 150px;
+}
+.newWorkoutChild10 {
+  left: 246px;
+}
+.image1Icon {
+  position: absolute;
+  top: 357px;
+  left: 65px;
+  width: 73px;
+  height: 68px;
+  object-fit: cover;
+}
+.back,
+.image2Icon {
+  position: absolute;
+  top: 334px;
+  left: 81px;
+}
+.image2Icon {
+  top: 357px;
+  left: 165px;
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+}
+.abs,
+.image3Icon {
+  position: absolute;
+  top: 334px;
+  left: 181px;
+}
+.image3Icon {
+  top: 355px;
+  left: 258px;
+  width: 71px;
+  height: 72px;
+  object-fit: cover;
+}
+.biceps {
+  position: absolute;
+  top: 335px;
+  left: 268px;
+}
+.ictwotoneSearchIcon {
+  position: absolute;
+  top: 234px;
+  left: 261px;
+  width: 36px;
+  height: 33px;
+  cursor: pointer;
+}
+.newWorkoutChild11 {
+  position: absolute;
+  top: 721px;
+  left: 122px;
+  border-radius: var(--br-8xs);
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 21px;
+  height: 25px;
+}
+.div,
+.lineIcon {
+  position: absolute;
+}
+.div {
+  top: 719px;
+  left: 126px;
+  font-size: var(--font-size-5xl);
+}
+.lineIcon {
+  top: 428.3px;
+  left: 246px;
+  width: 96.7px;
+  height: 93.7px;
+}
+.newWorkoutChild12,
+.newWorkoutChild13 {
+  position: absolute;
+  top: 427.3px;
+  left: 245.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild13 {
+  top: 522.3px;
+  left: 54px;
+  height: 93.7px;
+}
+.newWorkoutChild14,
+.newWorkoutChild15 {
+  position: absolute;
+  top: 521.3px;
+  left: 53.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild15 {
+  top: 522.3px;
+  left: 150px;
+  height: 93.7px;
+}
+.newWorkoutChild16,
+.newWorkoutChild17 {
+  position: absolute;
+  top: 521.3px;
+  left: 149.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild17 {
+  top: 524.3px;
+  left: 245px;
+  height: 93.7px;
+}
+.newWorkoutChild18,
+.newWorkoutChild19 {
+  position: absolute;
+  top: 523.3px;
+  left: 244.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild19 {
+  top: 616.3px;
+  left: 54px;
+  height: 93.7px;
+}
+.newWorkoutChild20,
+.newWorkoutChild21 {
+  position: absolute;
+  top: 615.3px;
+  left: 53.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild21 {
+  top: 616.3px;
+  left: 150px;
+  height: 93.7px;
+}
+.newWorkoutChild22,
+.newWorkoutChild23 {
+  position: absolute;
+  top: 615.3px;
+  left: 149.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.newWorkoutChild23 {
+  top: 616.3px;
+  left: 246px;
+  height: 93.7px;
+}
+.mdifilterIcon,
+.newWorkoutChild24 {
+  position: absolute;
+  top: 615.3px;
+  left: 245.3px;
+  width: 96.7px;
+  height: 94.7px;
+}
+.mdifilterIcon {
+  top: 234px;
+  left: 329px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+.newWorkout {
+  position: absolute;
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--black);
+  font-family: var(--body-1);
+}

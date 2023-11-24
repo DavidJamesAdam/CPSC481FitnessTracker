@@ -1,0 +1,152 @@
+.iosstatusBarblackIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 392px;
+  height: 43.3px;
+  overflow: hidden;
+}
+.workoutType {
+  position: relative;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+}
+.input {
+  align-self: stretch;
+  border-radius: var(--br-8xs);
+  background-color: var(--gray-50);
+  border: 1px solid var(--white);
+  box-sizing: border-box;
+  height: 36px;
+}
+.textFieldFill,
+.textFieldFill1 {
+  position: absolute;
+  left: 17px;
+  width: 320px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+}
+.textFieldFill {
+  top: 38px;
+  height: 59px;
+}
+.textFieldFill1 {
+  top: 124px;
+}
+.textFieldFill2 {
+  position: absolute;
+  top: 296px;
+  display: flex;
+}
+.textFieldFill2,
+.textFieldFill3,
+.textFieldFill4 {
+  left: 17px;
+  width: 320px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-6xs);
+}
+.textFieldFill3 {
+  position: absolute;
+  top: 210px;
+  display: flex;
+}
+.textFieldFill4 {
+  top: 382px;
+}
+.div,
+.textFieldFill4,
+.textFieldFill5 {
+  position: absolute;
+  display: flex;
+}
+.textFieldFill5 {
+  top: 468px;
+  left: 17px;
+  width: 320px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.div {
+  top: 503px;
+  left: 19px;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  align-items: center;
+  width: 318px;
+  height: 30px;
+}
+.backCom2Icon,
+.textFieldFillParent {
+  position: absolute;
+  top: 135px;
+  left: 18px;
+  width: 355px;
+  height: 542px;
+  overflow: hidden;
+}
+.backCom2Icon {
+  top: 102px;
+  left: 34px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.community {
+  position: absolute;
+  top: 63px;
+  left: 18px;
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 138px;
+  height: 16px;
+}
+.testworkoutChild {
+  position: absolute;
+  top: 85px;
+  left: 304px;
+  border-radius: 50%;
+  background-color: var(--white);
+  width: 58px;
+  height: 58px;
+}
+.shareIcon {
+  position: absolute;
+  top: 100px;
+  left: 314px;
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.testworkout {
+  position: absolute;
+  top: 85px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 394px;
+  height: 782.3px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--white);
+  font-family: var(--body-1);
+}

@@ -1,0 +1,26 @@
+.amOrPmnoChild {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 15.5px);
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  height: 31.5px;
+}
+.instanceParent {
+  position: absolute;
+  top: calc(50% - 81px);
+  left: calc(50% - 63.5px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-8xl);
+}
+.amOrPmno {
+  background-color: var(--white);
+  box-shadow: 0-0.5px 0#eee inset;
+  width: 375px;
+  height: 212px;
+}

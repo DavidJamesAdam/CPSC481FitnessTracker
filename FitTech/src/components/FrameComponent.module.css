@@ -1,0 +1,37 @@
+.today {
+  position: relative;
+  line-height: 12px;
+  font-weight: 500;
+  opacity: 0.2;
+}
+.today1 {
+  font-size: var(--community-size);
+  line-height: 18px;
+  opacity: 0.5;
+}
+.today1,
+.today2,
+.today3 {
+  position: relative;
+  font-weight: 500;
+}
+.today2 {
+  font-size: var(--font-size-mini);
+  line-height: 20px;
+  opacity: 0.6;
+}
+.today3 {
+  font-size: var(--font-size-base);
+  line-height: 24px;
+}
+.todayParent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--text-light-primary);
+  font-family: var(--font-avenir-next);
+}

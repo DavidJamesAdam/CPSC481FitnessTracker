@@ -1,0 +1,70 @@
+.filterBarChild {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-gainsboro);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+}
+.filter {
+  flex: 1;
+  position: relative;
+}
+.textbox {
+  position: absolute;
+  height: 61.22%;
+  width: 60.84%;
+  top: 18.37%;
+  right: 19.39%;
+  bottom: 20.41%;
+  left: 19.77%;
+  border-radius: var(--br-9xs);
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-5xs);
+}
+.uilenterIcon {
+  position: absolute;
+  height: 83.67%;
+  width: 16.73%;
+  top: 14.29%;
+  right: 1.9%;
+  bottom: 2.04%;
+  left: 81.37%;
+  overflow: hidden;
+}
+.filterBar,
+.mdifilterIcon,
+.uilenterIcon {
+  max-width: 100%;
+  max-height: 100%;
+}
+.mdifilterIcon {
+  position: absolute;
+  height: 63.27%;
+  width: 13.69%;
+  top: 18.37%;
+  right: 83.27%;
+  bottom: 18.37%;
+  left: 3.04%;
+  overflow: hidden;
+}
+.filterBar {
+  width: 263px;
+  height: 49px;
+  overflow: auto;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--gray);
+  font-family: var(--input-field-label);
+}

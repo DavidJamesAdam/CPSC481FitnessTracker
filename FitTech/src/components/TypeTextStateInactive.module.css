@@ -1,0 +1,34 @@
+.label {
+  position: relative;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.textFieldData {
+  flex: 1;
+  position: relative;
+}
+.textbox,
+.typetextStateinactive {
+  display: flex;
+  justify-content: flex-start;
+}
+.textbox {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  flex-direction: row;
+  align-items: center;
+  padding: var(--padding-5xs);
+  font-size: var(--body-1-size);
+}
+.typetextStateinactive {
+  width: 200px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-9xs);
+  text-align: left;
+  font-size: var(--input-field-label-size);
+  color: var(--light-gray);
+  font-family: var(--input-field-label);
+}

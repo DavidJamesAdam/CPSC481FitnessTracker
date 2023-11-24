@@ -1,0 +1,24 @@
+.view1 {
+  position: relative;
+  font-weight: 300;
+}
+.view {
+  position: absolute;
+  top: 154px;
+  left: 197px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-dodgerblue);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 81px;
+  height: 27px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}

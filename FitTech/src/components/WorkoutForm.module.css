@@ -1,0 +1,58 @@
+.iosstatusBarblack1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+}
+.iosstatusBarblack {
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  color: var(--color-dimgray-100);
+}
+.workoutName {
+  position: absolute;
+  top: 110px;
+  left: 84px;
+  font-size: var(--font-size-13xl);
+}
+.workoutDescriptionOptional {
+  position: absolute;
+  top: 253px;
+  left: 42px;
+  font-size: var(--font-size-3xl);
+  display: inline-block;
+  width: 324px;
+  height: 41px;
+}
+.backCom2Icon,
+.newWorkout {
+  position: absolute;
+  overflow: hidden;
+}
+.backCom2Icon {
+  top: 47px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.newWorkout {
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--white);
+  font-family: var(--body-1);
+}

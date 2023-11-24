@@ -1,0 +1,159 @@
+.iosstatusBarblack1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+}
+.iosstatusBarblack {
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+}
+.homeIcon,
+.vectorIcon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.homeIcon {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.vectorIcon {
+  cursor: pointer;
+}
+.settingsIcon,
+.vectorIcon1,
+.vectorIcon2 {
+  position: relative;
+  width: 28.9px;
+  height: 30px;
+}
+.settingsIcon,
+.vectorIcon2 {
+  width: 30px;
+}
+.settingsIcon {
+  width: 35.7px;
+  height: 37.3px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.bottombar,
+.settingsItem {
+  background-color: var(--black);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.bottombar {
+  position: absolute;
+  top: 783px;
+  left: 1px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  width: 392px;
+  height: 69px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-base);
+  box-sizing: border-box;
+}
+.settingsScreenChild {
+  position: absolute;
+  top: 73px;
+  left: 36px;
+}
+.profilePicIcon,
+.user1234 {
+  position: absolute;
+  top: 122px;
+  left: 140px;
+}
+.profilePicIcon {
+  height: 5.99%;
+  width: 12.98%;
+  top: 6.92%;
+  right: 43.51%;
+  bottom: 87.09%;
+  left: 43.51%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.accountChild {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-slategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 349px;
+  height: 38px;
+}
+.accountWrapper {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--padding-3xs) 0 0;
+}
+.vectorIcon3 {
+  position: absolute;
+  height: 52.63%;
+  width: 3.44%;
+  top: 23.68%;
+  right: 2.29%;
+  bottom: 23.68%;
+  left: 94.27%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.account {
+  position: absolute;
+  top: 177px;
+  left: 24px;
+  width: 349px;
+  height: 38px;
+}
+.help {
+  position: relative;
+}
+.account2,
+.settingsScreen {
+  position: absolute;
+  top: 227px;
+  left: 24px;
+  width: 349px;
+  height: 38px;
+}
+.settingsScreen {
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}

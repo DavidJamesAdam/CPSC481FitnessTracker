@@ -1,0 +1,25 @@
+.communityIcon {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.community,
+.communityIcon {
+  position: relative;
+}
+.selectedyes {
+  background-color: var(--black);
+  width: 70px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-mini) 0;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--white);
+  font-family: var(--body-1);
+}

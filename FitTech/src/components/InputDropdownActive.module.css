@@ -1,0 +1,42 @@
+.pleaseSelectExercise {
+  position: relative;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.exercises {
+  flex: 1;
+  position: relative;
+}
+.chevronIcon {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+.dropdownBox,
+.inputdropdownactive {
+  display: flex;
+  justify-content: flex-start;
+}
+.dropdownBox {
+  align-self: stretch;
+  border-radius: var(--br-9xs);
+  background-color: var(--white);
+  border: 1px solid var(--gray);
+  flex-direction: row;
+  align-items: center;
+  padding: var(--padding-5xs);
+  gap: var(--gap-3xs);
+  font-size: var(--body-1-size);
+  color: var(--gray);
+}
+.inputdropdownactive {
+  width: 245px;
+  height: 61px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--gap-9xs);
+  text-align: left;
+  font-size: var(--input-field-label-size);
+  color: var(--black);
+  font-family: var(--input-field-label);
+}

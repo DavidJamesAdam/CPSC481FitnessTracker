@@ -1,0 +1,333 @@
+.exercisesChild {
+  position: absolute;
+  top: 216px;
+  left: 14px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-gainsboro);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 359px;
+  height: 558px;
+}
+.homeIcon {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.home,
+.homeIcon {
+  position: relative;
+}
+.homeItem {
+  flex: 1;
+  background-color: var(--white);
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.progress {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.progressItem {
+  cursor: pointer;
+}
+.communityItem,
+.progressItem {
+  flex: 1;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.settings,
+.settingsIcon {
+  position: relative;
+  flex-shrink: 0;
+}
+.settingsIcon {
+  width: 35.7px;
+  height: 37.3px;
+  overflow: hidden;
+}
+.settings {
+  display: inline-block;
+  width: 56px;
+  height: 15px;
+}
+.navigationBar {
+  position: absolute;
+  top: 776px;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25), 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 393px;
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  font-size: var(--body-1-size);
+  color: var(--black);
+}
+.iosstatusBarblack1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+}
+.iosstatusBarblack {
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+}
+.exercisesItem {
+  position: absolute;
+  top: calc(50% - 0px);
+  left: 0;
+}
+.scrollBarChild {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--color-gainsboro);
+  height: 691px;
+}
+.scrollBar,
+.scrollBarChild,
+.scrollBarItem {
+  position: absolute;
+  width: 6px;
+}
+.scrollBarItem {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-xl);
+  background-color: var(--gray);
+  height: 128px;
+}
+.scrollBar {
+  top: 55px;
+  left: 377px;
+  height: 691px;
+}
+.chestDay {
+  position: absolute;
+  top: 91px;
+  left: 123px;
+  font-size: var(--font-size-13xl);
+  text-decoration: underline;
+}
+.yourListAppears {
+  position: absolute;
+  top: 159px;
+  left: 51px;
+}
+.exercisesInner,
+.rectangleDiv {
+  position: absolute;
+  top: 398px;
+  left: 18px;
+  border-radius: var(--br-8xs);
+  width: 349px;
+  height: 169px;
+}
+.rectangleDiv {
+  top: 575px;
+  background-color: var(--color-dimgray-200);
+  height: 180px;
+}
+.barbellBenchChild {
+  position: absolute;
+  top: 85px;
+  left: 32px;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-slategray);
+  border: 2px solid var(--black);
+  box-sizing: border-box;
+  width: 308px;
+  height: 107px;
+}
+.barbellBench1 {
+  position: absolute;
+  top: 95px;
+  left: 154px;
+  display: inline-block;
+  width: 141px;
+  height: 23px;
+}
+.barbellBenchIcon {
+  position: absolute;
+  top: 95px;
+  left: 44px;
+  border-radius: var(--br-xl);
+  width: 100px;
+  height: 86px;
+  object-fit: cover;
+}
+.iconParkOutlineadd {
+  position: absolute;
+  top: 87px;
+  left: 294px;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+}
+.barbellBench {
+  position: absolute;
+  top: 365px;
+  left: -2px;
+  width: 372px;
+  height: 131px;
+}
+.barbellBenchItem {
+  position: absolute;
+  top: 85px;
+  left: 20px;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-slategray);
+  border: 2px solid var(--black);
+  box-sizing: border-box;
+  width: 308px;
+  height: 112px;
+}
+.crunches {
+  position: absolute;
+  top: 95px;
+  left: 143px;
+  display: inline-block;
+  width: 121px;
+  height: 25px;
+}
+.view1 {
+  position: relative;
+  font-weight: 300;
+}
+.view {
+  position: absolute;
+  top: 152px;
+  left: 186px;
+  border-radius: var(--br-31xl);
+  background-color: var(--color-dodgerblue);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 82px;
+  height: 29px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-3xl);
+}
+.crunchImageIcon {
+  position: absolute;
+  top: 95px;
+  left: 32px;
+  border-radius: var(--br-xl);
+  width: 100px;
+  height: 91px;
+  object-fit: cover;
+}
+.iconParkOutlineadd1 {
+  position: absolute;
+  top: 87px;
+  left: 282px;
+  width: 44px;
+  height: 44px;
+}
+.barbellBench2,
+.mdifilterIcon {
+  position: absolute;
+  top: 547px;
+  left: 10px;
+  width: 372px;
+  height: 131px;
+}
+.mdifilterIcon {
+  top: 232px;
+  left: 321px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+}
+.backCom2Icon,
+.vectorIcon {
+  position: absolute;
+  overflow: hidden;
+  cursor: pointer;
+}
+.vectorIcon {
+  height: 2.82%;
+  width: 6.67%;
+  top: 27.58%;
+  right: 26.92%;
+  bottom: 69.6%;
+  left: 66.41%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.backCom2Icon {
+  top: 47px;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+}
+.exercisesChild1 {
+  position: absolute;
+  top: 286px;
+  left: 21px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-whitesmoke);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 132px;
+  height: 36px;
+}
+.categories,
+.exercises,
+.exercises1 {
+  position: absolute;
+  font-size: var(--font-size-5xl);
+  color: var(--black);
+}
+.categories {
+  top: 230px;
+  left: 25px;
+  cursor: pointer;
+}
+.exercises,
+.exercises1 {
+  top: 289px;
+  left: 33px;
+}
+.exercises {
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}

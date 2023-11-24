@@ -1,0 +1,164 @@
+.iosstatusBarblack1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+}
+.iosstatusBarblack {
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+}
+.bicepsBicepCurls {
+  position: relative;
+  font-weight: 900;
+}
+.logLastSetButton {
+  position: absolute;
+  top: 47px;
+  left: 0;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-slategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 392px;
+  height: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-xl);
+}
+.vectorIcon {
+  position: relative;
+  width: 28.9px;
+  height: 30px;
+  cursor: pointer;
+}
+.vectorIcon1,
+.vectorIcon2 {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+.vectorIcon2 {
+  width: 31.3px;
+  height: 32.7px;
+  cursor: pointer;
+}
+.bottombar {
+  position: absolute;
+  top: 783px;
+  left: 0;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  width: 393px;
+  height: 69px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-base);
+  box-sizing: border-box;
+}
+.enterReps {
+  position: relative;
+}
+.button {
+  top: 279px;
+  left: 91px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dodgerblue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-mini) var(--padding-xl);
+}
+.button,
+.button1,
+.set1 {
+  position: absolute;
+}
+.button1 {
+  top: 407px;
+  left: 74px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dodgerblue);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-mini) var(--padding-xl);
+}
+.set1 {
+  top: 124px;
+  left: 149px;
+  text-decoration: underline;
+}
+.tapEnterReps {
+  position: absolute;
+  top: 186px;
+  left: 59px;
+  font-size: var(--font-size-3xl);
+  display: inline-block;
+  width: 326px;
+  height: 57px;
+}
+.next {
+  margin: 0;
+}
+.button2,
+.button3 {
+  position: absolute;
+  top: 537px;
+  left: 7px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dodgerblue);
+  width: 173px;
+  height: 138px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-mini) var(--padding-xl);
+  box-sizing: border-box;
+  text-align: center;
+}
+.button3 {
+  left: 208px;
+}
+.backCom2Icon,
+.homeScreen {
+  position: absolute;
+  overflow: hidden;
+}
+.backCom2Icon {
+  top: 100px;
+  left: 8px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+.homeScreen {
+  top: 86px;
+  left: 524px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}

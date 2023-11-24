@@ -1,0 +1,76 @@
+.jennaSwitzer,
+.likeeIcon {
+  position: absolute;
+  top: 538px;
+  left: 173px;
+  width: 20.7px;
+  height: 20.2px;
+}
+.jennaSwitzer {
+  top: 33px;
+  left: 19px;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  width: 188px;
+  height: 39px;
+}
+.workoutName {
+  position: absolute;
+  top: 102px;
+  width: 171px;
+}
+.timeTakenTo,
+.workoutGoalAchieved,
+.workoutName {
+  left: 19px;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+.workoutGoalAchieved {
+  position: absolute;
+  top: 182px;
+  width: 278px;
+}
+.timeTakenTo {
+  top: 259px;
+  width: 328px;
+}
+.div,
+.icon,
+.timeTakenTo {
+  position: absolute;
+}
+.div {
+  top: 525px;
+  left: 139px;
+  letter-spacing: 0.5px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  width: 23px;
+  height: 50px;
+}
+.icon {
+  top: 357px;
+  left: 58px;
+  width: 259px;
+  height: 140px;
+  object-fit: cover;
+}
+.scrollframe {
+  position: absolute;
+  top: 130px;
+  left: 10px;
+  width: 375px;
+  height: 581px;
+  overflow-y: auto;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--white);
+  font-family: var(--body-1);
+}
