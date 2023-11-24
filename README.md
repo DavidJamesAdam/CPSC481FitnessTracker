@@ -1,6 +1,12 @@
 # CPSC481FitnessTracker
 Our implementation of our designs from Assignment 01 in CPSC 481 - Human-Computer Interaction
 
+# TO RUN
+cd CPSC481FITNESSTRACKER
+cd FitTech
+npm install
+npm start
+
 Adam, David
  30111821
 david.adam1@ucalgary.ca
