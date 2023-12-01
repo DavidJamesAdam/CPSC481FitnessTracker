@@ -1,14 +1,108 @@
 import { useCallback } from "react";
-import IOSStatusBarBlack from "./IOSStatusBarBlack";
+import styled from "styled-components";
+import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import Vaadinbutton from "./Vaadinbutton";
 import { useNavigate } from "react-router-dom";
-import styles from "./NewWorkout3.module.css";
+
+const IosstatusBarblack1 = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+`;
+const IosstatusBarblack = styled.div`
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+`;
+const ChestDay = styled.div`
+  position: absolute;
+  top: 91px;
+  left: 126px;
+  text-decoration: underline;
+`;
+const YourListAppears = styled.div`
+  position: absolute;
+  top: 174px;
+  left: 58px;
+  font-size: var(--font-size-xl);
+`;
+const AddItemComponent = styled.img`
+  position: absolute;
+  top: 220px;
+  left: 135px;
+  width: 113px;
+  height: 105px;
+  cursor: pointer;
+`;
+const NewWorkoutChild = styled.div`
+  position: absolute;
+  top: 685px;
+  left: 265px;
+  border-radius: var(--br-8xs);
+  background-color: var(--gray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 112px;
+  height: 62px;
+`;
+const Finish = styled.div`
+  position: absolute;
+  top: 697px;
+  left: 276px;
+  color: var(--black);
+  cursor: pointer;
+`;
+const BackCom2Icon = styled.img`
+  position: absolute;
+  top: 47px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+`;
+const UileditIcon = styled.img`
+  position: absolute;
+  top: 91px;
+  left: 306px;
+  width: 47px;
+  height: 45px;
+  cursor: pointer;
+`;
+const NewWorkoutRoot = styled.div`
+  position: absolute;
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--white);
+  font-family: var(--community);
+`;
 
 const NewWorkout3 = () => {
   const navigate = useNavigate();
 
-  const onIconParkOutlineaddClick = useCallback(() => {
-    navigate("/choose-exercise-category-view");
+  const onAddItemComponentClick = useCallback(() => {
+    navigate("/workout-screen-choose-exercise-category-view");
+  }, [navigate]);
+
+  const onFinishTextClick = useCallback(() => {
+    navigate("/workout-screen-workout-created");
   }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
@@ -20,41 +114,24 @@ const NewWorkout3 = () => {
   }, [navigate]);
 
   return (
-    <div className={styles.newWorkout}>
-      <div className={styles.iosstatusBarblack}>
-        <div className={styles.iosstatusBarblack1}>iOS/Status Bar/Black</div>
-        <IOSStatusBarBlack
-          iOSStatusBarBlackIconPosition="absolute"
-          iOSStatusBarBlackIconTop="24.4px"
-          iOSStatusBarBlackIconLeft="1px"
-        />
-      </div>
-      <div className={styles.chestDay}>Chest Day</div>
-      <div className={styles.yourListAppears}>
-        Your list appears to be empty
-      </div>
+    <NewWorkoutRoot>
+      <IosstatusBarblack>
+        <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+        <IOSStatusBarBlackIcon />
+      </IosstatusBarblack>
+      <ChestDay>Chest Day</ChestDay>
+      <YourListAppears>Your list appears to be empty</YourListAppears>
       <Vaadinbutton />
-      <img
-        className={styles.iconParkOutlineadd}
+      <AddItemComponent
         alt=""
-        src="/iconparkoutlineadd1.svg"
-        onClick={onIconParkOutlineaddClick}
+        src="/add-item-component.svg"
+        onClick={onAddItemComponentClick}
       />
-      <div className={styles.newWorkoutChild} />
-      <div className={styles.finish}>Finish</div>
-      <img
-        className={styles.backCom2Icon}
-        alt=""
-        src="/back-com2.svg"
-        onClick={onBackCom2IconClick}
-      />
-      <img
-        className={styles.uileditIcon}
-        alt=""
-        src="/uiledit.svg"
-        onClick={onUileditIconClick}
-      />
-    </div>
+      <NewWorkoutChild />
+      <Finish onClick={onFinishTextClick}>Finish</Finish>
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <UileditIcon alt="" src="/uiledit.svg" onClick={onUileditIconClick} />
+    </NewWorkoutRoot>
   );
 };
 

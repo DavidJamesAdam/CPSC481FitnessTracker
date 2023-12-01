@@ -1,67 +1,104 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import IOSStatusBarBlack from "./IOSStatusBarBlack";
+import styled from "styled-components";
+import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
-import LineMdconfirmCircleTwotone from "./LineMdconfirmCircleTwotone";
-import styles from "./WorkoutForm.module.css";
+import LineMdconfirmCircleTwotoneIcon from "./LineMdconfirmCircleTwotoneIcon";
 
-const WorkoutForm = () => {
-  const navigate = useNavigate();
+const IosstatusBarblack1 = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+`;
+const IosstatusBarblack = styled.div`
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  color: var(--color-dimgray-100);
+`;
+const WorkoutName = styled.div`
+  position: absolute;
+  top: 110px;
+  left: 84px;
+  font-size: var(--font-size-13xl);
+`;
+const WorkoutDescriptionOptional = styled.div`
+  position: absolute;
+  top: 253px;
+  left: 42px;
+  font-size: var(--font-size-3xl);
+  display: inline-block;
+  width: 324px;
+  height: 41px;
+`;
+const BackCom2Icon = styled.img`
+  position: absolute;
+  top: 47px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+`;
+const NewWorkoutRoot = styled.div`
+  position: absolute;
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--white);
+  font-family: var(--community);
+`;
 
-  const onLineMdconfirmCircleTwotoneClick = useCallback(() => {
-    navigate("/populate-workout-list");
-  }, [navigate]);
-
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
-  }, [navigate]);
-
+const WorkoutForm = ({
+  onLineMdconfirmCircleTwotoneClick,
+  onBackCom2IconClick,
+}) => {
   return (
-    <div className={styles.newWorkout}>
-      <div className={styles.iosstatusBarblack}>
-        <div className={styles.iosstatusBarblack1}>iOS/Status Bar/Black</div>
-        <IOSStatusBarBlack
-          iOSStatusBarBlackIconPosition="absolute"
-          iOSStatusBarBlackIconTop="24.4px"
-          iOSStatusBarBlackIconLeft="1px"
-        />
-      </div>
-      <div className={styles.workoutName}>Workout Name</div>
-      <div className={styles.workoutDescriptionOptional}>
+    <NewWorkoutRoot>
+      <IosstatusBarblack>
+        <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+        <IOSStatusBarBlackIcon />
+      </IosstatusBarblack>
+      <WorkoutName>Workout Name</WorkoutName>
+      <WorkoutDescriptionOptional>
         Workout Description (Optional)
-      </div>
+      </WorkoutDescriptionOptional>
       <InputTextActive
-        enterWorkoutNameHere="Enter workout name here"
-        inputTextActiveWidth="200px"
-        inputTextActivePosition="absolute"
-        inputTextActiveTop="152px"
-        inputTextActiveLeft="96px"
-        inputTextActiveHeight="unset"
-        textboxFlex="unset"
+        workoutNamePlaceholder="Enter workout name here"
+        propTop="152px"
+        propLeft="96px"
+        propWidth="200px"
+        propHeight="unset"
+        propFlex="unset"
       />
       <InputTextActive
-        enterWorkoutNameHere="Enter workout description here"
-        inputTextActiveWidth="316px"
-        inputTextActivePosition="absolute"
-        inputTextActiveTop="294px"
-        inputTextActiveLeft="42px"
-        inputTextActiveHeight="182px"
-        textboxFlex="1"
+        workoutNamePlaceholder="Enter workout description here"
+        propTop="294px"
+        propLeft="42px"
+        propWidth="316px"
+        propHeight="182px"
+        propFlex="1"
       />
-      <LineMdconfirmCircleTwotone
-        lineMdconfirmCircleTwotonPosition="absolute"
-        lineMdconfirmCircleTwotonTop="680px"
-        lineMdconfirmCircleTwotonLeft="299px"
-        lineMdconfirmCircleTwotonCursor="pointer"
+      <LineMdconfirmCircleTwotoneIcon
+        propTop="680px"
+        propLeft="299px"
+        propCursor="pointer"
         onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
       />
-      <img
-        className={styles.backCom2Icon}
-        alt=""
-        src="/back-com2.svg"
-        onClick={onBackCom2IconClick}
-      />
-    </div>
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+    </NewWorkoutRoot>
   );
 };
 

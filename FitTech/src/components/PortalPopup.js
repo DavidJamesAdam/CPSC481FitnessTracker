@@ -1,7 +1,14 @@
 import { useMemo, useCallback, useState, useRef, useEffect } from "react";
 
 import { createPortal } from "react-dom";
-import styles from "./PortalPopup.module.css";
+import styled from "styled-components";
+
+const PortalOverlay = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+`;
 
 const PortalPopup = ({
   children,
@@ -121,10 +128,7 @@ const PortalPopup = ({
 
   const onOverlayClick = useCallback(
     (e) => {
-      if (
-        onOutsideClick &&
-        e.target.classList.contains(styles.portalPopupOverlay)
-      ) {
+      if (onOutsideClick && e.target.classList.contains("portalPopupOverlay")) {
         onOutsideClick();
       }
       e.stopPropagation();
@@ -134,15 +138,15 @@ const PortalPopup = ({
 
   return (
     <Portal>
-      <div
-        className={styles.portalPopupOverlay}
+      <PortalOverlay
+        className="portalPopupOverlay"
         style={popupStyle}
         onClick={onOverlayClick}
       >
         <div ref={relContainerRef} style={relativeStyle}>
           {children}
         </div>
-      </div>
+      </PortalOverlay>
     </Portal>
   );
 };

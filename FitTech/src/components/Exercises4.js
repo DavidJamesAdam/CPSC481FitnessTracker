@@ -1,184 +1,365 @@
 import { useState, useCallback } from "react";
-import FilterBar from "./FilterBar";
+import PopupChangesSaved from "./PopupChangesSaved";
 import PortalPopup from "./PortalPopup";
-import SearchBar from "./SearchBar";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 import WorkoutItemNo from "./WorkoutItemNo";
-import IOSStatusBarBlack from "./IOSStatusBarBlack";
-import View from "./View";
-import styles from "./Exercises4.module.css";
+import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
+import InputTextActive from "./InputTextActive";
+import InputDropdownActive from "./InputDropdownActive";
+
+const Bxx = styled.div`
+  position: absolute;
+  top: 612px;
+  left: 89px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+`;
+const HomeComponentIcon = styled.img`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+`;
+const Home = styled.div`
+  position: relative;
+`;
+const HomeItem = styled.div`
+  flex: 1;
+  background-color: var(--white);
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const Progress = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 18px;
+  flex-shrink: 0;
+`;
+const ProgressItem = styled.div`
+  flex: 1;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+`;
+const CommunityItem = styled.div`
+  flex: 1;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const SettingsComponentIcon = styled.img`
+  position: relative;
+  width: 35.7px;
+  height: 37.3px;
+  overflow: hidden;
+  flex-shrink: 0;
+`;
+const Settings = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 15px;
+  flex-shrink: 0;
+`;
+const NavigationBar = styled.div`
+  position: absolute;
+  top: 776px;
+  left: 0px;
+  background-color: var(--white);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 393px;
+  display: none;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--padding-3xs);
+  box-sizing: border-box;
+  font-size: var(--body-1-size);
+  color: var(--black);
+`;
+const IosstatusBarblack1 = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+`;
+const IosstatusBarblack = styled.div`
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+`;
+const ExercisesChild = styled.div`
+  position: absolute;
+  top: calc(50% - 0px);
+  left: 0px;
+`;
+const BackCom2Icon = styled.img`
+  position: absolute;
+  top: 47px;
+  left: 15px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+`;
+const ExerciseNameWrapper = styled.div`
+  position: absolute;
+  top: 147px;
+  left: 44px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs) 0px;
+`;
+const DescriptionWrapper = styled.div`
+  position: absolute;
+  top: 238px;
+  left: 43px;
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--padding-3xs) 0px;
+  box-sizing: border-box;
+  font-family: var(--input-field-label);
+`;
+const UploadMediaWrapper = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs) 0px;
+`;
+const MaterialSymbolsuploadIcon = styled.img`
+  position: absolute;
+  top: 7px;
+  left: 152px;
+  border-radius: var(--br-xl);
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+`;
+const Upload = styled.div`
+  position: absolute;
+  top: 490px;
+  left: 44px;
+  width: 184px;
+  height: 46px;
+  font-family: var(--input-field-label);
+`;
+const SaveChangesWrapper = styled.div`
+  position: absolute;
+  top: 690px;
+  left: 43px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-dodgerblue);
+  width: 172px;
+  height: 66px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
+  box-sizing: border-box;
+  cursor: pointer;
+`;
+const Tags = styled.div`
+  position: absolute;
+  top: 554px;
+  left: 43px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
+  gap: var(--gap-21xl);
+`;
+const VectorIcon = styled.img`
+  position: relative;
+  width: 11.3px;
+  height: 11.3px;
+`;
+const ChestTag = styled.div`
+  position: absolute;
+  top: 612px;
+  left: 47px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-slategray-200);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-8xs) var(--padding-6xs) var(--padding-8xs)
+    var(--padding-8xs);
+  gap: var(--gap-sm);
+  font-size: var(--body-1-size);
+  font-family: var(--input-field-label);
+`;
+const ExercisesRoot = styled.div`
+  position: absolute;
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-3xl);
+  color: var(--white);
+  font-family: var(--community);
+`;
 
 const Exercises4 = () => {
-  const [isFilterBarOpen, setFilterBarOpen] = useState(false);
-  const [isSearchBarOpen, setSearchBarOpen] = useState(false);
+  const [isPopupChangesSavedOpen, setPopupChangesSavedOpen] = useState(false);
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
     navigate("/workoutexercises-screen");
   }, [navigate]);
 
+  const onWorkoutexercisesComponentIconClick = useCallback(() => {
+    navigate("/workoutexercise-main-screen");
+  }, [navigate]);
+
   const onProgressItemContainerClick = useCallback(() => {
-    navigate("/progresss-screen");
-  }, [navigate]);
-
-  const onIconParkOutlineaddClick = useCallback(() => {
-    navigate("/populate-workout-list1");
-  }, [navigate]);
-
-  const openFilterBar = useCallback(() => {
-    setFilterBarOpen(true);
-  }, []);
-
-  const closeFilterBar = useCallback(() => {
-    setFilterBarOpen(false);
-  }, []);
-
-  const openSearchBar = useCallback(() => {
-    setSearchBarOpen(true);
-  }, []);
-
-  const closeSearchBar = useCallback(() => {
-    setSearchBarOpen(false);
+    // Please sync "Progresss screen" to the project
   }, []);
 
   const onBackCom2IconClick = useCallback(() => {
     navigate("/community");
   }, [navigate]);
 
-  const onCategoriesTextClick = useCallback(() => {
-    navigate("/choose-exercise-category-view");
-  }, [navigate]);
+  const openPopupChangesSaved = useCallback(() => {
+    setPopupChangesSavedOpen(true);
+  }, []);
+
+  const closePopupChangesSaved = useCallback(() => {
+    setPopupChangesSavedOpen(false);
+  }, []);
 
   return (
     <>
-      <div className={styles.exercises}>
-        <div className={styles.exercisesChild} />
-        <div className={styles.navigationBar}>
-          <div className={styles.homeItem}>
-            <img className={styles.homeIcon} alt="" src="/home1.svg" />
-            <div className={styles.home}>Home</div>
-          </div>
+      <ExercisesRoot>
+        <Bxx />
+        <NavigationBar>
+          <HomeItem>
+            <HomeComponentIcon alt="" src="/home-component.svg" />
+            <Home>Home</Home>
+          </HomeItem>
           <WorkoutItemNo
-            workoutexercises="/workoutexercises1.svg"
-            showWorkout
+            workoutexercisesComponent="/workoutexercises-component1.svg"
             workoutItemNoWidth="unset"
             workoutItemNoPadding="unset"
             workoutItemNoBoxSizing="unset"
             workoutItemNoFlex="1"
-            workoutItemNoBackgroundColor="2px solid #000"
+            workoutItemNoBackgroundColor="1px solid #000"
             workoutItemNoCursor="pointer"
-            workoutexercisesIconCursor="unset"
-            workoutColor="#fff"
             onWorkoutItemNoContainerClick={onWorkoutItemNoContainerClick}
+            onWorkoutexercisesComponentIconClick={
+              onWorkoutexercisesComponentIconClick
+            }
           />
-          <div
-            className={styles.progressItem}
-            onClick={onProgressItemContainerClick}
-          >
-            <img className={styles.homeIcon} alt="" src="/progress.svg" />
-            <div className={styles.progress}>Progress</div>
-          </div>
-          <div className={styles.communityItem}>
-            <img className={styles.homeIcon} alt="" src="/community1.svg" />
-            <div className={styles.home}>Community</div>
-          </div>
-          <div className={styles.communityItem}>
-            <img className={styles.settingsIcon} alt="" src="/settings.svg" />
-            <div className={styles.settings}>Settings</div>
-          </div>
-        </div>
-        <div className={styles.iosstatusBarblack}>
-          <div className={styles.iosstatusBarblack1}>iOS/Status Bar/Black</div>
-          <IOSStatusBarBlack
-            iOSStatusBarBlackIconPosition="absolute"
-            iOSStatusBarBlackIconTop="24.4px"
-            iOSStatusBarBlackIconLeft="1px"
-          />
-        </div>
-        <div className={styles.exercisesItem} />
-        <div className={styles.scrollBar}>
-          <div className={styles.scrollBarChild} />
-          <div className={styles.scrollBarItem} />
-        </div>
-        <div className={styles.chestDay}>Chest Day</div>
-        <div className={styles.yourListAppears}>
-          Your list appears to be empty
-        </div>
-        <img className={styles.exercisesInner} alt="" src="/rectangle-24.svg" />
-        <div className={styles.rectangleDiv} />
-        <div className={styles.barbellBench}>
-          <div className={styles.barbellBenchChild} />
-          <b className={styles.barbellBench1}>Barbell Bench</b>
-          <img
-            className={styles.barbellBenchIcon}
-            alt=""
-            src="/barbell-bench1@2x.png"
-          />
-          <View />
-          <img
-            className={styles.iconParkOutlineadd}
-            alt=""
-            src="/iconparkoutlineadd.svg"
-            onClick={onIconParkOutlineaddClick}
-          />
-        </div>
-        <div className={styles.barbellBench2}>
-          <div className={styles.barbellBenchItem} />
-          <b className={styles.crunches}>Crunches</b>
-          <div className={styles.view}>
-            <div className={styles.view1}>View</div>
-          </div>
-          <img
-            className={styles.crunchImageIcon}
-            alt=""
-            src="/crunchimage1@2x.png"
-          />
-          <img
-            className={styles.iconParkOutlineadd1}
-            alt=""
-            src="/iconparkoutlineadd.svg"
-          />
-        </div>
-        <img
-          className={styles.mdifilterIcon}
-          alt=""
-          src="/mdifilter1.svg"
-          onClick={openFilterBar}
-        />
-        <img
-          className={styles.vectorIcon}
-          alt=""
-          src="/vector.svg"
-          onClick={openSearchBar}
-        />
-        <img
-          className={styles.backCom2Icon}
+          <ProgressItem onClick={onProgressItemContainerClick}>
+            <HomeComponentIcon alt="" src="/progress-component.svg" />
+            <Progress>Progress</Progress>
+          </ProgressItem>
+          <CommunityItem>
+            <HomeComponentIcon alt="" src="/community-component1.svg" />
+            <Home>Community</Home>
+          </CommunityItem>
+          <CommunityItem>
+            <SettingsComponentIcon alt="" src="/settings-component1.svg" />
+            <Settings>Settings</Settings>
+          </CommunityItem>
+        </NavigationBar>
+        <IosstatusBarblack>
+          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+          <IOSStatusBarBlackIcon />
+        </IosstatusBarblack>
+        <ExercisesChild />
+        <BackCom2Icon
           alt=""
           src="/back-com2.svg"
           onClick={onBackCom2IconClick}
         />
-        <div className={styles.exercisesChild1} />
-        <div className={styles.categories} onClick={onCategoriesTextClick}>
-          Categories
-        </div>
-        <div className={styles.exercises1}>Exercises</div>
-      </div>
-      {isFilterBarOpen && (
+        <ExerciseNameWrapper>
+          <Home>Exercise Name</Home>
+        </ExerciseNameWrapper>
+        <InputTextActive
+          workoutNamePlaceholder="Enter workout name here"
+          propTop="175px"
+          propLeft="43px"
+          propWidth="306px"
+          propHeight="unset"
+          propFlex="unset"
+        />
+        <InputTextActive
+          workoutNamePlaceholder="Enter workout name here"
+          propTop="284px"
+          propLeft="43px"
+          propWidth="306px"
+          propHeight="173px"
+          propFlex="1"
+        />
+        <DescriptionWrapper>
+          <Home>Description</Home>
+        </DescriptionWrapper>
+        <Upload>
+          <UploadMediaWrapper>
+            <Home>Upload Media</Home>
+          </UploadMediaWrapper>
+          <MaterialSymbolsuploadIcon alt="" src="/materialsymbolsupload.svg" />
+        </Upload>
+        <SaveChangesWrapper onClick={openPopupChangesSaved}>
+          <Home> Save Changes</Home>
+        </SaveChangesWrapper>
+        <Tags>
+          <Home>Category Tags</Home>
+          <InputDropdownActive
+            exercises="Tags"
+            showPleaseSelectExercise={false}
+            inputDropdownActiveWidth="105px"
+          />
+        </Tags>
+        <ChestTag>
+          <Home>#chest</Home>
+          <VectorIcon alt="" src="/vector10.svg" />
+        </ChestTag>
+      </ExercisesRoot>
+      {isPopupChangesSavedOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
-          onOutsideClick={closeFilterBar}
+          onOutsideClick={closePopupChangesSaved}
         >
-          <FilterBar onClose={closeFilterBar} />
-        </PortalPopup>
-      )}
-      {isSearchBarOpen && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closeSearchBar}
-        >
-          <SearchBar onClose={closeSearchBar} />
+          <PopupChangesSaved onClose={closePopupChangesSaved} />
         </PortalPopup>
       )}
     </>

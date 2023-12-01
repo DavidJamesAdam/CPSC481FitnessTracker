@@ -1,31 +1,51 @@
-import { useMemo } from "react";
-import styles from "./SelectedYes.module.css";
+import styled from "styled-components";
+
+const CommunityComponentIcon = styled.img`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+`;
+const Community = styled.div`
+  position: relative;
+`;
+const SelectedyesRoot = styled.div`background-color: var(--black);
+  width: 70px;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-mini) 0px;
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--body-1-size);
+  color: var(--white);
+  font-family: var(--community);
+  width: ${(p) => p.selectedYesWidth}
+  height: ${(p) => p.selectedYesHeight}
+  cursor: ${(p) => p.selectedYesCursor}
+`;
 
 const SelectedYes = ({
-  community,
+  communityComponent,
   showCommunity,
   selectedYesWidth,
   selectedYesHeight,
   selectedYesCursor,
   onCommunityItemContainerClick,
 }) => {
-  const selectedYesStyle = useMemo(() => {
-    return {
-      width: selectedYesWidth,
-      height: selectedYesHeight,
-      cursor: selectedYesCursor,
-    };
-  }, [selectedYesWidth, selectedYesHeight, selectedYesCursor]);
-
   return (
-    <div
-      className={styles.selectedyes}
-      style={selectedYesStyle}
+    <SelectedyesRoot
+      selectedYesWidth={selectedYesWidth}
+      selectedYesHeight={selectedYesHeight}
+      selectedYesCursor={selectedYesCursor}
       onClick={onCommunityItemContainerClick}
     >
-      <img className={styles.communityIcon} alt="" src={community} />
-      {showCommunity && <div className={styles.community}>Community</div>}
-    </div>
+      <CommunityComponentIcon alt="" src={communityComponent} />
+      {showCommunity && <Community>Community</Community>}
+    </SelectedyesRoot>
   );
 };
 

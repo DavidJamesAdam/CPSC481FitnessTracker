@@ -1,40 +1,176 @@
 import { useState, useCallback } from "react";
-import AreYouSureWindow from "./AreYouSureWindow";
+import PopupAreYouSureDeleteEx from "./PopupAreYouSureDeleteEx";
 import PortalPopup from "./PortalPopup";
-import WorkoutUpdated from "./WorkoutUpdated";
-import IOSStatusBarBlack from "./IOSStatusBarBlack";
+import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import Vaadinbutton from "./Vaadinbutton";
 import View from "./View";
-import styles from "./NewWorkout1.module.css";
+
+const IosstatusBarblack1 = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  align-items: flex-end;
+  width: 123.7px;
+  height: 15.9px;
+`;
+const IosstatusBarblack = styled.div`
+  position: absolute;
+  top: -24px;
+  left: -1px;
+  width: 393px;
+  height: 71px;
+  font-size: var(--body-1-size);
+  color: var(--color-dimgray-100);
+`;
+const BackCom2Icon = styled.img`
+  position: absolute;
+  top: 47px;
+  left: 18px;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  cursor: pointer;
+`;
+const ChestDay = styled.div`
+  position: absolute;
+  top: 91px;
+  left: 126px;
+  text-decoration: underline;
+`;
+const AddItemComponent = styled.img`
+  position: absolute;
+  top: 283px;
+  left: 140px;
+  width: 113px;
+  height: 105px;
+  cursor: pointer;
+`;
+const BarbellBenchChild = styled.div`
+  position: absolute;
+  top: -2px;
+  left: 32px;
+  border-radius: var(--br-10xs);
+  background-color: var(--color-slategray-200);
+  border: 2px solid var(--black);
+  box-sizing: border-box;
+  width: 308px;
+  height: 107px;
+`;
+const BarbellBench1 = styled.b`
+  position: absolute;
+  top: 8px;
+  left: 154px;
+  display: inline-block;
+  width: 141px;
+  height: 23px;
+`;
+const BarbellBenchIcon = styled.img`
+  position: absolute;
+  top: 8px;
+  left: 44px;
+  border-radius: var(--br-xl);
+  width: 100px;
+  height: 86px;
+  object-fit: cover;
+`;
+const MdigarbageCanOutlineIcon = styled.img`
+  position: absolute;
+  top: 5px;
+  left: 305px;
+  border-radius: var(--br-xl);
+  width: 29px;
+  height: 29px;
+  overflow: hidden;
+  cursor: pointer;
+`;
+const BarbellBench = styled.div`
+  position: absolute;
+  top: 168px;
+  left: 11px;
+  width: 372px;
+  height: 131px;
+  font-size: var(--font-size-xl);
+`;
+const NewWorkoutChild = styled.div`
+  position: absolute;
+  top: 702px;
+  left: 271px;
+  border-radius: var(--br-8xs);
+  background-color: var(--gray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 112px;
+  height: 62px;
+`;
+const Finish = styled.div`
+  position: absolute;
+  top: 714px;
+  left: 282px;
+  color: var(--black);
+  cursor: pointer;
+`;
+const UileditIcon = styled.img`
+  position: absolute;
+  top: 91px;
+  left: 306px;
+  width: 47px;
+  height: 45px;
+  cursor: pointer;
+`;
+const NewWorkoutRoot = styled.div`
+  position: absolute;
+  top: 86px;
+  left: 523px;
+  background-color: var(--color-darkslategray);
+  border: 1px solid var(--black);
+  box-sizing: border-box;
+  width: 393px;
+  height: 852px;
+  overflow: hidden;
+  mix-blend-mode: normal;
+  text-align: left;
+  font-size: var(--font-size-13xl);
+  color: var(--white);
+  font-family: var(--community);
+`;
 
 const NewWorkout1 = () => {
-  const [isAreYouSureWindowOpen, setAreYouSureWindowOpen] = useState(false);
-  const [isWorkoutUpdatedOpen, setWorkoutUpdatedOpen] = useState(false);
+  const [isPopupAreYouSureDeleteExOpen, setPopupAreYouSureDeleteExOpen] =
+    useState(false);
+  const [isPopupWorkoutUpdatedOpen, setPopupWorkoutUpdatedOpen] =
+    useState(false);
   const navigate = useNavigate();
+
+  const onViewContainerClick = useCallback(() => {
+    navigate("/exercise-screen-view");
+  }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
     navigate("/community");
   }, [navigate]);
 
-  const onIconParkOutlineaddClick = useCallback(() => {
-    navigate("/choose-exercise-category-view");
+  const onAddItemComponentClick = useCallback(() => {
+    navigate("/workout-screen-choose-exercise-category-view");
   }, [navigate]);
 
-  const openAreYouSureWindow = useCallback(() => {
-    setAreYouSureWindowOpen(true);
+  const openPopupAreYouSureDeleteEx = useCallback(() => {
+    setPopupAreYouSureDeleteExOpen(true);
   }, []);
 
-  const closeAreYouSureWindow = useCallback(() => {
-    setAreYouSureWindowOpen(false);
+  const closePopupAreYouSureDeleteEx = useCallback(() => {
+    setPopupAreYouSureDeleteExOpen(false);
   }, []);
 
-  const openWorkoutUpdated = useCallback(() => {
-    setWorkoutUpdatedOpen(true);
+  const openPopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(true);
   }, []);
 
-  const closeWorkoutUpdated = useCallback(() => {
-    setWorkoutUpdatedOpen(false);
+  const closePopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(false);
   }, []);
 
   const onUileditIconClick = useCallback(() => {
@@ -43,79 +179,60 @@ const NewWorkout1 = () => {
 
   return (
     <>
-      <div className={styles.newWorkout}>
-        <div className={styles.iosstatusBarblack}>
-          <div className={styles.iosstatusBarblack1}>iOS/Status Bar/Black</div>
-          <IOSStatusBarBlack
-            iOSStatusBarBlackIconPosition="absolute"
-            iOSStatusBarBlackIconTop="24.4px"
-            iOSStatusBarBlackIconLeft="1px"
-          />
-        </div>
-        <img
-          className={styles.backCom2Icon}
+      <NewWorkoutRoot>
+        <IosstatusBarblack>
+          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+          <IOSStatusBarBlackIcon />
+        </IosstatusBarblack>
+        <BackCom2Icon
           alt=""
           src="/back-com2.svg"
           onClick={onBackCom2IconClick}
         />
-        <div className={styles.chestDay}>Chest Day</div>
+        <ChestDay>Chest Day</ChestDay>
         <Vaadinbutton />
-        <img
-          className={styles.iconParkOutlineadd}
+        <AddItemComponent
           alt=""
-          src="/iconparkoutlineadd1.svg"
-          onClick={onIconParkOutlineaddClick}
+          src="/add-item-component.svg"
+          onClick={onAddItemComponentClick}
         />
-        <div className={styles.barbellBench}>
-          <div className={styles.barbellBenchChild} />
-          <b className={styles.barbellBench1}>Barbell Bench</b>
-          <img
-            className={styles.barbellBenchIcon}
-            alt=""
-            src="/barbell-bench1@2x.png"
-          />
+        <BarbellBench>
+          <BarbellBenchChild />
+          <BarbellBench1>Barbell Bench</BarbellBench1>
+          <BarbellBenchIcon alt="" src="/barbell-bench@2x.png" />
           <View
-            propTop="67px"
-            propLeft="197px"
-            propWidth="81px"
-            propHeight="27px"
-            propRight="unset"
-            propBottom="unset"
+            viewPosition="absolute"
+            viewTop="67px"
+            viewLeft="197px"
+            viewCursor="pointer"
+            onViewContainerClick={onViewContainerClick}
           />
-          <img
-            className={styles.mdigarbageCanOutlineIcon}
+          <MdigarbageCanOutlineIcon
             alt=""
-            src="/mdigarbagecanoutline.svg"
-            onClick={openAreYouSureWindow}
+            src="/mdigarbagecanoutline1.svg"
+            onClick={openPopupAreYouSureDeleteEx}
           />
-        </div>
-        <div className={styles.newWorkoutChild} />
-        <div className={styles.finish} onClick={openWorkoutUpdated}>
-          Finish
-        </div>
-        <img
-          className={styles.uileditIcon}
-          alt=""
-          src="/uiledit.svg"
-          onClick={onUileditIconClick}
-        />
-      </div>
-      {isAreYouSureWindowOpen && (
+        </BarbellBench>
+        <NewWorkoutChild />
+        <Finish onClick={openPopupWorkoutUpdated}>Finish</Finish>
+        <UileditIcon alt="" src="/uiledit.svg" onClick={onUileditIconClick} />
+      </NewWorkoutRoot>
+      {isPopupAreYouSureDeleteExOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
-          onOutsideClick={closeAreYouSureWindow}
+          onOutsideClick={closePopupAreYouSureDeleteEx}
         >
-          <AreYouSureWindow onClose={closeAreYouSureWindow} />
+          <PopupAreYouSureDeleteEx onClose={closePopupAreYouSureDeleteEx} />
         </PortalPopup>
       )}
-      {isWorkoutUpdatedOpen && (
+      {isPopupWorkoutUpdatedOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
-          onOutsideClick={closeWorkoutUpdated}
+          onOutsideClick={closePopupWorkoutUpdated}
         >
-          <WorkoutUpdated onClose={closeWorkoutUpdated} />
+          <PopupWorkoutUpdated onClose={closePopupWorkoutUpdated} />
         </PortalPopup>
       )}
     </>

@@ -5,38 +5,31 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import ExerciseSelection from "./pages/ExerciseSelection";
-import Community2 from "./pages/Community2";
 import HomeScreen from "./pages/HomeScreen";
-import WorkoutCreate from "./pages/WorkoutCreate";
-import MyWorkoutList from "./pages/MyWorkoutList";
-import SettingsScreen from "./pages/SettingsScreen";
-import ProgressScreen from "./pages/ProgressScreen";
-import Workoutexercise from "./pages/Workoutexercise";
-import Exercise from "./pages/Exercise";
-import ExerciseCreate from "./pages/ExerciseCreate";
-import PopulateWorkoutList1 from "./pages/PopulateWorkoutList1";
-import ExerciseEdit from "./pages/ExerciseEdit";
-import ExerciseView from "./pages/ExerciseView";
-import CommunityScreen from "./pages/CommunityScreen";
-import Community3 from "./pages/Community3";
-import IntroLogScreen from "./pages/IntroLogScreen";
-import LogScreenAfterSelectingWor from "./pages/LogScreenAfterSelectingWor";
-import MainScreenForEnteringWeigh1 from "./pages/MainScreenForEnteringWeigh1";
-import ChooseExerciseCategoryView from "./pages/ChooseExerciseCategoryView";
-import ChooseExerciseListView from "./pages/ChooseExerciseListView";
-import ExerciseGallery from "./pages/ExerciseGallery";
-import PopulateWorkoutList from "./pages/PopulateWorkoutList";
-import ExerciseSelection1 from "./pages/ExerciseSelection1";
-import EnteringReps from "./pages/EnteringReps";
-import MainScreenForEnteringWeigh from "./pages/MainScreenForEnteringWeigh";
-import EnteringWeight from "./pages/EnteringWeight";
-import ScreenAfterLoggingBothWeig from "./pages/ScreenAfterLoggingBothWeig";
-import WorkoutScreen from "./pages/WorkoutScreen";
-import ExerciseSuccessfulCreation from "./pages/ExerciseSuccessfulCreation";
-import SettingsAccount from "./pages/SettingsAccount";
-import SettingsHelp from "./pages/SettingsHelp";
+import SettingsScreenForgotPassw from "./pages/SettingsScreenForgotPassw";
+import SettingsScreenChangePassw from "./pages/SettingsScreenChangePassw";
+import WorkoutScreenDeleteWorkou from "./pages/WorkoutScreenDeleteWorkou";
 import WorkoutEdit from "./pages/WorkoutEdit";
+import SettingsScreenHelp from "./pages/SettingsScreenHelp";
+import SettingsScreenAccount from "./pages/SettingsScreenAccount";
+import WorkoutScreenWorkoutCreat from "./pages/WorkoutScreenWorkoutCreat";
+import WorkoutScreenChestCategor from "./pages/WorkoutScreenChestCategor";
+import WorkoutScreenExerciseAdde from "./pages/WorkoutScreenExerciseAdde";
+import ExerciseScreenGallery from "./pages/ExerciseScreenGallery";
+import WorkoutScreenChooseExerci from "./pages/WorkoutScreenChooseExerci";
+import WorkoutScreenChooseExerci1 from "./pages/WorkoutScreenChooseExerci1";
+import CommunityScreenPost from "./pages/CommunityScreenPost";
+import CommunityScreenMain from "./pages/CommunityScreenMain";
+import CommunityScreenPosting from "./pages/CommunityScreenPosting";
+import ExerciseScreenView from "./pages/ExerciseScreenView";
+import ExerciseScreenEdit from "./pages/ExerciseScreenEdit";
+import WorkoutScreenPopulateWork from "./pages/WorkoutScreenPopulateWork";
+import ExerciseScreenCreate from "./pages/ExerciseScreenCreate";
+import WorkoutScreenNameDescrive from "./pages/WorkoutScreenNameDescrive";
+import WorkoutScreenMyWorkoutList from "./pages/WorkoutScreenMyWorkoutList";
+import SettingsScreenMain from "./pages/SettingsScreenMain";
+import ExerciseScreenList from "./pages/ExerciseScreenList";
+import WorkoutExerciseMainScreen from "./pages/WorkoutExerciseMainScreen";
 
 function App() {
   const action = useNavigationType();
@@ -58,55 +51,51 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/community":
+      case "/settings-screen-forgot-password":
         title = "";
         metaDescription = "";
         break;
-      case "/home":
+      case "/settings-screen-change-password":
         title = "";
         metaDescription = "";
         break;
-      case "/workout-create":
+      case "/workout-screen-delete-workout":
         title = "";
         metaDescription = "";
         break;
-      case "/my-workout-list":
+      case "/workout-edit":
         title = "";
         metaDescription = "";
         break;
-      case "/settiings":
+      case "/settings-screen-help":
         title = "";
         metaDescription = "";
         break;
-      case "/progress":
+      case "/settings-screen-account":
         title = "";
         metaDescription = "";
         break;
-      case "/workoutexercise":
+      case "/workout-screen-workout-created":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise":
+      case "/workout-screen-chest-category":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise-create":
+      case "/workout-screen-exercise-added":
         title = "";
         metaDescription = "";
         break;
-      case "/populate-workout-list":
+      case "/exercise-screen-gallery":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise-edit":
+      case "/workout-screen-choose-exercise-list-view":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise-view":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/community-2":
+      case "/workout-screen-choose-exercise-category-view":
         title = "";
         metaDescription = "";
         break;
@@ -114,71 +103,47 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/intro-log-screen":
+      case "/community-screen-main":
         title = "";
         metaDescription = "";
         break;
-      case "/log-screen-after-selecting-workout":
+      case "/community":
         title = "";
         metaDescription = "";
         break;
-      case "/main-screen-for-entering-weight-and-reps":
+      case "/exercise-screen-view":
         title = "";
         metaDescription = "";
         break;
-      case "/choose-exercise-category-view":
+      case "/exercise-screen-edit":
         title = "";
         metaDescription = "";
         break;
-      case "/choose-exercise-list-view":
+      case "/workout-screen-populate-workout-list":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise-gallery":
+      case "/exercise-screen-create":
         title = "";
         metaDescription = "";
         break;
-      case "/populate-workout-list1":
+      case "/workout-screen-namedescrive-workout":
         title = "";
         metaDescription = "";
         break;
-      case "/exercise-selection":
+      case "/workout-screen-my-workout-list":
         title = "";
         metaDescription = "";
         break;
-      case "/entering-reps":
+      case "/settings-screen-main":
         title = "";
         metaDescription = "";
         break;
-      case "/main-screen-for-entering-weight-and-reps1":
+      case "/exercise-screen-list":
         title = "";
         metaDescription = "";
         break;
-      case "/entering-weight":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/screen-after-logging-both-weight-and-reps":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/workout-screen":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/exercise-successful-creation":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/settings-account":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/settings-help":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/workout-edit":
+      case "/workoutexercise-main-screen":
         title = "";
         metaDescription = "";
         break;
@@ -200,59 +165,76 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<ExerciseSelection />} />
-      <Route path="/community" element={<Community2 />} />
-      <Route path="/home" element={<HomeScreen />} />
-      <Route path="/workout-create" element={<WorkoutCreate />} />
-      <Route path="/my-workout-list" element={<MyWorkoutList />} />
-      <Route path="/settiings" element={<SettingsScreen />} />
-      <Route path="/progress" element={<ProgressScreen />} />
-      <Route path="/workoutexercise" element={<Workoutexercise />} />
-      <Route path="/exercise" element={<Exercise />} />
-      <Route path="/exercise-create" element={<ExerciseCreate />} />
-      <Route path="/populate-workout-list" element={<PopulateWorkoutList1 />} />
-      <Route path="/exercise-edit" element={<ExerciseEdit />} />
-      <Route path="/exercise-view" element={<ExerciseView />} />
-      <Route path="/community-2" element={<CommunityScreen />} />
-      <Route path="/community-3" element={<Community3 />} />
-      <Route path="/intro-log-screen" element={<IntroLogScreen />} />
+      <Route path="/" element={<HomeScreen />} />
       <Route
-        path="/log-screen-after-selecting-workout"
-        element={<LogScreenAfterSelectingWor />}
+        path="/settings-screen-forgot-password"
+        element={<SettingsScreenForgotPassw />}
       />
       <Route
-        path="/main-screen-for-entering-weight-and-reps"
-        element={<MainScreenForEnteringWeigh1 />}
+        path="/settings-screen-change-password"
+        element={<SettingsScreenChangePassw />}
       />
       <Route
-        path="/choose-exercise-category-view"
-        element={<ChooseExerciseCategoryView />}
+        path="/workout-screen-delete-workout"
+        element={<WorkoutScreenDeleteWorkou />}
       />
-      <Route
-        path="/choose-exercise-list-view"
-        element={<ChooseExerciseListView />}
-      />
-      <Route path="/exercise-gallery" element={<ExerciseGallery />} />
-      <Route path="/populate-workout-list1" element={<PopulateWorkoutList />} />
-      <Route path="/exercise-selection" element={<ExerciseSelection1 />} />
-      <Route path="/entering-reps" element={<EnteringReps />} />
-      <Route
-        path="/main-screen-for-entering-weight-and-reps1"
-        element={<MainScreenForEnteringWeigh />}
-      />
-      <Route path="/entering-weight" element={<EnteringWeight />} />
-      <Route
-        path="/screen-after-logging-both-weight-and-reps"
-        element={<ScreenAfterLoggingBothWeig />}
-      />
-      <Route path="/workout-screen" element={<WorkoutScreen />} />
-      <Route
-        path="/exercise-successful-creation"
-        element={<ExerciseSuccessfulCreation />}
-      />
-      <Route path="/settings-account" element={<SettingsAccount />} />
-      <Route path="/settings-help" element={<SettingsHelp />} />
       <Route path="/workout-edit" element={<WorkoutEdit />} />
+      <Route path="/settings-screen-help" element={<SettingsScreenHelp />} />
+      <Route
+        path="/settings-screen-account"
+        element={<SettingsScreenAccount />}
+      />
+      <Route
+        path="/workout-screen-workout-created"
+        element={<WorkoutScreenWorkoutCreat />}
+      />
+      <Route
+        path="/workout-screen-chest-category"
+        element={<WorkoutScreenChestCategor />}
+      />
+      <Route
+        path="/workout-screen-exercise-added"
+        element={<WorkoutScreenExerciseAdde />}
+      />
+      <Route
+        path="/exercise-screen-gallery"
+        element={<ExerciseScreenGallery />}
+      />
+      <Route
+        path="/workout-screen-choose-exercise-list-view"
+        element={<WorkoutScreenChooseExerci />}
+      />
+      <Route
+        path="/workout-screen-choose-exercise-category-view"
+        element={<WorkoutScreenChooseExerci1 />}
+      />
+      <Route path="/community-3" element={<CommunityScreenPost />} />
+      <Route path="/community-screen-main" element={<CommunityScreenMain />} />
+      <Route path="/community" element={<CommunityScreenPosting />} />
+      <Route path="/exercise-screen-view" element={<ExerciseScreenView />} />
+      <Route path="/exercise-screen-edit" element={<ExerciseScreenEdit />} />
+      <Route
+        path="/workout-screen-populate-workout-list"
+        element={<WorkoutScreenPopulateWork />}
+      />
+      <Route
+        path="/exercise-screen-create"
+        element={<ExerciseScreenCreate />}
+      />
+      <Route
+        path="/workout-screen-namedescrive-workout"
+        element={<WorkoutScreenNameDescrive />}
+      />
+      <Route
+        path="/workout-screen-my-workout-list"
+        element={<WorkoutScreenMyWorkoutList />}
+      />
+      <Route path="/settings-screen-main" element={<SettingsScreenMain />} />
+      <Route path="/exercise-screen-list" element={<ExerciseScreenList />} />
+      <Route
+        path="/workoutexercise-main-screen"
+        element={<WorkoutExerciseMainScreen />}
+      />
     </Routes>
   );
 }

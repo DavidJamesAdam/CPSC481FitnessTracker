@@ -1,68 +1,116 @@
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import WorkoutForm from "../components/WorkoutForm";
-import styles from "./WorkoutEdit.module.css";
+import styled from "styled-components";
+
+const HomeIcon = styled.img`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+`;
+const WorkoutexercisesIcon = styled.img`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  flex-shrink: 0;
+`;
+const WorkoutItem = styled.div`
+  background-color: var(--black);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+const VectorIcon = styled.img`
+  position: relative;
+  width: 28.9px;
+  height: 30px;
+  cursor: pointer;
+`;
+const VectorIcon1 = styled.img`
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+`;
+const VectorIcon2 = styled.img`
+  position: relative;
+  width: 31.3px;
+  height: 32.7px;
+  cursor: pointer;
+`;
+const Bottombar = styled.div`
+  position: absolute;
+  top: 869px;
+  left: 523px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  width: 393px;
+  height: 69px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--padding-3xs) var(--padding-base);
+  box-sizing: border-box;
+`;
+const WorkoutEditRoot = styled.div`
+  position: relative;
+  background-color: var(--white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+`;
 
 const WorkoutEdit = () => {
   const navigate = useNavigate();
 
   const onLineMdconfirmCircleTwotoneClick = useCallback(() => {
-    navigate("/populate-workout-list");
+    navigate("/workout-screen-populate-workout-list");
+  }, [navigate]);
+
+  const onBackCom2IconClick = useCallback(() => {
+    navigate("/community");
   }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
-    navigate("/home");
+    navigate("/");
   }, [navigate]);
 
   const onVectorIconClick = useCallback(() => {
-    navigate("/home");
+    navigate("/");
   }, [navigate]);
 
   const onVectorIcon1Click = useCallback(() => {
-    navigate("/community-2");
+    navigate("/community-screen-main");
   }, [navigate]);
 
   const onVectorIcon2Click = useCallback(() => {
-    navigate("/settiings");
+    navigate("/settings-screen-main");
   }, [navigate]);
 
   return (
-    <div className={styles.workoutEdit}>
-      <WorkoutForm />
-      <div className={styles.bottombar}>
-        <img
-          className={styles.homeIcon}
-          alt=""
-          src="/home2.svg"
-          onClick={onHomeIconClick}
-        />
-        <div className={styles.workoutItem}>
-          <img
-            className={styles.workoutexercisesIcon}
-            alt=""
-            src="/workoutexercises2.svg"
-          />
-        </div>
-        <img
-          className={styles.vectorIcon}
-          alt=""
-          src="/vector2.svg"
-          onClick={onVectorIconClick}
-        />
-        <img
-          className={styles.vectorIcon1}
-          alt=""
-          src="/vector3.svg"
-          onClick={onVectorIcon1Click}
-        />
-        <img
-          className={styles.vectorIcon2}
-          alt=""
-          src="/vector4.svg"
-          onClick={onVectorIcon2Click}
-        />
-      </div>
-    </div>
+    <WorkoutEditRoot>
+      <WorkoutForm
+        onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
+        onBackCom2IconClick={onBackCom2IconClick}
+      />
+      <Bottombar>
+        <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
+        <WorkoutItem>
+          <WorkoutexercisesIcon alt="" src="/workoutexercises.svg" />
+        </WorkoutItem>
+        <VectorIcon alt="" src="/vector4.svg" onClick={onVectorIconClick} />
+        <VectorIcon1 alt="" src="/vector5.svg" onClick={onVectorIcon1Click} />
+        <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon2Click} />
+      </Bottombar>
+    </WorkoutEditRoot>
   );
 };
 
