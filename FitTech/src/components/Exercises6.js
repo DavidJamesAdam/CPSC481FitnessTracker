@@ -376,7 +376,7 @@ const Exercises6 = () => {
   }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate("/workoutexercise-main-screen");
   }, [navigate]);
 
   return (

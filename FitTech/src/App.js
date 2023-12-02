@@ -12,7 +12,7 @@ import WorkoutScreenDeleteWorkou from "./pages/WorkoutScreenDeleteWorkou";
 import WorkoutEdit from "./pages/WorkoutEdit";
 import SettingsScreenHelp from "./pages/SettingsScreenHelp";
 import SettingsScreenAccount from "./pages/SettingsScreenAccount";
-import WorkoutScreenWorkoutCreat from "./pages/WorkoutScreenWorkoutCreat";
+import WorkoutScreenWorkoutCreate from "./pages/WorkoutScreenWorkoutCreate";
 import WorkoutScreenChestCategor from "./pages/WorkoutScreenChestCategor";
 import WorkoutScreenExerciseAdde from "./pages/WorkoutScreenExerciseAdde";
 import ExerciseScreenGallery from "./pages/ExerciseScreenGallery";
@@ -25,11 +25,12 @@ import ExerciseScreenView from "./pages/ExerciseScreenView";
 import ExerciseScreenEdit from "./pages/ExerciseScreenEdit";
 import WorkoutScreenPopulateWork from "./pages/WorkoutScreenPopulateWork";
 import ExerciseScreenCreate from "./pages/ExerciseScreenCreate";
-import WorkoutScreenNameDescrive from "./pages/WorkoutScreenNameDescrive";
+import WorkoutScreenNameDescribe from "./pages/WorkoutScreenNameDescribe";
 import WorkoutScreenMyWorkoutList from "./pages/WorkoutScreenMyWorkoutList";
 import SettingsScreenMain from "./pages/SettingsScreenMain";
 import ExerciseScreenList from "./pages/ExerciseScreenList";
 import WorkoutExerciseMainScreen from "./pages/WorkoutExerciseMainScreen";
+import ProgressScreenMain from "./pages/ProgressScreenMain";
 
 function App() {
   const action = useNavigationType();
@@ -184,9 +185,10 @@ function App() {
         path="/settings-screen-account"
         element={<SettingsScreenAccount />}
       />
+      <Route path="/new-workout" element={<WorkoutScreenWorkoutCreate></WorkoutScreenWorkoutCreate>}/>
       <Route
         path="/workout-screen-workout-created"
-        element={<WorkoutScreenWorkoutCreat />}
+        element={<WorkoutScreenWorkoutCreate />}
       />
       <Route
         path="/workout-screen-chest-category"
@@ -222,13 +224,14 @@ function App() {
         element={<ExerciseScreenCreate />}
       />
       <Route
-        path="/workout-screen-namedescrive-workout"
-        element={<WorkoutScreenNameDescrive />}
+        path="/workout-screen-name-describe-workout"
+        element={<WorkoutScreenNameDescribe />}
       />
       <Route
         path="/workout-screen-my-workout-list"
         element={<WorkoutScreenMyWorkoutList />}
       />
+      <Route path="/progress-screen-main" element={<ProgressScreenMain />}></Route>
       <Route path="/settings-screen-main" element={<SettingsScreenMain />} />
       <Route path="/exercise-screen-list" element={<ExerciseScreenList />} />
       <Route

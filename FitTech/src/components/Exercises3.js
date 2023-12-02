@@ -269,8 +269,8 @@ const Exercises3 = () => {
     // Please sync "Progresss screen" to the project
   }, []);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/exercise-screen-list");
   }, [navigate]);
 
   const onGalleryTextClick = useCallback(() => {
@@ -315,7 +315,7 @@ const Exercises3 = () => {
         <IOSStatusBarBlackIcon />
       </IosstatusBarblack>
       <ExercisesChild />
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
       <ExercisesItem />
       <BarbellBenchIcon alt="" src="/barbell-bench1@2x.png" />
       <BarbellBench>Barbell Bench</BarbellBench>

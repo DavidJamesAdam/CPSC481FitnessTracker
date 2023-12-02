@@ -171,20 +171,20 @@ const WorkoutexercisesScreen = () => {
     navigate("/");
   }, [navigate]);
 
-  const onVectorIconClick = useCallback(() => {
+  const progressNavClick = useCallback(() => {
     // Please sync "Progress screen - Main" to the project
   }, []);
 
-  const onVectorIcon1Click = useCallback(() => {
+  const communityNavClick = useCallback(() => {
     navigate("/community-screen-main");
   }, [navigate]);
 
-  const onVectorIcon2Click = useCallback(() => {
+  const settingsNavClick = useCallback(() => {
     navigate("/settings-screen-main");
   }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate("/");
   }, [navigate]);
 
   return (
@@ -211,9 +211,9 @@ const WorkoutexercisesScreen = () => {
         <WorkoutItem>
           <WorkoutexercisesIcon alt="" src="/workoutexercises1.svg" />
         </WorkoutItem>
-        <VectorIcon alt="" src="/vector8.svg" onClick={onVectorIconClick} />
-        <VectorIcon1 alt="" src="/vector9.svg" onClick={onVectorIcon1Click} />
-        <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon2Click} />
+        <VectorIcon alt="" src="/vector8.svg" onClick={progressNavClick} />
+        <VectorIcon1 alt="" src="/vector9.svg" onClick={communityNavClick} />
+        <VectorIcon2 alt="" src="/vector6.svg" onClick={settingsNavClick} />
       </Bottombar>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
     </WorkoutexercisesScreenRoot>

@@ -248,12 +248,12 @@ const Exercises4 = () => {
     navigate("/workoutexercise-main-screen");
   }, [navigate]);
 
-  const onProgressItemContainerClick = useCallback(() => {
+  const onProgressNavClick = useCallback(() => {
     // Please sync "Progresss screen" to the project
   }, []);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/exercise-screen-list");
   }, [navigate]);
 
   const openPopupChangesSaved = useCallback(() => {
@@ -286,7 +286,7 @@ const Exercises4 = () => {
               onWorkoutexercisesComponentIconClick
             }
           />
-          <ProgressItem onClick={onProgressItemContainerClick}>
+          <ProgressItem onClick={onProgressNavClick}>
             <HomeComponentIcon alt="" src="/progress-component.svg" />
             <Progress>Progress</Progress>
           </ProgressItem>
@@ -307,7 +307,7 @@ const Exercises4 = () => {
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
-          onClick={onBackCom2IconClick}
+          onClick={onBackClick}
         />
         <ExerciseNameWrapper>
           <Home>Exercise Name</Home>

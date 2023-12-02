@@ -205,8 +205,8 @@ const UserSettingsForm1 = () => {
     useState(false);
   const navigate = useNavigate();
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/settings-screen-account");
   }, [navigate]);
 
   const openPopupPasswordChanged = useCallback(() => {
@@ -250,7 +250,7 @@ const UserSettingsForm1 = () => {
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
-          onClick={onBackCom2IconClick}
+          onClick={onBackClick}
         />
         <NewPassword>
           <NewPasswordChild />

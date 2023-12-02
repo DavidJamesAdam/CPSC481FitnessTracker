@@ -75,8 +75,8 @@ const WorkoutScreenNameDescrive = () => {
     navigate("/workout-screen-populate-workout-list");
   }, [navigate]);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/workout-screen-my-workout-list");
   }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
@@ -99,7 +99,7 @@ const WorkoutScreenNameDescrive = () => {
     <WorkoutScreenNamedescriveRoot>
       <WorkoutForm
         onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
-        onBackCom2IconClick={onBackCom2IconClick}
+        onBackClick={onBackClick}
       />
       <Bottombar>
         <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />

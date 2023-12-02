@@ -175,19 +175,19 @@ const SettingsScreenRoot = styled.div`
 const SettingsScreen4 = () => {
   const navigate = useNavigate();
 
-  const onHomeIcon1Click = useCallback(() => {
+  const onHomeNavClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
-  const onVectorIcon5Click = useCallback(() => {
+  const onWorkoutNavClick = useCallback(() => {
     navigate("/workoutexercise-main-screen");
   }, [navigate]);
 
-  const onVectorIcon6Click = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+  const onProgressNavClick = useCallback(() => {
+    navigate("/progress-main-screen");
+  }, [navigate]);
 
-  const onVectorIcon7Click = useCallback(() => {
+  const onCommunityNavClick = useCallback(() => {
     navigate("/community-screen-main");
   }, [navigate]);
 
@@ -199,8 +199,8 @@ const SettingsScreen4 = () => {
     navigate("/settings-screen-help");
   }, [navigate]);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/");
   }, [navigate]);
 
   return (
@@ -210,10 +210,10 @@ const SettingsScreen4 = () => {
         <IOSStatusBarBlackIcon />
       </IosstatusBarblack>
       <Bottombar>
-        <HomeIcon alt="" src="/home.svg" onClick={onHomeIcon1Click} />
-        <VectorIcon alt="" src="/vector1.svg" onClick={onVectorIcon5Click} />
-        <VectorIcon1 alt="" src="/vector2.svg" onClick={onVectorIcon6Click} />
-        <VectorIcon alt="" src="/vector3.svg" onClick={onVectorIcon7Click} />
+        <HomeIcon alt="" src="/home.svg" onClick={onHomeNavClick} />
+        <VectorIcon alt="" src="/vector1.svg" onClick={onWorkoutNavClick} />
+        <VectorIcon1 alt="" src="/vector2.svg" onClick={onProgressNavClick} />
+        <VectorIcon alt="" src="/vector3.svg" onClick={onCommunityNavClick} />
         <SettingsItem>
           <SettingsComponentIcon alt="" src="/settings-component.svg" />
         </SettingsItem>
@@ -235,7 +235,7 @@ const SettingsScreen4 = () => {
         </AccountWrapper>
         <VectorIcon3 alt="" src="/vector7.svg" />
       </Account2>
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
     </SettingsScreenRoot>
   );
 };

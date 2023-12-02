@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import FormContainer from "./FormContainer";
@@ -35,11 +35,11 @@ const FrameChild = styled.div`
   position: absolute;
   top: 138px;
   left: 0px;
-  background-color: var(--white);
+  background-color: var(--color-slategray-100);
   width: 313px;
   height: 42px;
 `;
-const Jenna = styled.div`
+const PersonName = styled.div`
   position: absolute;
   top: 149px;
   left: 11px;
@@ -142,7 +142,7 @@ const Scrollframe1 = styled.div`
   overflow-y: auto;
   text-align: left;
   font-size: var(--community-size);
-  color: var(--black);
+  color: var(--white);
 `;
 const TestworkoutChild = styled.div`
   position: absolute;
@@ -198,6 +198,56 @@ const TestworkoutRoot = styled.div`
   font-family: var(--community);
 `;
 
+const LikeeIcon = styled.img`
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  top: 148px;
+  left: 80px;
+  width: 20.7px;
+  height: 20.2px;
+`;
+
+  const LikeIconBackground = styled.img`
+  position: absolute;
+  top: 148.4px;
+  left: 80.5px;
+  width: 19.5px;
+  height: 18px;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  display: visible;
+  display: ${(props) => (props.isInverted ? 'visible' : 'none')};
+`;
+
+const LikeIconBackground2 = styled.img`
+position: absolute;
+top: 148.4px;
+left: 80.5px;
+width: 19.5px;
+height: 18px;
+max-width: 100%;
+overflow: hidden;
+max-height: 100%;
+display: visible;
+display: ${(props) => (props.isInverted ? 'visible' : 'none')};
+`;
+
+const LikeIconBackground3 = styled.img`
+position: absolute;
+top: 148.4px;
+left: 80.5px;
+width: 19.5px;
+height: 18px;
+max-width: 100%;
+overflow: hidden;
+max-height: 100%;
+display: visible;
+display: ${(props) => (props.isInverted ? 'visible' : 'none')};
+`;
+
 const Testworkout = () => {
   const navigate = useNavigate();
 
@@ -245,33 +295,66 @@ const Testworkout = () => {
     navigate("/community");
   }, [navigate]);
 
+  const [likeCount, setLikeCount] = useState(0);
+
+  const handleLikeClick = () => {
+    console.log("like click");
+    // hard coding such that post can have only one like (to simulate user only being able to like once)
+    if (likeCount === 1) {
+      // unlike
+      setLikeCount(0);
+    }
+    else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsInverted(!isInverted);
+  }
+
+  const handleLikeClick2 = () => {
+    console.log("like click 2");
+    setIsInverted2(!isInverted2);
+  }
+
+  const handleLikeClick3 = () => {
+    setIsInverted3(!isInverted3);
+  }
+  const [isInverted, setIsInverted] = useState(false);
+  const [isInverted2, setIsInverted2] = useState(false);
+  const [isInverted3, setIsInverted3] = useState(false);
+
   return (
     <TestworkoutRoot>
       <IosstatusBarblackIcon1 alt="" src="/iosstatus-barblack1.svg" />
       <Community>Community</Community>
       <Scrollframe1>
-        <Parent1 onClick={onFrameContainerClick}>
-          <Icon alt="" src="/5-1@2x.png" />
+        <Parent1 >
+          <Icon alt="" src="/5-1@2x.png" onClick={onFrameContainerClick}/>
           <FrameChild />
-          <Jenna>Jenna</Jenna>
+          <PersonName>Jenna</PersonName>
           <WorkoutGoalAchieved>Workout goal achieved</WorkoutGoalAchieved>
-          <Likee />
+          {/* <Likee />
           <AIcon alt="" src="/a.svg" />
-          <BIcon alt="" src="/b.svg" />
+          <BIcon alt="" src="/b.svg" /> */}
+          <LikeIconBackground alt="" src="/likebuttonfill.svg" isInverted={isInverted}/>
+          <LikeeIcon alt="" src="/likee1.svg" onClick={handleLikeClick} isInverted={isInverted}/>
         </Parent1>
-        <Group onClick={onFrameContainer1Click}>
-          <Icon1 alt="" src="/5-2@2x.png" />
+        <Group>
+          <Icon1 alt="" src="/5-2@2x.png" onClick={onFrameContainer1Click}/>
           <FrameChild />
           <WorkoutGoalAchieved>Workout goal achieved</WorkoutGoalAchieved>
-          <Jenna>Yozan</Jenna>
-          <AIcon alt="" src="/a.svg" />
-          <BIcon alt="" src="/b.svg" />
+          <PersonName>Yozan</PersonName>
+          {/* <AIcon alt="" src="/a.svg" />
+          <BIcon alt="" src="/b.svg" /> */}
+          <LikeIconBackground2 alt="" src="/likebuttonfill.svg" isInverted={isInverted2}/>
+          <LikeeIcon alt="" src="/likee1.svg" onClick={handleLikeClick2}/>
         </Group>
-        <Container onClick={onFrameContainer2Click}>
-          <Icon alt="" src="/5-1@2x.png" />
+        <Container>
+          <Icon alt="" src="/5-1@2x.png" onClick={onFrameContainer2Click}/>
           <FrameChild />
-          <Jenna>Jenna</Jenna>
+          <PersonName>Jenna</PersonName>
           <WorkoutGoalAchieved>Workout goal achieved</WorkoutGoalAchieved>
+          <LikeIconBackground3 alt="" src="/likebuttonfill.svg" isInverted={isInverted3}/>
+          <LikeeIcon alt="" src="/likee1.svg" onClick={handleLikeClick3}/>
         </Container>
       </Scrollframe1>
       <TestworkoutChild onClick={onEllipseClick} />

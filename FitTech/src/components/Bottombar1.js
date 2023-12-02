@@ -70,7 +70,8 @@ const Bottombar1 = () => {
 
   const onProgressCom3IconClick = useCallback(() => {
     // Please sync "Progress screen - Main" to the project
-  }, []);
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   const onSettingsCom3IconClick = useCallback(() => {
     navigate("/settings-screen-main");

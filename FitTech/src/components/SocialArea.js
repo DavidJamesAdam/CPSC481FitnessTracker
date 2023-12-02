@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -72,8 +72,8 @@ const MinAgo = styled.div`
 const MinAgoWrapper = styled.div`
   position: absolute;
   top: 91px;
-  left: 83px;
-  width: 60px;
+  left: 67px;
+  width: 90px;
   height: 34px;
   display: flex;
   flex-direction: row;
@@ -94,6 +94,20 @@ const User1234Wrapper = styled.div`
   justify-content: center;
   padding: var(--padding-3xs);
   box-sizing: border-box;
+`;
+const LikeIconBackground = styled.img`
+  position: absolute;
+  height: 6.46%;
+  width: 5.34%;
+  top: 78.4%;
+  right: 47.33%;
+  bottom: 14.97%;
+  left: 47.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  display: visible;
+  display: ${(props) => (props.isInverted ? 'visible' : 'none')};
 `;
 const LikeeIcon = styled.img`
   position: absolute;
@@ -144,6 +158,22 @@ const SocialArea = () => {
     navigate("/community-screen-main");
   }, [navigate]);
 
+  const [likeCount, setLikeCount] = useState(0);
+
+  const handleLikeClick = () => {
+    // hard coding such that post can have only one like (to simulate user only being able to like once)
+    if (likeCount === 1) {
+      // unlike
+      setLikeCount(0);
+    }
+    else {
+      setLikeCount(likeCount + 1);
+    }
+    setIsInverted(!isInverted);
+  }
+
+  const [isInverted, setIsInverted] = useState(false);
+
   return (
     <SocialAreaRoot>
       <SocialAreaChild />
@@ -160,9 +190,10 @@ const SocialArea = () => {
       <User1234Wrapper>
         <MinAgo>user1234</MinAgo>
       </User1234Wrapper>
-      <LikeeIcon alt="" src="/likee1.svg" />
+      <LikeIconBackground alt="" src="/likebuttonfill.svg" isInverted={isInverted}/>
+      <LikeeIcon alt="" src="/likee1.svg" onClick={handleLikeClick}/>
       <LineIcon alt="" src="/line-2.svg" />
-      <Like>1 like</Like>
+      <Like>{likeCount} like</Like>
     </SocialAreaRoot>
   );
 };
