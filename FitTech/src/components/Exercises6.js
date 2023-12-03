@@ -116,6 +116,14 @@ const BarbellBench = styled.div`
   height: 131px;
   font-size: var(--font-size-3xl);
 `;
+const Exercise = styled.div`
+  position: absolute;
+  top: 48px;
+  left: -20px;
+  width: 372px;
+  height: 131px;
+  font-size: var(--font-size-3xl);
+`;
 const B = styled.div`
   position: relative;
   width: 135px;
@@ -379,12 +387,34 @@ const Exercises6 = () => {
     navigate("/community");
   }, [navigate]);
 
+  const alphabetHashtable = {};
+
+  // Create arrays for each letter
+  for (let i = 65; i <= 90; i++) {
+    const letter = String.fromCharCode(i);
+    alphabetHashtable[letter] = [];
+  }
+
+  alphabetHashtable['B'].push('barbell bench');
+  alphabetHashtable['C'].push('crunch');
+
   return (
     <>
       <ExercisesRoot>
         <Letters>
           <Letters1>
-            <A>A</A>
+            <>
+              {Object.from(alphabetHashtable.entries()).map(([letter, exercises]) => (
+              <A key={letter}>
+                <h2>{letter}</h2>
+                {exercises.map((exercise) => (
+                  <Exercise key={exercise.name}>
+                    {exercise.name} - {exercise.category}
+                  </Exercise>
+                ))}
+              </A>))}
+            </>
+            {/* <A>A</A>
             <B>
               <B1>B</B1>
               <BarbellBench>
@@ -449,7 +479,7 @@ const Exercises6 = () => {
             <A>W</A>
             <A>X</A>
             <A>Y</A>
-            <A>Z</A>
+            <A>Z</A> */}
           </Letters1>
         </Letters>
         <NavigationBar>
