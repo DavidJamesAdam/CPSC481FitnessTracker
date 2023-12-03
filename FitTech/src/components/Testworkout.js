@@ -133,17 +133,23 @@ const Container = styled.div`
   overflow: hidden;
   cursor: pointer;
 `;
+// ... (previous imports)
+
 const Scrollframe1 = styled.div`
   position: absolute;
-  top: 130px;
+  top: 145px; /* Adjust the top position to create a 10-pixel gap */
   left: 10px;
   width: 375px;
-  height: 653px;
+  height: 600px;
   overflow-y: auto;
   text-align: left;
   font-size: var(--community-size);
   color: var(--black);
+  padding-top: 0px;
 `;
+
+// ... (rest of your component)
+
 const TestworkoutChild = styled.div`
   position: absolute;
   top: 90px;
