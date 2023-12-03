@@ -13,8 +13,9 @@ const IosstatusBarblackIcon1 = styled.img`
 `;
 const Community = styled.b`
   position: absolute;
-  top: 63px;
-  left: 18px;
+  font-size: 30px;
+  top: 80px;
+  left: 50px;
   letter-spacing: 0.5px;
   line-height: 16px;
   display: flex;
@@ -293,7 +294,7 @@ const Testworkout = () => {
         onCommunityItemContainerClick={onCommunityItemContainerClick}
         onSettingsCom2IconClick={onSettingsCom2IconClick}
       />
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      {/* <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} /> */}
     </TestworkoutRoot>
   );
 };

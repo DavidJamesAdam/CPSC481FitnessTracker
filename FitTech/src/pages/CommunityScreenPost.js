@@ -96,20 +96,20 @@ const CommunityScreenPost = () => {
     navigate("/community-screen-main");
   }, [navigate]);
 
+  const onToFeedClick = useCallback(() => {
+    navigate("/community-screen-main"); // Navigate to the desired route
+  }, [navigate]);
+
   return (
     <CommunityScreenPostRoot>
       <Testworkout2>
         <IosstatusBarblackIcon1 alt="" src="/iosstatus-barblack1.svg" />
         <Community>Community</Community>
-        <BackCom3Icon
-          alt=""
-          src="/back-com2.svg"
-          onClick={onBackCom3IconClick}
-        />
+        <BackCom3Icon alt="" src="/back-com2.svg" onClick={onBackCom3IconClick} />
         <ScrollFrame />
         <Bottombar1 />
         <TestworkoutChild onClick={onRectangleClick} />
-        <ToFeed>To feed</ToFeed>
+        <ToFeed onClick={onToFeedClick}>To feed</ToFeed>
       </Testworkout2>
     </CommunityScreenPostRoot>
   );
