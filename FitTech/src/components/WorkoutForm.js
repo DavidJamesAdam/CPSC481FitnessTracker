@@ -84,7 +84,7 @@ const WorkoutForm = ({
         propFlex="unset"
       />
       <InputTextActive
-        workoutNamePlaceholder="Enter workout description here"
+        workoutNamePlaceholder="Enter workout name here"
         propTop="294px"
         propLeft="42px"
         propWidth="316px"

@@ -182,7 +182,7 @@ const Exercises2 = () => {
   }, []);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate(-1);
   }, [navigate]);
 
   const onCategoriesTextClick = useCallback(() => {

@@ -253,7 +253,7 @@ const Exercises1 = () => {
   }, []);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate(-1);
   }, [navigate]);
 
   return (
