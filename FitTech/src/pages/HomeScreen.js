@@ -148,8 +148,8 @@ const HomeScreen = () => {
   const navigate = useNavigate();
 
   const onLogLastSetButton1Click = useCallback(() => {
-    // Please sync "Intro Log Screen" to the project
-  }, []);
+    navigate("/workout-screen-my-workout-list")
+  }, [navigate]);
 
   const onProgressBoxContainerClick = useCallback(() => {
     console.log("Navigate to progress");

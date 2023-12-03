@@ -292,7 +292,6 @@ const UserSettingsForm2 = () => {
       </Bottombar>
       <Account>Account</Account>
       <SettingsScreenItem />
-      <ChangePassword>Account</ChangePassword>
       <VectorIcon3 alt="" src="/vector7.svg" />
       <SettingsScreenInner onClick={onRectangle1Click} />
       <ChangePassword>Change Password</ChangePassword>
@@ -301,11 +300,8 @@ const UserSettingsForm2 = () => {
       <ForgotPassword>Account</ForgotPassword>
       <VectorIcon5 alt="" src="/vector7.svg" />
       <SettingsScreenChild1 onClick={onRectangle3Click} />
-      <SettingsScreenChild2 onClick={onRectangle4Click} />
       <ForgotPassword>Forgot Password</ForgotPassword>
-      <BackToSettings>Back to Settings</BackToSettings>
       <VectorIcon5 alt="" src="/vector7.svg" />
-      <VectorIcon7 alt="" src="/vector7.svg" />
     </SettingsScreenRoot>
   );
 };

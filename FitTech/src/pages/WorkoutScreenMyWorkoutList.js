@@ -92,7 +92,7 @@ const WorkoutScreenMyWorkoutLi = () => {
   }, [navigate]);
 
   const onBackClick = useCallback(() => {
-    navigate("/workoutexercise-main-screen");
+    navigate(-1);
   }, [navigate]);
 
   const onProgressNavClick = useCallback(() => {

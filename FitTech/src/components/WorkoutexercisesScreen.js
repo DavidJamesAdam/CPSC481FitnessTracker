@@ -183,8 +183,8 @@ const WorkoutexercisesScreen = () => {
     navigate("/settings-screen-main");
   }, [navigate]);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/");
+  const onBackClick = useCallback(() => {
+    navigate(-1);
   }, [navigate]);
 
   return (
@@ -215,7 +215,7 @@ const WorkoutexercisesScreen = () => {
         <VectorIcon1 alt="" src="/vector9.svg" onClick={communityNavClick} />
         <VectorIcon2 alt="" src="/vector6.svg" onClick={settingsNavClick} />
       </Bottombar>
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
     </WorkoutexercisesScreenRoot>
   );
 };

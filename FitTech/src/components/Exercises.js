@@ -156,8 +156,8 @@ const Exercises = () => {
     // Please sync "Progresss screen" to the project
   }, []);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate(-1);
   }, [navigate]);
 
   return (
@@ -200,7 +200,7 @@ const Exercises = () => {
       <ExercisesChild />
       <ChestDay>Chest Day</ChestDay>
       <YourListAppears>Your list appears to be empty</YourListAppears>
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
       <ChestExeriseList
         muscle="Chest"
         rectangleIcon

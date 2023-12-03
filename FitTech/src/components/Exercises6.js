@@ -132,7 +132,7 @@ const BarbellBench2 = styled.div`
 const C = styled.div`
   position: relative;
   width: 57px;
-  height: 223px;
+  height: 179px;
 `;
 const Letters1 = styled.div`
   position: absolute;
@@ -147,10 +147,12 @@ const Letters1 = styled.div`
 const Letters = styled.div`
   position: absolute;
   top: 96px;
-  left: 32px;
-  width: 57px;
-  height: 1650px;
+  left: 25px;
+  width: 450px;
+  min-height: 600px;
+  // height: 1650px;
   font-size: var(--font-size-13xl);
+  overflow: auto;
 `;
 const HomeComponentIcon = styled.img`
   position: relative;
@@ -367,23 +369,48 @@ const Exercises6 = () => {
     setPopupAreYouSureDeleteEx1Open(false);
   }, []);
 
-  const onProgressItemContainerClick = useCallback(() => {
-    // Please sync "Progresss screen" to the project
-  }, []);
+  const onProgressNavClick = useCallback(() => {
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   const onAddItemComponentClick = useCallback(() => {
     navigate("/exercise-screen-create");
   }, [navigate]);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/workoutexercise-main-screen");
+  const onBackClick = useCallback(() => {
+    navigate(-1);
   }, [navigate]);
+
+  const exercisesList = ['barbell-bench', 'crunch'];
+  const alphabetHashtable = {};
+
+  // Create arrays for each letter
+  for (let i = 65; i <= 90; i++) {
+    const letter = String.fromCharCode(i);
+    alphabetHashtable[letter] = [];
+  }
+
+  const organizeExercisesByLetter = (exercises) => {
+    return exercises.reduce((acc, exercise) => {
+      const initialLetter = exercise[0].toUpperCase();
+      acc[initialLetter] = acc[initialLetter] || [];
+      acc[initialLetter].push(exercise);
+      return acc;
+    }, {});
+  };
+
+  // alphabetHashtable['b']
+
+  const organizedExercises = organizeExercisesByLetter(exercisesList);
 
   return (
     <>
       <ExercisesRoot>
         <Letters>
           <Letters1>
+            {/* {Object.entries(organizedExercises).map(([letter, exercises]) =>(
+
+            ))} */}
             <A>A</A>
             <B>
               <B1>B</B1>
@@ -406,7 +433,7 @@ const Exercises6 = () => {
                 />
               </BarbellBench>
             </B>
-            <C>
+            <B>
               <B1>C</B1>
               <BarbellBench2>
                 <BarbellBenchChild />
@@ -426,7 +453,7 @@ const Exercises6 = () => {
                   onClick={openPopupAreYouSureDeleteEx1}
                 />
               </BarbellBench2>
-            </C>
+            </B>
             <A>D</A>
             <A>E</A>
             <A>F</A>
@@ -470,7 +497,7 @@ const Exercises6 = () => {
               onWorkoutexercisesComponentIconClick
             }
           />
-          <ProgressItem onClick={onProgressItemContainerClick}>
+          <ProgressItem onClick={onProgressNavClick}>
             <HomeComponentIcon alt="" src="/progress-component.svg" />
             <Progress>Progress</Progress>
           </ProgressItem>
@@ -488,10 +515,10 @@ const Exercises6 = () => {
           <IOSStatusBarBlackIcon />
         </IosstatusBarblack>
         <ExercisesChild />
-        <ScrollBar>
+        {/* <ScrollBar>
           <ScrollBarChild />
           <ScrollBarItem />
-        </ScrollBar>
+        </ScrollBar> */}
         <AddItemComponent
           alt=""
           src="/add-item-component.svg"
@@ -503,7 +530,7 @@ const Exercises6 = () => {
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
-          onClick={onBackCom2IconClick}
+          onClick={onBackClick}
         />
       </ExercisesRoot>
       {isPopupAreYouSureDeleteExOpen && (
