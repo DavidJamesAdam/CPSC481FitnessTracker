@@ -7,6 +7,7 @@ import WorkoutItemNo from "./WorkoutItemNo";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
 import InputDropdownActive from "./InputDropdownActive";
+import HelpFormInput from "./HelpFormInput";
 
 const HomeComponentIcon = styled.img`
   position: relative;
@@ -173,9 +174,6 @@ const CreateWrapper = styled.div`
   cursor: pointer;
 `;
 const Tags = styled.div`
-  position: absolute;
-  top: 557px;
-  left: 37px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -198,6 +196,35 @@ const ExercisesRoot = styled.div`
   font-size: var(--font-size-3xl);
   color: var(--white);
   font-family: var(--community);
+`;
+
+const HelpWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  top: 160px;
+  left: 46px;
+  margin-top: 25px;
+`;
+
+
+const UploadMediaText = styled.div`
+`;
+
+const UploadMediaImage = styled.img`
+`;
+
+const UploadMediaWrapper2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+`;
+
+const CreateExerciseTitle = styled.div`
+  text-align: center;
+  margin-top: 50px;
+  font-size: 32px;
 `;
 
 const Exercises5 = () => {
@@ -232,84 +259,40 @@ const Exercises5 = () => {
   return (
     <>
       <ExercisesRoot>
-        <NavigationBar>
-          <HomeItem>
-            <HomeComponentIcon alt="" src="/home-component.svg" />
-            <Home>Home</Home>
-          </HomeItem>
-          <WorkoutItemNo
-            workoutexercisesComponent="/workoutexercises-component1.svg"
-            workoutItemNoWidth="unset"
-            workoutItemNoPadding="unset"
-            workoutItemNoBoxSizing="unset"
-            workoutItemNoFlex="1"
-            workoutItemNoBackgroundColor="1px solid #000"
-            workoutItemNoCursor="pointer"
-            onWorkoutItemNoContainerClick={onWorkoutItemNoContainerClick}
-            onWorkoutexercisesComponentIconClick={
-              onWorkoutexercisesComponentIconClick
-            }
-          />
-          <ProgressItem onClick={onProgressItemContainerClick}>
-            <HomeComponentIcon alt="" src="/progress-component.svg" />
-            <Progress>Progress</Progress>
-          </ProgressItem>
-          <CommunityItem>
-            <HomeComponentIcon alt="" src="/community-component1.svg" />
-            <Home>Community</Home>
-          </CommunityItem>
-          <CommunityItem>
-            <SettingsComponentIcon alt="" src="/settings-component1.svg" />
-            <Settings>Settings</Settings>
-          </CommunityItem>
-        </NavigationBar>
         <IosstatusBarblack>
           <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
           <IOSStatusBarBlackIcon />
         </IosstatusBarblack>
-        <ExercisesChild />
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
           onClick={onBackClick}
         />
-        <ExerciseNameWrapper>
-          <Home>Exercise Name</Home>
-        </ExerciseNameWrapper>
-        <InputTextActive
-          workoutNamePlaceholder="Enter workout name here"
-          propTop="175px"
-          propLeft="43px"
-          propWidth="306px"
-          propHeight="unset"
-          propFlex="unset"
-        />
-        <InputTextActive
-          workoutNamePlaceholder="Enter workout name here"
-          propTop="284px"
-          propLeft="43px"
-          propWidth="306px"
-          propHeight="173px"
-          propFlex="1"
-        />
-        <DescriptionWrapper>
-          <Home>Description</Home>
-        </DescriptionWrapper>
-        <UploadMediaWrapper>
-          <Home>Upload Media</Home>
-        </UploadMediaWrapper>
-        <MaterialSymbolsuploadIcon alt="" src="/materialsymbolsupload.svg" />
-        <CreateWrapper onClick={openPopupExerciseCreated}>
-          <Home>Create!</Home>
-        </CreateWrapper>
-        <Tags>
-          <Home>Category Tags</Home>
-          <InputDropdownActive
-            exercises="Tags"
-            showPleaseSelectExercise={false}
-            inputDropdownActiveWidth="105px"
-          />
-        </Tags>
+        <CreateExerciseTitle>Create Exercise</CreateExerciseTitle>
+        <HelpWrapper>
+          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" />
+          <HelpFormInput titleText="Description" placeholder="Ex: This is a description" inputHeight="100px" inputWidth="300px" />
+          {/* <SaveChangesWrapper onClick={openPopupPasswordChanged}>
+            <ConfirmNewPassword1> Save Changes</ConfirmNewPassword1>
+          </SaveChangesWrapper>
+          <CancelWrapper onClick={onFrameContainer2Click}>
+            <ConfirmNewPassword1>Cancel</ConfirmNewPassword1>
+          </CancelWrapper> */}
+          <UploadMediaWrapper>
+            <UploadMediaWrapper2>
+              <UploadMediaText>Upload Media</UploadMediaText>
+              <UploadMediaImage src="uploadImage.svg" />
+            </UploadMediaWrapper2>
+          </UploadMediaWrapper>
+          <Tags>
+            <Home>Category Tags</Home>
+            <InputDropdownActive
+              exercises="Tags"
+              showPleaseSelectExercise={false}
+              inputDropdownActiveWidth="105px"
+            />
+          </Tags>
+        </HelpWrapper>
       </ExercisesRoot>
       {isPopupExerciseCreatedOpen && (
         <PortalPopup

@@ -1,10 +1,12 @@
 import { useState, useCallback } from "react";
 import PopupAreYouSureDeleteEx from "./PopupAreYouSureDeleteEx";
-import PortalPopup from "./PortalPopup";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import WorkoutItemNo from "./WorkoutItemNo";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
+import ExerciseIconInList from "./ExerciseIconInList";
+import PopUp from "./PopUp";
+import PortalPopup from "./PortalPopup";
 
 const A = styled.b`
   position: relative;
@@ -330,12 +332,26 @@ const ExercisesRoot = styled.div`
   font-family: var(--community);
 `;
 
+const Scrollframe1 = styled.div`
+  position: relative;
+  top: 100px;
+  margin-left: 25px;
+  width: 375px;
+  height: 603px;
+  overflow-y: auto;
+`;
+
+const UL = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
+
 const Exercises6 = () => {
-  const [isPopupAreYouSureDeleteExOpen, setPopupAreYouSureDeleteExOpen] =
-    useState(false);
-  const [isPopupAreYouSureDeleteEx1Open, setPopupAreYouSureDeleteEx1Open] =
-    useState(false);
+
   const navigate = useNavigate();
+
+  const [areYouSureDeletePopup, setAreYouSureDeletePopup] = useState(false);
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
     navigate("/workoutexercises-screen");
@@ -354,11 +370,11 @@ const Exercises6 = () => {
   }, [navigate]);
 
   const openPopupAreYouSureDeleteEx = useCallback(() => {
-    setPopupAreYouSureDeleteExOpen(true);
+    setAreYouSureDeletePopup(true);
   }, []);
 
   const closePopupAreYouSureDeleteEx = useCallback(() => {
-    setPopupAreYouSureDeleteExOpen(false);
+    setPopupAreYouSureDelete(false);
   }, []);
 
   const onEditContainer1Click = useCallback(() => {
@@ -368,14 +384,6 @@ const Exercises6 = () => {
   const onViewContainer1Click = useCallback(() => {
     navigate("/exercise-screen-view");
   }, [navigate]);
-
-  const openPopupAreYouSureDeleteEx1 = useCallback(() => {
-    setPopupAreYouSureDeleteEx1Open(true);
-  }, []);
-
-  const closePopupAreYouSureDeleteEx1 = useCallback(() => {
-    setPopupAreYouSureDeleteEx1Open(false);
-  }, []);
 
   const onProgressNavClick = useCallback(() => {
     navigate("/progress-screen-main");
@@ -389,7 +397,26 @@ const Exercises6 = () => {
     navigate(-1);
   }, [navigate]);
 
-  const exercisesList = ['barbell-bench', 'crunch'];
+  const closePopupAreYouSureDelete = useCallback(() => {
+    setAreYouSureDeletePopup(false);
+  }, []);
+
+  const deleteClick = () => {
+    console.log("hello");
+    openPopupAreYouSureDeleteEx();
+  }
+
+  const onCloseHandler = useCallback(() => {
+    closePopupAreYouSureDelete();
+
+    navigate(0);
+  }, [navigate])
+
+  const onXMarkCloseHandler = useCallback(() => {
+    navigate(0);
+  }, [navigate]);
+
+
   const alphabetHashtable = {};
 
   // Create arrays for each letter
@@ -398,16 +425,40 @@ const Exercises6 = () => {
     alphabetHashtable[letter] = [];
   }
 
-  alphabetHashtable['B'].push('barbell bench');
-  alphabetHashtable['C'].push('crunch');
+  alphabetHashtable['B'].push(<ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={"Barbell Bench"} viewClick={onViewContainer1Click}
+    editClick={onEditContainer1Click} deleteClick={deleteClick} />);
+  alphabetHashtable['C'].push(<ExerciseIconInList imagePreview={"crunchimage@2x.png"} exerciseName={"Crunches"} viewClick={onViewContainer1Click}
+    editClick={onEditContainer1Click} />);
 
   return (
     <>
       <ExercisesRoot>
-        <Letters>
+        <Scrollframe1>
+          {Object.keys(alphabetHashtable).map((letter) => (
+            <div key={letter}>
+              <h2>{letter}</h2>
+              <UL>
+                {alphabetHashtable[letter].map((word) => (
+                  <li key={word}>{word}</li>
+                ))}
+              </UL>
+            </div>
+          ))}
+        </Scrollframe1>
+        {areYouSureDeletePopup && (
+          <PortalPopup
+            overlayColor="rgba(113, 113, 113, 0.3)"
+            placement="Centered"
+            onOutsideClick={onXMarkCloseHandler}
+          >
+            <PopUp onClose={onCloseHandler} text="Delete Exercise?" top="86px" left="523px" checkMarkClick={onCloseHandler} onXMarkCloseClick={onXMarkCloseHandler}  deleteImage="deleteImage.svg"/>
+          </PortalPopup>
+        )}
+        {/* <Letters>
           <Letters1>
             <>
-              {/* {Object.from(alphabetHashtable.entries()).map(([letter, exercises]) => (
+
+              {Object.from(alphabetHashtable.entries()).map(([letter, exercises]) => (
               <A key={letter}>
                 <h2>{letter}</h2>
                 {exercises.map((exercise) => (
@@ -415,9 +466,9 @@ const Exercises6 = () => {
                     {exercise.name} - {exercise.category}
                   </Exercise>
                 ))}
-              </A>))} */}
+              </A>))}
             </>
-            {/* <A>A</A>
+            <A>A</A>
             <B>
               <B1>B</B1>
               <BarbellBench>
@@ -482,7 +533,7 @@ const Exercises6 = () => {
             <A>W</A>
             <A>X</A>
             <A>Y</A>
-            <A>Z</A> */}
+            <A>Z</A>
           </Letters1>
         </Letters>
         <NavigationBar>
@@ -520,7 +571,7 @@ const Exercises6 = () => {
           <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
           <IOSStatusBarBlackIcon />
         </IosstatusBarblack>
-        <ExercisesChild />
+        <ExercisesChild /> */}
         {/* <ScrollBar>
           <ScrollBarChild />
           <ScrollBarItem />
@@ -539,7 +590,7 @@ const Exercises6 = () => {
           onClick={onBackClick}
         />
       </ExercisesRoot>
-      {isPopupAreYouSureDeleteExOpen && (
+      {/* {isPopupAreYouSureDeleteExOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
@@ -547,8 +598,8 @@ const Exercises6 = () => {
         >
           <PopupAreYouSureDeleteEx onClose={closePopupAreYouSureDeleteEx} />
         </PortalPopup>
-      )}
-      {isPopupAreYouSureDeleteEx1Open && (
+      )} */}
+      {/* {isPopupAreYouSureDeleteEx1Open && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
@@ -556,9 +607,9 @@ const Exercises6 = () => {
         >
           <PopupAreYouSureDeleteEx onClose={closePopupAreYouSureDeleteEx1} />
         </PortalPopup>
-      )}
+      )} */}
     </>
   );
-};
+}
 
 export default Exercises6;

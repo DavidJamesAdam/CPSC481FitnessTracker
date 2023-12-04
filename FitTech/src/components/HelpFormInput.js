@@ -8,7 +8,7 @@ const Input = styled.input `
     // top: 374px;
     // left: 47px;
     margin-top: 10px;
-    width: 200px;
+    width: ${(props) => props.inputWidth || '200px'};
     height: ${(props) => props.inputHeight || '25px'};
 `;
 
@@ -17,11 +17,11 @@ const Wrapper = styled.div `
     flex-direction: column;
 `;
 
-const HelpFormInput = ({titleText, placeholder, inputHeight}) => {
+const HelpFormInput = ({titleText, placeholder, inputHeight, inputWidth}) => {
     return (
         <Wrapper>
         <FormTitle>{titleText}</FormTitle>
-        <Input input="text" placeholder={placeholder} inputHeight={inputHeight}/>
+        <Input input="text" placeholder={placeholder} inputHeight={inputHeight} inputWidth={inputWidth}/>
         </Wrapper>
     )
 }

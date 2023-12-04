@@ -31,20 +31,39 @@ const PopupWrapper = styled.div`
     left: ${(props) => props.left};
 `;
 
-const CheckMark = styled.img `
+const CheckMark = styled.img`
     width: 67px;
     height: 67px;
     cursor: pointer;
 `;
 
-const PopUp = ({ text, top, left, checkMarkClick }) => {
+const XMark = styled.img`
+    width: 67px;
+    height: 67px;
+    cursor: pointer;
+`;
+
+const ButtonWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+`;
+
+const PopUp = ({ text, top, left, checkMarkClick, deleteImage, onXMarkCloseClick }) => {
 
     return (
         <>
             <PopupWrapper top={top} left={left}>
                 <PopUpBackground>
                     <WorkoutText>{text}</WorkoutText>
-                    <CheckMark src="/linemdconfirmcircletwotone.svg" alt="" onClick={checkMarkClick}/>
+                    <ButtonWrapper>
+                        {
+                            deleteImage !== undefined ? (
+                                <XMark src={deleteImage} alt="" onClick={onXMarkCloseClick}/>
+                            ) : null
+                        }
+                        <CheckMark src="/linemdconfirmcircletwotone.svg" alt="" onClick={checkMarkClick} />
+                    </ButtonWrapper>
                 </PopUpBackground>
             </PopupWrapper>
         </>
