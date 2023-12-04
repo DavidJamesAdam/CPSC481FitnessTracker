@@ -4,15 +4,6 @@ import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
 import ExerciseForm from "./ExerciseForm";
 
-const IosstatusBarblack1 = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  display: flex;
-  align-items: flex-end;
-  width: 123.7px;
-  height: 15.9px;
-`;
 const IosstatusBarblack = styled.div`
   position: absolute;
   top: -24px;
@@ -68,7 +59,7 @@ const LoggingBackground1 = styled.div`
   top: -21px;
   left: 8px;
   width: 360px;
-  height: 558px;
+  height: auto;
 `;
 const Scrollframe1 = styled.div`
   position: absolute;
@@ -142,19 +133,18 @@ const LoggingForm = () => {
       <UileditIcon alt="" src="/uiledit.svg" onClick={onUileditIconClick} />
       <Scrollframe1>
         <LoggingBackground1>
-          <ScrollFrame1 />
+          <ExerciseForm
+            exerciseName="Barbell Bench"
+            setBoxTop="17px"
+            removeSetButtonLeft="calc(50% - 62.5px)"
+            removeSetTextAlign="left"
+          />
           <ExerciseForm exerciseName="Chest Flys" />
           <ExerciseForm
             exerciseName="Incline Bench"
             setBoxTop="463px"
             removeSetButtonLeft="calc(50% - 60px)"
             removeSetTextAlign="center"
-          />
-          <ExerciseForm
-            exerciseName="Barbell Bench"
-            setBoxTop="17px"
-            removeSetButtonLeft="calc(50% - 62.5px)"
-            removeSetTextAlign="left"
           />
         </LoggingBackground1>
       </Scrollframe1>

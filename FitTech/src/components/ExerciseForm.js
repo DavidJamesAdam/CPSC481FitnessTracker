@@ -25,21 +25,27 @@ const ExerciseName = styled.div`
   box-sizing: border-box;
   left: ${(p) => p.removeSetButtonLeft};
 `;
-const SetBox = styled.div`
+const SetBox = styled.text`
   position: absolute;
   top: 0px;
   left: 0px;
   border-radius: var(--br-8xs);
-  background-color: var(--surface);
+  background-color: var(--white);
   width: 23px;
   height: 21px;
+
+  ::before {
+    content: '${props => props.text || ''}';
+    font-size: 14px; /* You can adjust the font size as needed */
+    color: var(--black); /* You can set the text color */
+  }
 `;
-const RepBox = styled.div`
+const RepBox = styled.input`
   position: absolute;
   top: 0.3px;
   left: 72px;
   border-radius: var(--br-8xs);
-  background-color: var(--surface);
+  background-color: var(--white);
   width: 48px;
   height: 21px;
 `;
@@ -64,12 +70,12 @@ const RemoveSetButton = styled.div`
   padding: var(--padding-3xs);
   box-sizing: border-box;
 `;
-const WeightBox = styled.div`
+const WeightBox = styled.input`
   position: absolute;
   top: 0px;
   left: 166px;
   border-radius: var(--br-8xs);
-  background-color: var(--surface);
+  background-color: var(--white);
   width: 48px;
   height: 21px;
 `;
@@ -172,6 +178,7 @@ const ExerciseSectionRoot = styled.div`
   position: absolute;
   top: 240px;
   left: 9px;
+  // display: flex;
   width: 343px;
   height: 216px;
   text-align: center;
@@ -187,6 +194,10 @@ const ExerciseForm = ({
   removeSetButtonLeft,
   removeSetTextAlign,
 }) => {
+
+  const onAddSetClick = () =>  {
+    
+  }
   return (
     <ExerciseSectionRoot setBoxTop={setBoxTop}>
       <ExerciseBackground />
@@ -197,31 +208,31 @@ const ExerciseForm = ({
       </ExerciseName>
       <Sets>
         <Set1>
-          <SetBox />
-          <RepBox />
+          <SetBox text='2'/>
+          <RepBox type="number"/>
           <RemoveSetButton>
             <RemoveSet>Remove set</RemoveSet>
           </RemoveSetButton>
-          <WeightBox />
+          <WeightBox type="number"/>
         </Set1>
         <Set11>
-          <SetBox />
-          <RepBox />
+          <SetBox text='3'/>
+          <RepBox type="number"/>
           <RemoveSetButton>
             <RemoveSet>Remove set</RemoveSet>
           </RemoveSetButton>
-          <WeightBox />
+          <WeightBox type="number"/>
         </Set11>
         <Set2>
-          <SetBox />
-          <RepBox />
+          <SetBox text='1'/>
+          <RepBox type="number"/>
           <RemoveSetButton>
             <RemoveSet>Remove set</RemoveSet>
           </RemoveSetButton>
-          <WeightBox />
+          <WeightBox type="number"/>
         </Set2>
       </Sets>
-      <AddSetButton>
+      <AddSetButton onClick={onAddSetClick}>
         <AddSetText>
           <ChestFlys1>Add Set</ChestFlys1>
         </AddSetText>
