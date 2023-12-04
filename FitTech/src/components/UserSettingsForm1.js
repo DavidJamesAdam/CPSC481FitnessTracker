@@ -4,7 +4,7 @@ import PortalPopup from "./PortalPopup";
 import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
-import InputTextActive from "./InputTextActive";
+import HelpFormInput from "./HelpFormInput";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -99,9 +99,6 @@ const ConfirmNewPassword1 = styled.div`
   position: relative;
 `;
 const SaveChangesWrapper = styled.div`
-  position: absolute;
-  top: 316px;
-  left: 28px;
   border-radius: var(--br-xl);
   background-color: var(--color-dodgerblue);
   width: 172px;
@@ -167,9 +164,6 @@ const Bottombar = styled.div`
   box-sizing: border-box;
 `;
 const CancelWrapper = styled.div`
-  position: absolute;
-  top: 393px;
-  left: 28px;
   border-radius: var(--br-xl);
   background-color: var(--color-crimson);
   width: 172px;
@@ -198,6 +192,16 @@ const SettingsScreenRoot = styled.div`
   font-size: var(--font-size-lg);
   color: var(--white);
   font-family: var(--community);
+`;
+
+const HelpWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  top: 160px;
+  left: 46px;
+  margin-top: 25px;
 `;
 
 const UserSettingsForm1 = () => {
@@ -252,32 +256,16 @@ const UserSettingsForm1 = () => {
           src="/back-com2.svg"
           onClick={onBackClick}
         />
-        <NewPassword>
-          <NewPasswordChild />
-        </NewPassword>
-        <InputTextActive
-          propTop="190px"
-          propLeft="28px"
-          propWidth="200px"
-          propHeight="unset"
-          propFlex="unset"
-        />
-        <NewPassword1>New password</NewPassword1>
-        <NewPassword2>
-          <InputTextActive
-            propTop="36px"
-            propLeft="0px"
-            propWidth="200px"
-            propHeight="unset"
-            propFlex="unset"
-          />
-          <ConfirmNewPasswordWrapper>
-            <ConfirmNewPassword>Confirm New password</ConfirmNewPassword>
-          </ConfirmNewPasswordWrapper>
-        </NewPassword2>
-        <SaveChangesWrapper onClick={openPopupPasswordChanged}>
-          <ConfirmNewPassword1> Save Changes</ConfirmNewPassword1>
-        </SaveChangesWrapper>
+        <HelpWrapper>
+          <HelpFormInput titleText="New Password" placeholder="Ex: pasword1234"/>
+          <HelpFormInput titleText="Confirm New Password" placeholder="Ex: password1234"/>
+          <SaveChangesWrapper onClick={openPopupPasswordChanged}>
+            <ConfirmNewPassword1> Save Changes</ConfirmNewPassword1>
+          </SaveChangesWrapper>
+          <CancelWrapper onClick={onFrameContainer2Click}>
+            <ConfirmNewPassword1>Cancel</ConfirmNewPassword1>
+          </CancelWrapper>
+        </HelpWrapper>
         <Bottombar>
           <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
           <VectorIcon alt="" src="/vector1.svg" onClick={onVectorIconClick} />
@@ -287,9 +275,6 @@ const UserSettingsForm1 = () => {
             <SettingsComponentIcon alt="" src="/settings-component.svg" />
           </SettingsItem>
         </Bottombar>
-        <CancelWrapper onClick={onFrameContainer2Click}>
-          <ConfirmNewPassword1>Cancel</ConfirmNewPassword1>
-        </CancelWrapper>
       </SettingsScreenRoot>
       {isPopupPasswordChangedOpen && (
         <PortalPopup
