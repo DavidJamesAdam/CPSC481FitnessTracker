@@ -40,7 +40,7 @@ const PopupWorkoutUpdated = () => {
 
   return (
     <PopupWorkoutUpdatedRoot>
-      <PopupWorkoutUpdatedChild />
+      {/* <PopupWorkoutUpdatedChild /> */}
       <WorkoutUpdated>Workout updated!</WorkoutUpdated>
       <LineMdconfirmCircleTwotoneIcon
         propTop="115px"

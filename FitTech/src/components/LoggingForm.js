@@ -1,9 +1,12 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
 import ExerciseForm from "./ExerciseForm";
 import LogExerciseForm from "./LogExerciseForm";
+import PortalPopup from "./PortalPopup";
+import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
+import PopUp from "./PopUp";
 
 const IosstatusBarblack = styled.div`
   position: absolute;
@@ -25,11 +28,10 @@ const LoggingBackground = styled.div`
   cursor: pointer;
 `;
 const ChestDay = styled.div`
-  position: absolute;
-  top: 54px;
-  left: 117px;
+  margin-top: 50px;
   font-size: var(--font-size-13xl);
   color: var(--white);
+  text-align: center;
 `;
 const BackCom2Icon = styled.img`
   position: absolute;
@@ -123,9 +125,20 @@ const LoggingForm = () => {
     navigate("/");
   }, [navigate]);
 
+  const openPopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(true);
+  }, []);
+
+  const [isPopupWorkoutUpdatedOpen, setPopupWorkoutUpdatedOpen] =
+    useState(false);
+
   const finishWorkoutClick = () => {
-    finishWorkoutClickNavigate();
+    openPopupWorkoutUpdated();
   }
+
+  const closePopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(false);
+  }, []);
 
   const onLoggingBackgroundClick = useCallback(() => {
     navigate("/community-screen-main");
@@ -152,7 +165,6 @@ const LoggingForm = () => {
       <LoggingBackground onClick={onLoggingBackgroundClick} />
       <ChestDay>Chest Day</ChestDay>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
-      <UileditIcon alt="" src="/uiledit.svg" onClick={onUileditIconClick} />
       <Scrollframe1>
         <LoggingBackground1>
           <LogExerciseForm exerciseTitle="Barbell Bench Press" />
@@ -164,8 +176,35 @@ const LoggingForm = () => {
         <FinishWorkout>Add Exercise +</FinishWorkout>
         <FinishWorkout onClick={finishWorkoutClick}>Finish Workout</FinishWorkout>
       </FinishWorkoutWrapper>
+      {isPopupWorkoutUpdatedOpen && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closePopupWorkoutUpdated}
+        >
+          <PopUp onClose={closePopupWorkoutUpdated} text="Workout Successfully Logged" top="86px" left="523px" checkMarkClick={finishWorkoutClickNavigate}/>
+        </PortalPopup>
+      )}
     </WorkoutScreenRoot>
   );
 };
+/*
+  const openPopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(true);
+  }, []);
+
+  const [isPopupWorkoutUpdatedOpen, setPopupWorkoutUpdatedOpen] =
+  useState(false);
+
+  {isPopupWorkoutUpdatedOpen && (
+    <PortalPopup
+      overlayColor="rgba(113, 113, 113, 0.3)"
+      placement="Centered"
+      onOutsideClick={closePopupWorkoutUpdated}
+    >
+      <PopupWorkoutUpdated onClose={closePopupWorkoutUpdated} />
+    </PortalPopup>
+  )}
+ */
 
 export default LoggingForm;
