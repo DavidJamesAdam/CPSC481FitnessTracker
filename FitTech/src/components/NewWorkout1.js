@@ -112,6 +112,16 @@ const UileditIcon = styled.img`
   height: 45px;
   cursor: pointer;
 `;
+const MdigarbageCanOutlineIcon = styled.img`
+  position: absolute;
+  top: 3px;
+  left: 300px;
+  border-radius: var(--br-xl);
+  width: 29px;
+  height: 29px;
+  overflow: hidden;
+  cursor: pointer;
+`;
 const NewWorkoutRoot = styled.div`
   position: absolute;
   top: 86px;
@@ -190,6 +200,9 @@ const NewWorkout1 = () => {
         <BarbellBench>
           <BarbellBenchChild />
           <BarbellBench1>Barbell Bench</BarbellBench1>
+          <MdigarbageCanOutlineIcon 
+            src="/mdigarbagecanoutline1.svg"
+            onClick={openPopupAreYouSureDeleteEx}/>
           <BarbellBenchIcon alt="" src="/barbell-bench@2x.png" />
           <View
             viewPosition="absolute"
@@ -207,6 +220,7 @@ const NewWorkout1 = () => {
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
+          top = "100px"
           onOutsideClick={closePopupAreYouSureDeleteEx}
         >
           <PopupAreYouSureDeleteEx onClose={closePopupAreYouSureDeleteEx} />
