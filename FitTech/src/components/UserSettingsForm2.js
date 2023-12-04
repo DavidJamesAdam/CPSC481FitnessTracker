@@ -239,23 +239,23 @@ const SettingsScreenRoot = styled.div`
 const UserSettingsForm2 = () => {
   const navigate = useNavigate();
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/settings-screen-main");
   }, [navigate]);
 
-  const onHomeIconClick = useCallback(() => {
+  const onHomeNavClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
-  const onVectorIconClick = useCallback(() => {
+  const onWorkoutNavClick = useCallback(() => {
     navigate("/workoutexercise-main-screen");
   }, [navigate]);
 
-  const onVectorIcon1Click = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+  const onProgressNavClick = useCallback(() => {
+    navigate("/progress-screen-main")
+  }, [navigate]);
 
-  const onVectorIcon2Click = useCallback(() => {
+  const onCommunityClick = useCallback(() => {
     navigate("/community-screen-main");
   }, [navigate]);
 
@@ -280,19 +280,18 @@ const UserSettingsForm2 = () => {
       <SettingsScreenChild />
       <User1234>user1234</User1234>
       <ProfilePicIcon alt="" src="/profilepic.svg" />
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
       <Bottombar>
-        <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
-        <VectorIcon alt="" src="/vector1.svg" onClick={onVectorIconClick} />
-        <VectorIcon1 alt="" src="/vector2.svg" onClick={onVectorIcon1Click} />
-        <VectorIcon alt="" src="/vector3.svg" onClick={onVectorIcon2Click} />
+        <HomeIcon alt="" src="/home.svg" onClick={onHomeNavClick} />
+        <VectorIcon alt="" src="/vector1.svg" onClick={onWorkoutNavClick} />
+        <VectorIcon1 alt="" src="/vector2.svg" onClick={onProgressNavClick} />
+        <VectorIcon alt="" src="/vector3.svg" onClick={onCommunityClick} />
         <SettingsItem>
           <SettingsComponentIcon alt="" src="/settings-component.svg" />
         </SettingsItem>
       </Bottombar>
       <Account>Account</Account>
       <SettingsScreenItem />
-      <ChangePassword>Account</ChangePassword>
       <VectorIcon3 alt="" src="/vector7.svg" />
       <SettingsScreenInner onClick={onRectangle1Click} />
       <ChangePassword>Change Password</ChangePassword>
@@ -301,11 +300,8 @@ const UserSettingsForm2 = () => {
       <ForgotPassword>Account</ForgotPassword>
       <VectorIcon5 alt="" src="/vector7.svg" />
       <SettingsScreenChild1 onClick={onRectangle3Click} />
-      <SettingsScreenChild2 onClick={onRectangle4Click} />
       <ForgotPassword>Forgot Password</ForgotPassword>
-      <BackToSettings>Back to Settings</BackToSettings>
       <VectorIcon5 alt="" src="/vector7.svg" />
-      <VectorIcon7 alt="" src="/vector7.svg" />
     </SettingsScreenRoot>
   );
 };

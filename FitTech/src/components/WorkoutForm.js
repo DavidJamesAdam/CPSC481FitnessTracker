@@ -63,7 +63,7 @@ const NewWorkoutRoot = styled.div`
 
 const WorkoutForm = ({
   onLineMdconfirmCircleTwotoneClick,
-  onBackCom2IconClick,
+  onBackClick,
 }) => {
   return (
     <NewWorkoutRoot>
@@ -72,9 +72,9 @@ const WorkoutForm = ({
         <IOSStatusBarBlackIcon />
       </IosstatusBarblack>
       <WorkoutName>Workout Name</WorkoutName>
-      <WorkoutDescriptionOptional>
+      {/* <WorkoutDescriptionOptional>
         Workout Description (Optional)
-      </WorkoutDescriptionOptional>
+      </WorkoutDescriptionOptional> */}
       <InputTextActive
         workoutNamePlaceholder="Enter workout name here"
         propTop="152px"
@@ -97,7 +97,7 @@ const WorkoutForm = ({
         propCursor="pointer"
         onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
       />
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
     </NewWorkoutRoot>
   );
 };

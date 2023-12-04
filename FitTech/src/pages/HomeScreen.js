@@ -3,6 +3,7 @@ import styled from "styled-components";
 import IOSStatusBarBlackIcon from "../components/IOSStatusBarBlackIcon";
 import SocialArea from "../components/SocialArea";
 import Bottombar2 from "../components/Bottombar2";
+import { useNavigate } from "react-router-dom";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -136,14 +137,24 @@ const HomeScreenRoot = styled.div`
   font-family: var(--community);
 `;
 
+/*
+  const onFrameContainerClick = useCallback(() => {
+    navigate("/workout-screen-my-workout-list");
+  }, [navigate]);
+*/
+
 const HomeScreen = () => {
+
+  const navigate = useNavigate();
+
   const onLogLastSetButton1Click = useCallback(() => {
-    // Please sync "Intro Log Screen" to the project
-  }, []);
+    navigate("/workout-screen-my-workout-list")
+  }, [navigate]);
 
   const onProgressBoxContainerClick = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+    console.log("Navigate to progress");
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   return (
     <HomeScreenRoot>

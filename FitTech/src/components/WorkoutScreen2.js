@@ -68,7 +68,7 @@ const WorkoutScreen2 = () => {
   const navigate = useNavigate();
 
   const onAddItemComponentClick = useCallback(() => {
-    navigate("/new-workout");
+    navigate("/workout-screen-name-describe-workout");
   }, [navigate]);
 
   return (

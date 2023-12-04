@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const EnterWorkoutName = styled.div`
+const EnterWorkoutName = styled.input`
   flex: 1;
   position: relative;
 `;
@@ -42,6 +42,10 @@ const InputTextActive = ({
   propHeight,
   propFlex,
 }) => {
+
+  const handleInput = () => {
+    console.log("Input detected");
+  }
   return (
     <InputtextactiveRoot
       propTop={propTop}
@@ -50,7 +54,7 @@ const InputTextActive = ({
       propHeight={propHeight}
     >
       <Textbox propFlex={propFlex}>
-        <EnterWorkoutName>{workoutNamePlaceholder}</EnterWorkoutName>
+        <EnterWorkoutName input="text" placeholder={workoutNamePlaceholder} onChange={handleInput}></EnterWorkoutName>
       </Textbox>
     </InputtextactiveRoot>
   );

@@ -217,8 +217,8 @@ const Exercises5 = () => {
     // Please sync "Progresss screen" to the project
   }, []);
 
-  const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+  const onBackClick = useCallback(() => {
+    navigate("/exercise-screen-list");
   }, [navigate]);
 
   const openPopupExerciseCreated = useCallback(() => {
@@ -271,7 +271,7 @@ const Exercises5 = () => {
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
-          onClick={onBackCom2IconClick}
+          onClick={onBackClick}
         />
         <ExerciseNameWrapper>
           <Home>Exercise Name</Home>
