@@ -18,8 +18,8 @@ const WorkoutUpdated = styled.div`
 `;
 const PopupWorkoutUpdatedRoot = styled.div`
   position: fixed;
-  left: 32.8%;
-  top: 15%;
+  left: 36%;
+  top: 20%;
   width: 341px;
   height: 196px;
   max-width: 100%;
@@ -41,8 +41,8 @@ const PopupWorkoutUpdated = () => {
     <PopupWorkoutUpdatedRoot>
       <WorkoutUpdated>Workout updated!</WorkoutUpdated>
       <LineMdconfirmCircleTwotoneIcon
-        propTop="60%"
-        propLeft="40%"
+        propTop="65%"
+        propLeft="43%"
         propCursor="pointer"
         onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
       />

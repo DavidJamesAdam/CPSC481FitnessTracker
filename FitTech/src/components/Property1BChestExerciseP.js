@@ -90,6 +90,8 @@ const BarbellBench = styled.div`
   font-size: var(--font-size-3xl);
 `;
 
+
+
 const BarbellBenchBoarder = styled.div`
   position: absolute;
   top: -5px;

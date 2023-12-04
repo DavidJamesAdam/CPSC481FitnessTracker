@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-const LineMdconfirmCircleTwotoneIconRoot = styled.img
-`position: absolute;
+const cancelIconRoot = styled.img`
+  position: absolute;
   width: 67px;
   height: 67px;
   cursor: pointer;
@@ -10,16 +10,16 @@ const LineMdconfirmCircleTwotoneIconRoot = styled.img
   cursor: ${(p) => p.propCursor};
 `;
 
-const LineMdconfirmCircleTwotoneIcon = ({
+const cancelIcon = ({
   propTop,
   propLeft,
   propCursor,
-  onLineMdconfirmCircleTwotoneClick,
+  cancelIconClick,
 }) => {
   return (
-    <LineMdconfirmCircleTwotoneIconRoot
-      src="/linemdconfirmcircletwotone.svg"
-      onClick={onLineMdconfirmCircleTwotoneClick}
+    <cancelIconRoot
+      src="/materialsymbolscanceloutline.svg"
+      onClick={cancelIconClick}
       propTop={propTop}
       propLeft={propLeft}
       propCursor={propCursor}
@@ -27,4 +27,4 @@ const LineMdconfirmCircleTwotoneIcon = ({
   );
 };
 
-export default LineMdconfirmCircleTwotoneIcon;
+export default cancelIcon;

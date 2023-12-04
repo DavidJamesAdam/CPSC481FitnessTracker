@@ -40,8 +40,6 @@ const ExerciseList = ({
       exerciseListLeft={exerciseListLeft}
     >
       <ExerciseListHeader
-        muscle="Muscle"
-        showRectangleIcon
         showMuscle
         exerciseListHeaderWidth="242.2px"
         exerciseListHeaderPosition="absolute"

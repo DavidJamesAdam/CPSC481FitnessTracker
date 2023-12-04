@@ -2,11 +2,12 @@ import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import LineMdconfirmCircleTwotoneIcon from "./LineMdconfirmCircleTwotoneIcon";
+import cancelIcon from "./roundCancelIcon";
 
 const PopupAreYouSureDeleteExChild = styled.div`
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 20%;
+  left: 36%;
   border-radius: var(--br-8xs);
   background-color: var(--color-gainsboro);
   border: 1px solid var(--black);
@@ -19,16 +20,17 @@ const AreYouSure = styled.p`
 `;
 const AreYouSureContainer = styled.div`
   position: absolute;
-  top: 49px;
-  left: 41px;
+  top: 22%;
+  left: 39%;
 `;
 const MaterialSymbolscancelOutlinIcon = styled.img`
   position: absolute;
-  top: 115px;
-  left: 233px;
+  top: 34%;
+  left: 51%;
   width: 67px;
   height: 67px;
   overflow: hidden;
+  cursor: pointer;
 `;
 const PopupAreYouSureDeleteExRoot = styled.div`
   width: 341px;
@@ -49,6 +51,12 @@ const PopupAreYouSureDeleteEx = () => {
     navigate("/workout-screen-populate-workout-list");
   }, [navigate]);
 
+  const cancel = useCallback(() => {
+    navigate("/workout-screen-exercise-added");
+  },
+  [navigate]
+  );
+
   return (
     <PopupAreYouSureDeleteExRoot>
       <PopupAreYouSureDeleteExChild />
@@ -57,14 +65,17 @@ const PopupAreYouSureDeleteEx = () => {
         <AreYouSure> want to delete exercise?</AreYouSure>
       </AreYouSureContainer>
       <LineMdconfirmCircleTwotoneIcon
-        propTop="115px"
-        propLeft="42px"
+        propTop="34%"
+        propLeft="40%"
         propCursor="pointer"
         onLineMdconfirmCircleTwotoneClick={onLineMdconfirmCircleTwotoneClick}
       />
       <MaterialSymbolscancelOutlinIcon
-        alt=""
-        src="/materialsymbolscanceloutline.svg"
+        src = "/materialsymbolscanceloutline.svg"
+        propTop="34%"
+        propLeft="40%"
+        propCursor="pointer"
+        onClick={cancel}
       />
     </PopupAreYouSureDeleteExRoot>
   );
