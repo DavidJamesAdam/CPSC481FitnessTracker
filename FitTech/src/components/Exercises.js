@@ -202,10 +202,10 @@ const Exercises = () => {
       <YourListAppears>Your list appears to be empty</YourListAppears>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <ChestExeriseList
-        muscle="Chest"
-        rectangleIcon
+        muscle="Test"
+        showRectangleIcon = "true"
         muscle1
-        chestExeriseListPosition="absolute"
+        chestExeriseListPosition="relative"
         chestExeriseListTop="199px"
         chestExeriseListLeft="24px"
       />

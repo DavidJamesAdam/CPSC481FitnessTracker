@@ -26,17 +26,18 @@ const MdifilterIcon = styled.img`
   height: 34px;
   cursor: pointer;
 `;
-const Muscle = styled.div`position: absolute;
+const Muscle = styled.div`
+position: absolute;
   height: 77.78%;
   width: 34.25%;
   top: 13.89%;
   left: 33.56%;
   display: flex;
   align-items: flex-end;
-  height: ${(p) => p.muscleHeight}
-  width: ${(p) => p.muscleWidth}
-  top: ${(p) => p.muscleTop}
-  left: ${(p) => p.muscleLeft}
+  height: ${(p) => p.muscleHeight};
+  width: ${(p) => p.muscleWidth};
+  top: ${(p) => p.muscleTop};
+  left: ${(p) => p.muscleLeft};
 `;
 const ExerciseListHeaderRoot = styled.div`width: 292px;
   height: 36px;
@@ -44,10 +45,10 @@ const ExerciseListHeaderRoot = styled.div`width: 292px;
   font-size: var(--font-size-5xl);
   color: var(--black);
   font-family: var(--community);
-  width: ${(p) => p.exerciseListHeaderWidth}
-  position: ${(p) => p.exerciseListHeaderPosition}
-  top: ${(p) => p.exerciseListHeaderTop}
-  left: ${(p) => p.exerciseListHeaderLeft}
+  width: ${(p) => p.exerciseListHeaderWidth};
+  position: ${(p) => p.exerciseListHeaderPosition};
+  top: ${(p) => p.exerciseListHeaderTop};
+  left: ${(p) => p.exerciseListHeaderLeft};
 `;
 
 const ExerciseListHeader = ({

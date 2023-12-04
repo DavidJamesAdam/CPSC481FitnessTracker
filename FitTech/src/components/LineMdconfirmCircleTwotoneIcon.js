@@ -6,9 +6,9 @@ const LineMdconfirmCircleTwotoneIconRoot = styled.img`position: absolute;
   width: 67px;
   height: 67px;
   cursor: pointer;
-  top: ${(p) => p.propTop}
-  left: ${(p) => p.propLeft}
-  cursor: ${(p) => p.propCursor}
+  top: ${(p) => p.propTop};
+  left: ${(p) => p.propLeft};
+  cursor: ${(p) => p.propCursor};
 `;
 
 const LineMdconfirmCircleTwotoneIcon = ({

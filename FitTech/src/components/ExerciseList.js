@@ -17,10 +17,10 @@ const ExerciseListRoot = styled.div`border-radius: var(--br-8xs);
   width: 345px;
   height: 572px;
   overflow: hidden;
-  height: ${(p) => p.exerciseListHeight}
-  position: ${(p) => p.exerciseListPosition}
-  top: ${(p) => p.exerciseListTop}
-  left: ${(p) => p.exerciseListLeft}
+  height: ${(p) => p.exerciseListHeight};
+  position: ${(p) => p.exerciseListPosition};
+  top: ${(p) => p.exerciseListTop};
+  left: ${(p) => p.exerciseListLeft};
 `;
 
 const ExerciseList = ({

@@ -150,7 +150,7 @@ const NewWorkout1 = () => {
   }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate(-1);
   }, [navigate]);
 
   const onAddItemComponentClick = useCallback(() => {

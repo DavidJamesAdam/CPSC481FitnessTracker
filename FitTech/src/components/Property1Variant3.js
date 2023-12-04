@@ -4,7 +4,7 @@ const P = styled.b`
   position: relative;
   -webkit-text-stroke: 1px #000;
 `;
-const Property1variant3Root = styled.div`
+const Property1Variant3Root = styled.div`
   border-radius: var(--br-8xs);
   background-color: var(--color-dimgray-200);
   border: 1px solid var(--black);
@@ -24,9 +24,9 @@ const Property1variant3Root = styled.div`
 
 const Property1Variant3 = () => {
   return (
-    <Property1variant3Root>
+    <Property1Variant3Root>
       <P>P</P>
-    </Property1variant3Root>
+    </Property1Variant3Root>
   );
 };
 
