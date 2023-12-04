@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SetWrapper from "./SetWrapper";
+import React, { useState } from "react";
 
 const ExerciseBackground = styled.div`
     background-color: #D9D9D9;
@@ -29,36 +31,6 @@ const Titles = styled.div`
     margin-right: ${(props) => props.margin || "none"};
 `;
 
-const SetBox = styled.div`
-  border-radius: var(--br-8xs);
-  background-color: var(--white);
-  width: 23px;
-  height: 21px;
-
-  ::before {
-    content: '${props => props.text || ''}';
-    font-size: 14px; /* You can adjust the font size as needed */
-    color: var(--black); /* You can set the text color */
-  }
-`;
-
-const RepBox = styled.input`
-  border-radius: var(--br-8xs);
-  background-color: var(--white);
-  width: 48px;
-  height: 21px;
-`;
-
-const RemoveSetButton = styled.div`
-  border-radius: var(--br-8xs);
-  background-color: var(--color-dodgerblue);
-  width: 70px;
-  height: 21px;
-  box-sizing: border-box;
-  padding-top: 5px;
-  font-size: 10px;
-`;
-
 const Empty = styled.div`
   flex: 1.5;
 `;
@@ -76,10 +48,27 @@ const AddSetButton = styled.div`
   box-sizing: border-box;
   text-align: left;
   margin-top: 20px;
+  cursor: pointer;
 `;
 
 
 const LogExerciseForm = ({ exerciseTitle }) => {
+
+    const removeSetClick = (setNumber) => {
+        setSets(sets.filter((set) => {
+            console.log(sets);
+            console.log(`set props: ${set.props.setNumber}`);
+            console.log(`set number ${setNumber}`);
+            return set.props.setNumber !== setNumber;
+        }))
+    }
+
+    const [sets, setSets] = useState([<SetWrapper setNumber='1' removeClick={removeSetClick}/>, <SetWrapper setNumber='2' removeClick={removeSetClick}/>, <SetWrapper setNumber='3' removeClick={removeSetClick}/>])
+
+    const addSetClick = () => {
+        setSets([...sets, <SetWrapper setNumber={sets.length + 1} removeClick={removeSetClick}/>])
+    }
+
     return (
         <>
             <ExerciseBackground>
@@ -91,26 +80,15 @@ const LogExerciseForm = ({ exerciseTitle }) => {
                         <Titles>Weight</Titles>
                         <Empty></Empty>
                     </RowWrapper>
-                    <RowWrapper>
-                        <SetBox>1</SetBox>
-                        <RepBox type="number"/>
-                        <RepBox type="number"/>
-                        <RemoveSetButton>Remove set</RemoveSetButton>
-                    </RowWrapper>
-                    <RowWrapper>
-                        <SetBox>2</SetBox>
-                        <RepBox type="number"/>
-                        <RepBox type="number"/>
-                        <RemoveSetButton>Remove set</RemoveSetButton>
-                    </RowWrapper>
-                    <RowWrapper>
-                        <SetBox>3</SetBox>
-                        <RepBox type="number"/>
-                        <RepBox type="number"/>
-                        <RemoveSetButton>Remove set</RemoveSetButton>
-                    </RowWrapper>
+                    {sets.map((set, index) => (
+                        <React.Fragment key={index}>{set}</React.Fragment>
+                    ))}
+                    {/* <SetWrapper setNumber='1'/>
+                    <SetWrapper setNumber='2'/>
+                    <SetWrapper setNumber='3'/> */}
                 </FormWrapper>
-                <AddSetButton>Add Set</AddSetButton>
+                {console.log(sets)}
+                <AddSetButton onClick={addSetClick}>Add Set</AddSetButton>
             </ExerciseBackground>
         </>
     )

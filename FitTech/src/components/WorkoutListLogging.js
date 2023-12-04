@@ -33,7 +33,7 @@ const MyWorkouts = styled.div`
   position: absolute;
   top: 105px;
   left: 98px;
-  color: var(--surface);
+  color: var(--white);
 `;
 const BackCom2Icon = styled.img`
   position: absolute;

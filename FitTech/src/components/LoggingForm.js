@@ -77,18 +77,22 @@ const Scrollframe1 = styled.div`
 `;
 const FinishWorkout = styled.div`
   position: relative;
+  width: 100px;
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--color-dodgerblue);
+  border-radius: var(--br-8xs);
 `;
 const FinishWorkoutWrapper = styled.div`
   position: absolute;
-  top: 734px;
-  left: 18px;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-dodgerblue);
+  top: 720px;
+  left: 15px;
+  padding: var(--padding-3xs);
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-3xs);
+  gap: 70px;
+  justify-content: space-between;
 `;
 const WorkoutScreenRoot = styled.div`
   position: absolute;
@@ -100,15 +104,28 @@ const WorkoutScreenRoot = styled.div`
   width: 393px;
   height: 852px;
   overflow: hidden;
-  mix-blend-mode: normal;
   text-align: left;
   font-size: var(--font-size-base);
   color: var(--black);
   font-family: var(--body-1);
 `;
 
+
 const LoggingForm = () => {
+  // const [exercises, setExercises] = useState([<SetWrapper setNumber='1' removeClick={removeSetClick}/>, <SetWrapper setNumber='2' removeClick={removeSetClick}/>, <SetWrapper setNumber='3' removeClick={removeSetClick}/>])
+
+  // const addExerciseClick = () => {
+  //     setSets([...sets, <SetWrapper setNumber={sets.length + 1} removeClick={removeSetClick}/>])
+  // }
   const navigate = useNavigate();
+
+  const finishWorkoutClickNavigate = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+
+  const finishWorkoutClick = () => {
+    finishWorkoutClickNavigate();
+  }
 
   const onLoggingBackgroundClick = useCallback(() => {
     navigate("/community-screen-main");
@@ -144,7 +161,8 @@ const LoggingForm = () => {
         </LoggingBackground1>
       </Scrollframe1>
       <FinishWorkoutWrapper>
-        <FinishWorkout>Finish Workout</FinishWorkout>
+        <FinishWorkout>Add Exercise +</FinishWorkout>
+        <FinishWorkout onClick={finishWorkoutClick}>Finish Workout</FinishWorkout>
       </FinishWorkoutWrapper>
     </WorkoutScreenRoot>
   );
