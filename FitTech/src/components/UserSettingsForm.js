@@ -4,8 +4,7 @@ import PortalPopup from "./PortalPopup";
 import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
-import FormContainer1 from "./FormContainer1";
-import InputTextActive from "./InputTextActive";
+import HelpFormInput from "./HelpFormInput";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -134,10 +133,32 @@ const EmailInput = styled.div`
   width: 200px;
   height: 72px;
 `;
-const SendButton = styled.div`
+
+const Name = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  top: 60px;
+
+`;
+
+const HelpWrapper = styled.div`
   position: absolute;
-  top: 550px;
-  left: 47px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  top: 160px;
+  left: 46px;
+`;
+
+const NameInput = styled.input`
+  background-color: white;
+  height: 25px;
+  font-size: 16px;
+  margin-top: 20px;
+`;
+const SendButton = styled.div`
   border-radius: var(--br-xl);
   background-color: var(--color-dodgerblue);
   width: 172px;
@@ -152,16 +173,12 @@ const SendButton = styled.div`
   font-size: var(--font-size-3xl);
 `;
 const Help = styled.div`
-  position: absolute;
-  top: 186px;
-  left: 46px;
   font-size: var(--font-size-3xl);
   text-decoration: underline;
+  font-size: 32px;
+  margin-top: 20px;
 `;
 const CancelWrapper = styled.div`
-  position: absolute;
-  top: 628px;
-  left: 47px;
   border-radius: var(--br-xl);
   background-color: var(--color-crimson);
   width: 172px;
@@ -253,33 +270,18 @@ const UserSettingsForm = () => {
             <SettingsComponentIcon alt="" src="/settings-component.svg" />
           </SettingsItem>
         </Bottombar>
-        <FormContainer1 userInfo="Full name" userFullName="Name" />
-        <FormContainer1
-          userInfo="Email"
-          userFullName="example@email.com"
-          propTop="290px"
-        />
-        <EmailInput>
-          <MessageInput>
-            <MessageWrapper>
-              <Message>Message</Message>
-            </MessageWrapper>
-            <InputTextActive
-              propTop="42px"
-              propLeft="0px"
-              propWidth="200px"
-              propHeight="unset"
-              propFlex="unset"
-            />
-          </MessageInput>
-        </EmailInput>
-        <SendButton onClick={openPopupHelpRequestReceived}>
-          <Message>Send</Message>
-        </SendButton>
-        <Help>Help</Help>
-        <CancelWrapper onClick={onFrameContainer3Click}>
-          <Message>Cancel</Message>
-        </CancelWrapper>
+        <HelpWrapper>
+          <Help>Help</Help>
+          <HelpFormInput titleText="Full Name" placeholder="Ex: John Doe" />
+          <HelpFormInput titleText="Email" placeholder="Ex: example123@email.com" />
+          <HelpFormInput titleText="Message" placeholder="Ex: This is an example message" inputHeight="100px" />
+          <SendButton onClick={openPopupHelpRequestReceived}>
+            <Message>Send</Message>
+          </SendButton>
+          <CancelWrapper onClick={onFrameContainer3Click}>
+            <Message>Cancel</Message>
+          </CancelWrapper>
+        </HelpWrapper>
       </SettingsScreenRoot>
       {isPopupHelpRequestReceivedOpen && (
         <PortalPopup

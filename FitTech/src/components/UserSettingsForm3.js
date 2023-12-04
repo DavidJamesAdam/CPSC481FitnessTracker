@@ -4,7 +4,7 @@ import PortalPopup from "./PortalPopup";
 import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
-import InputTextActive from "./InputTextActive";
+import HelpFormInput from "./HelpFormInput";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -67,9 +67,6 @@ const SaveChanges = styled.div`
   position: relative;
 `;
 const SaveChangesWrapper = styled.div`
-  position: absolute;
-  top: 239px;
-  left: 24px;
   border-radius: var(--br-xl);
   background-color: var(--color-dodgerblue);
   width: 172px;
@@ -83,9 +80,6 @@ const SaveChangesWrapper = styled.div`
   cursor: pointer;
 `;
 const CancelWrapper = styled.div`
-  position: absolute;
-  top: 317px;
-  left: 24px;
   border-radius: var(--br-xl);
   background-color: var(--color-crimson);
   width: 172px;
@@ -166,6 +160,17 @@ const SettingsScreenRoot = styled.div`
   font-family: var(--community);
 `;
 
+const ForgotPasswordWrapper = styled.div `
+  position: absolute;
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  top: 160px;
+  left: 46px;
+  margin-top: 20px;
+`;
+
+
 const UserSettingsForm3 = () => {
   const [isPopupResetPasswordEmailCOpen, setPopupResetPasswordEmailCOpen] =
     useState(false);
@@ -218,21 +223,15 @@ const UserSettingsForm3 = () => {
           src="/back-com2.svg"
           onClick={onBackClick}
         />
-        <InputTextActive
-          workoutNamePlaceholder="Enter Email"
-          propTop="193px"
-          propLeft="27px"
-          propWidth="200px"
-          propHeight="unset"
-          propFlex="unset"
-        />
-        <ResetPassword>Reset Password</ResetPassword>
-        <SaveChangesWrapper onClick={openPopupResetPasswordEmailC}>
-          <SaveChanges> Save Changes</SaveChanges>
-        </SaveChangesWrapper>
-        <CancelWrapper onClick={onFrameContainer1Click}>
-          <SaveChanges>Cancel</SaveChanges>
-        </CancelWrapper>
+        <ForgotPasswordWrapper>
+          <HelpFormInput titleText="Reset Password" placeholder="Ex: example123@email.com"/>
+          <SaveChangesWrapper onClick={openPopupResetPasswordEmailC}>
+            <SaveChanges> Save Changes</SaveChanges>
+          </SaveChangesWrapper>
+          <CancelWrapper onClick={onFrameContainer1Click}>
+            <SaveChanges>Cancel</SaveChanges>
+          </CancelWrapper>
+        </ForgotPasswordWrapper>
         <Bottombar>
           <HomeIcon alt="" src="/home.svg" onClick={onHomeNavClick} />
           <VectorIcon alt="" src="/vector1.svg" onClick={onWorkoutNavClick} />
