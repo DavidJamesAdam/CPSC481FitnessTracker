@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 const LineMdconfirmCircleTwotoneIconRoot = styled.img`position: absolute;
-  top: 680px;
-  left: 299px;
   width: 67px;
   height: 67px;
   cursor: pointer;
