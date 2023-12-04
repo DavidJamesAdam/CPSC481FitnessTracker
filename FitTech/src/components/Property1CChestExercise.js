@@ -9,7 +9,7 @@ const Property1cChestExerciseRoot = styled.div`
   background-color: var(--color-dimgray-200);
   border: 1px solid var(--black);
   width: 345px;
-  height: 100px;
+  height: 400px;
   text-align: left;
   font-size: var(--font-size-13xl);
   color: var(--white);

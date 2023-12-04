@@ -62,8 +62,8 @@ const ChestExeriseList = ({
         />
       </ExerciseListHeaderWrapper>
       <Property1BChestExerciseP />
-      <Property1DChestExercise />
       <Property1CChestExercise />
+      <Property1DChestExercise />
       <Property1Variant3 />
     </ChestExeriseListRoot>
   );

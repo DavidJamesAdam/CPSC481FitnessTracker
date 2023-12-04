@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { useState, useCallback } from "react";
-import PopupAreYouSureDeleteEx from "./PopupAreYouSureDeleteEx";
 import PortalPopup from "./PortalPopup";
 import { useNavigate } from "react-router-dom";
 
@@ -42,13 +41,8 @@ const Edit = styled.div`
   box-sizing: border-box;
   cursor: pointer;
 `;
-const Edit2 = styled.p`
-  margin: 0;
-`;
-const View1 = styled.div`
-  position: relative;
-  font-weight: 300;
-`;
+
+
 const MdigarbageCanOutlineIcon = styled.img`
   position: absolute;
   top: 3px;
@@ -56,7 +50,6 @@ const MdigarbageCanOutlineIcon = styled.img`
   border-radius: var(--br-xl);
   width: 29px;
   height: 29px;
-  overflow: hidden;
   cursor: pointer;
 `;
 const View2 = styled.div`
@@ -75,20 +68,13 @@ const View2 = styled.div`
   box-sizing: border-box;
   cursor: pointer;
 `;
-const Edit1 = styled.div`
-  position: relative;
-  font-weight: 300;
-  display: inline-block;
-  width: 43px;
-  height: 31px;
-  flex-shrink: 0;
-`;
+
 const Property1bChestExercisePRoot = styled.div`
   border-radius: var(--br-8xs);
   background-color: var(--color-dimgray-200);
   border: 1px solid var(--black);
   width: 345px;
-  height: 100px;
+  height: 400px;
   text-align: left;
   font-size: var(--font-size-13xl);
   color: var(--white);
@@ -103,15 +89,8 @@ const BarbellBench = styled.div`
   height: 131px;
   font-size: var(--font-size-3xl);
 `;
-const BarbellBench2 = styled.div`
-  position: absolute;
-  top: 46px;
-  left: -21px;
-  width: 372px;
-  height: 131px;
-  font-size: var(--font-size-3xl);
-`;
-const BarbellBenchChild = styled.div`
+
+const BarbellBenchBoarder = styled.div`
   position: absolute;
   top: -5px;
   left: -5px;
@@ -124,19 +103,7 @@ const BarbellBenchChild = styled.div`
 `;
 
 const Property1BChestExerciseP = () => {
-  const [isPopupAreYouSureDeleteExOpen, setPopupAreYouSureDeleteExOpen] =
-  useState(false);
-const [isPopupAreYouSureDeleteEx1Open, setPopupAreYouSureDeleteEx1Open] =
-  useState(false);
 const navigate = useNavigate();
-
-const onWorkoutItemNoContainerClick = useCallback(() => {
-  navigate("/workoutexercises-screen");
-}, [navigate]);
-
-const onWorkoutexercisesComponentIconClick = useCallback(() => {
-  navigate("/workoutexercise-main-screen");
-}, [navigate]);
 
 const onEditContainerClick = useCallback(() => {
   navigate("/exercise-screen-edit");
@@ -146,37 +113,13 @@ const onViewContainerClick = useCallback(() => {
   navigate("/exercise-screen-view");
 }, [navigate]);
 
-const openPopupAreYouSureDeleteEx = useCallback(() => {
-  setPopupAreYouSureDeleteExOpen(true);
-}, []);
-
-const closePopupAreYouSureDeleteEx = useCallback(() => {
-  setPopupAreYouSureDeleteExOpen(false);
-}, []);
-
-const onEditContainer1Click = useCallback(() => {
-  navigate("/exercise-screen-edit");
-}, [navigate]);
-
-const onViewContainer1Click = useCallback(() => {
-  navigate("/exercise-screen-view");
-}, [navigate]);
-
-const openPopupAreYouSureDeleteEx1 = useCallback(() => {
-  setPopupAreYouSureDeleteEx1Open(true);
-}, []);
-
-const closePopupAreYouSureDeleteEx1 = useCallback(() => {
-  setPopupAreYouSureDeleteEx1Open(false);
+const addToWorkoutList = useCallback(() => {
+  navigate("/workout-screen-exercise-added");
 }, []);
 
 const onProgressItemContainerClick = useCallback(() => {
   // Please sync "Progresss screen" to the project
 }, []);
-
-const onAddItemComponentClick = useCallback(() => {
-  navigate("/exercise-screen-create");
-}, [navigate]);
 
 const onBackCom2IconClick = useCallback(() => {
   navigate(-1);
@@ -185,21 +128,14 @@ const onBackCom2IconClick = useCallback(() => {
     <Property1bChestExercisePRoot>
       <B>B
         <BarbellBench>
-          <BarbellBenchChild />
+          <BarbellBenchBoarder />
             <Crunches>Barbell Bench</Crunches>
-              <BarbellBenchIcon alt="" src="/barbell-bench2@2x.png" />
-              <Edit onClick={onEditContainerClick}>
-                <Edit1>
-                  <Edit2>Edit</Edit2>
-                </Edit1>
-              </Edit>
-              <View2 onClick={onViewContainerClick}>
-                <View1>View</View1>
-              </View2>
+              <BarbellBenchIcon src="/barbell-bench2@2x.png" />
+              <Edit onClick={onEditContainerClick}>Edit</Edit>
+              <View2 onClick={onViewContainerClick}>View</View2>
               <MdigarbageCanOutlineIcon
-                  alt=""
-                  src="/mdigarbagecanoutline1.svg"
-                  onClick={openPopupAreYouSureDeleteEx}
+                  src="/add-item-component.svg"
+                  onClick={addToWorkoutList}
                 />
               </BarbellBench>
             </B>

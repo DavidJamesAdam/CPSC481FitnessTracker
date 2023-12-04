@@ -77,16 +77,7 @@ const BarbellBenchIcon = styled.img`
   height: 86px;
   object-fit: cover;
 `;
-const MdigarbageCanOutlineIcon = styled.img`
-  position: absolute;
-  top: 5px;
-  left: 305px;
-  border-radius: var(--br-xl);
-  width: 29px;
-  height: 29px;
-  overflow: hidden;
-  cursor: pointer;
-`;
+
 const BarbellBench = styled.div`
   position: absolute;
   top: 168px;
@@ -206,11 +197,6 @@ const NewWorkout1 = () => {
             viewLeft="197px"
             viewCursor="pointer"
             onViewContainerClick={onViewContainerClick}
-          />
-          <MdigarbageCanOutlineIcon
-            alt=""
-            src="/mdigarbagecanoutline1.svg"
-            onClick={openPopupAreYouSureDeleteEx}
           />
         </BarbellBench>
         <NewWorkoutChild />
