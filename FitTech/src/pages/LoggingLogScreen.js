@@ -49,7 +49,7 @@ const Bottombar = styled.div`
   position: absolute;
   top: 869px;
   left: 523px;
-  background-color: var(--surface);
+  background-color: var(--white);
   box-shadow: var(--shadow);
   width: 393px;
   height: 69px;

@@ -49,7 +49,7 @@ const Bottombar = styled.div`
   position: absolute;
   top: 869px;
   left: 523px;
-  background-color: var(--surface);
+  background-color: var(--white);
   box-shadow: var(--shadow);
   width: 393px;
   height: 69px;
@@ -91,12 +91,12 @@ const LoggingWorkoutList = () => {
     <LoggingWorkoutListRoot>
       <WorkoutListLogging />
       <Bottombar>
-        <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
+        <HomeIcon alt="" src="/home1.svg" onClick={onHomeIconClick} />
         <WorkoutItem>
-          <WorkoutexercisesIcon alt="" src="/workoutexercises.svg" />
+          <WorkoutexercisesIcon alt="" src="/workoutexercises1.svg" />
         </WorkoutItem>
-        <VectorIcon alt="" src="/vector4.svg" onClick={onVectorIconClick} />
-        <VectorIcon1 alt="" src="/vector5.svg" onClick={onVectorIcon1Click} />
+        <VectorIcon alt="" src="/vector8.svg" onClick={onVectorIconClick} />
+        <VectorIcon1 alt="" src="/vector9.svg" onClick={onVectorIcon1Click} />
         <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon2Click} />
       </Bottombar>
     </LoggingWorkoutListRoot>
