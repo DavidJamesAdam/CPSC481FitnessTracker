@@ -148,7 +148,7 @@ const HomeScreen = () => {
   const navigate = useNavigate();
 
   const onLogLastSetButton1Click = useCallback(() => {
-    navigate("/workout-screen-my-workout-list")
+    navigate("/logging-workout-list")
   }, [navigate]);
 
   const onProgressBoxContainerClick = useCallback(() => {

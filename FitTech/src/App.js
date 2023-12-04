@@ -31,6 +31,8 @@ import SettingsScreenMain from "./pages/SettingsScreenMain";
 import ExerciseScreenList from "./pages/ExerciseScreenList";
 import WorkoutExerciseMainScreen from "./pages/WorkoutExerciseMainScreen";
 import ProgressScreenMain from "./pages/ProgressScreenMain";
+import LoggingWorkoutList from "./pages/LoggingWorkoutList";
+import LoggingLogScreen from "./pages/LoggingLogScreen";
 
 function App() {
   const action = useNavigationType();
@@ -238,6 +240,8 @@ function App() {
         path="/workoutexercise-main-screen"
         element={<WorkoutExerciseMainScreen />}
       />
+      <Route path="/logging-workout-list" element={<LoggingWorkoutList />}/>
+      <Route path="/logging-log-screen" element={<LoggingLogScreen />}/>
     </Routes>
   );
 }
