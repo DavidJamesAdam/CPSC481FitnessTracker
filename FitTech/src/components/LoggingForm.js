@@ -3,6 +3,7 @@ import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
 import ExerciseForm from "./ExerciseForm";
+import LogExerciseForm from "./LogExerciseForm";
 
 const IosstatusBarblack = styled.div`
   position: absolute;
@@ -28,7 +29,7 @@ const ChestDay = styled.div`
   top: 54px;
   left: 117px;
   font-size: var(--font-size-13xl);
-  color: var(--surface);
+  color: var(--white);
 `;
 const BackCom2Icon = styled.img`
   position: absolute;
@@ -56,10 +57,14 @@ const ScrollFrame1 = styled.div`
 `;
 const LoggingBackground1 = styled.div`
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
   top: -21px;
   left: 8px;
   width: 360px;
   height: auto;
+  margin: 10px;
 `;
 const Scrollframe1 = styled.div`
   position: absolute;
@@ -133,19 +138,9 @@ const LoggingForm = () => {
       <UileditIcon alt="" src="/uiledit.svg" onClick={onUileditIconClick} />
       <Scrollframe1>
         <LoggingBackground1>
-          <ExerciseForm
-            exerciseName="Barbell Bench"
-            setBoxTop="17px"
-            removeSetButtonLeft="calc(50% - 62.5px)"
-            removeSetTextAlign="left"
-          />
-          <ExerciseForm exerciseName="Chest Flys" />
-          <ExerciseForm
-            exerciseName="Incline Bench"
-            setBoxTop="463px"
-            removeSetButtonLeft="calc(50% - 60px)"
-            removeSetTextAlign="center"
-          />
+          <LogExerciseForm exerciseTitle="Barbell Bench Press" />
+          <LogExerciseForm exerciseTitle="Chest Fly" />
+          <LogExerciseForm exerciseTitle="Incline Bench" />
         </LoggingBackground1>
       </Scrollframe1>
       <FinishWorkoutWrapper>
