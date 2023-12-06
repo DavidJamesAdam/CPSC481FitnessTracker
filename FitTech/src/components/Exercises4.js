@@ -280,7 +280,7 @@ const CreateButton = styled.div`
   cursor: pointer;
 `;
 
-const SaveChangesButton = styled.div `
+const SaveChangesButton = styled.div`
   background-color: var(--color-dodgerblue);
   text-align: center;
   border-radius: var(--button-radius);
@@ -290,8 +290,10 @@ const SaveChangesButton = styled.div `
   cursor: pointer;
 `;
 
-const Exercises4 = ({exerciseEdited}) => {
+const Exercises4 = ({ exerciseEdited }) => {
   const [isPopupChangesSavedOpen, setPopupChangesSavedOpen] = useState(false);
+
+  const [isDiscardChanges, setIsDiscardChanges] = useState(false);
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
@@ -307,8 +309,8 @@ const Exercises4 = ({exerciseEdited}) => {
   }, []);
 
   const onBackClick = useCallback(() => {
-    navigate("/exercise-screen-list");
-  }, [navigate]);
+    setIsDiscardChanges(true);
+  }, []);
 
   const openPopupChangesSaved = useCallback(() => {
     setPopupChangesSavedOpen(true);
@@ -316,11 +318,16 @@ const Exercises4 = ({exerciseEdited}) => {
 
   const closePopupChangesSaved = useCallback(() => {
     setPopupChangesSavedOpen(false);
+    setIsDiscardChanges(false);
     navigate(-1);
   }, [navigate]);
 
   const saveChangesClick = useCallback(() => {
     setPopupChangesSavedOpen(true);
+  })
+
+  const checkMarkClick = useCallback(() => {
+    setIsDiscardChanges(false);
   })
 
 
@@ -343,7 +350,7 @@ const Exercises4 = ({exerciseEdited}) => {
           <UploadMediaWrapper>
             <UploadMediaWrapper2>
               <UploadMediaText>Upload Cover Image</UploadMediaText>
-              <UploadMediaImage src="uploadImage.svg" onClick={() => {}} />
+              <UploadMediaImage src="uploadImage.svg" onClick={() => { }} />
             </UploadMediaWrapper2>
           </UploadMediaWrapper>
           <SaveChangesButton onClick={saveChangesClick}>Save Changes</SaveChangesButton>
@@ -368,6 +375,15 @@ const Exercises4 = ({exerciseEdited}) => {
           onOutsideClick={closePopupChangesSaved}
         >
           <PopUp onClose={closePopupChangesSaved} text="Changes Saved" top="86px" left="523px" checkMarkClick={closePopupChangesSaved} />
+        </PortalPopup>
+      )}
+      {isDiscardChanges && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closePopupChangesSaved}
+        >
+          <PopUp onClose={closePopupChangesSaved} text="Discard Changes?" top="86px" left="523px" checkMarkClick={closePopupChangesSaved} onXMarkCloseClick={checkMarkClick} deleteImage={"deleteImage.svg"}/>
         </PortalPopup>
       )}
     </>
