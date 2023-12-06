@@ -27,6 +27,7 @@ const AddItemComponent = styled.img`
   width: 113px;
   height: 105px;
   cursor: pointer;
+  
 `;
 const MyWorkouts = styled.div`
   position: absolute;
@@ -42,6 +43,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const WorkoutScreenChild = styled.div`
   position: absolute;
@@ -54,6 +60,11 @@ const WorkoutScreenChild = styled.div`
   width: 290px;
   height: 62px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ChestDay = styled.div`
   position: absolute;
@@ -68,6 +79,15 @@ const UileditIcon = styled.img`
   width: 47px;
   height: 45px;
   cursor: pointer;
+  box-shadow: 3px 3px 5px black;
+  border-radius: 10px;
+  background-color: var(--color-dodgerblue);
+
+  box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const WorkoutScreenRoot = styled.div`
   position: absolute;
