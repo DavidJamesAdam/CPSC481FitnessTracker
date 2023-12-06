@@ -200,7 +200,7 @@ const Exercises = () => {
       <ExercisesChild />
       <ChestDay>Chest Day</ChestDay>
       <YourListAppears>Your list appears to be empty</YourListAppears>
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
+      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <ChestExeriseList
         muscle="Test"
         showRectangleIcon = "true"
