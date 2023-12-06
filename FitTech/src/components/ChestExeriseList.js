@@ -26,9 +26,9 @@ const ChestExeriseListRoot = styled.div`border-radius: var(--br-8xs);
   justify-content: flex-start;
   padding: var(--padding-3xs) 0px;
   gap: var(--gap-11xl);
-  position: ${(p) => p.chestExeriseListPosition}
-  top: ${(p) => p.chestExeriseListTop}
-  left: ${(p) => p.chestExeriseListLeft}
+  position: ${(p) => p.chestExeriseListPosition};
+  top: ${(p) => p.chestExeriseListTop};
+  left: ${(p) => p.chestExeriseListLeft};
 `;
 
 const ChestExeriseList = ({
@@ -48,9 +48,9 @@ const ChestExeriseList = ({
     >
       <ExerciseListHeaderWrapper>
         <ExerciseListHeader
-          muscle="Muscle"
-          showRectangleIcon={false}
-          showMuscle={false}
+          muscle="Chest"
+          showRectangleIcon={true}
+          showMuscle={true}
           exerciseListHeaderWidth="242.2px"
           exerciseListHeaderPosition="absolute"
           exerciseListHeaderTop="0px"
@@ -62,8 +62,8 @@ const ChestExeriseList = ({
         />
       </ExerciseListHeaderWrapper>
       <Property1BChestExerciseP />
-      <Property1DChestExercise />
       <Property1CChestExercise />
+      <Property1DChestExercise />
       <Property1Variant3 />
     </ChestExeriseListRoot>
   );

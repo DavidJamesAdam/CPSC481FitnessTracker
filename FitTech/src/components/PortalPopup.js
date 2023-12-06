@@ -4,6 +4,7 @@ import { createPortal } from "react-dom";
 import styled from "styled-components";
 
 const PortalOverlay = styled.div`
+  position: absolute;
   display: flex;
   flex-direction: column;
   position: fixed;

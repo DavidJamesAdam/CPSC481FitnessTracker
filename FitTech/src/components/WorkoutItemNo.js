@@ -16,12 +16,12 @@ const WorkoutItemnoRoot = styled.div`width: 56px;
   justify-content: center;
   padding: var(--padding-mini) 0px;
   box-sizing: border-box;
-  width: ${(p) => p.workoutItemNoWidth}
-  padding: ${(p) => p.workoutItemNoPadding}
-  box-sizing: ${(p) => p.workoutItemNoBoxSizing}
-  flex: ${(p) => p.workoutItemNoFlex}
-  background-color: ${(p) => p.workoutItemNoBackgroundColor}
-  cursor: ${(p) => p.workoutItemNoCursor}
+  width: ${(p) => p.workoutItemNoWidth};
+  padding: ${(p) => p.workoutItemNoPadding};
+  box-sizing: ${(p) => p.workoutItemNoBoxSizing};
+  flex: ${(p) => p.workoutItemNoFlex};
+  background-color: ${(p) => p.workoutItemNoBackgroundColor};
+  cursor: ${(p) => p.workoutItemNoCursor};
 `;
 
 const WorkoutItemNo = ({

@@ -182,7 +182,7 @@ const Exercises2 = () => {
   }, []);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
+    navigate(-1);
   }, [navigate]);
 
   const onCategoriesTextClick = useCallback(() => {
@@ -231,7 +231,7 @@ const Exercises2 = () => {
       <YourListAppears>Your list appears to be empty</YourListAppears>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <ExerciseList
-        showRectangleIcon={false}
+        showRectangleIcon={true}
         showMuscle={false}
         exerciseListHeight="565px"
         exerciseListPosition="absolute"

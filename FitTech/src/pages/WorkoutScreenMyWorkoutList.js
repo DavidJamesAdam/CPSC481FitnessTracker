@@ -47,7 +47,7 @@ const VectorIcon2 = styled.img`
 const Bottombar = styled.div`
   position: absolute;
   top: 869px;
-  left: 523px;
+  left: 550px;
   background-color: var(--white);
   box-shadow: var(--shadow);
   width: 393px;
@@ -62,7 +62,7 @@ const Bottombar = styled.div`
 const BackCom2Icon = styled.img`
   position: absolute;
   top: 133px;
-  left: 543px;
+  left: 570px;
   width: 24px;
   height: 24px;
   overflow: hidden;
