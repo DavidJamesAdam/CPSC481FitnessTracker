@@ -7,6 +7,7 @@ import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import Vaadinbutton from "./Vaadinbutton";
 import View from "./View";
+import PopUp from "./PopUp";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -178,6 +179,14 @@ const NewWorkout1 = () => {
     navigate("/workout-edit");
   }, [navigate]);
 
+  const areYouSureDeletePopupX = useCallback(() => {
+    navigate(0);
+  }, [navigate]);
+
+  const finishCheckMarkClick = useCallback(() => {
+    navigate("/workout-screen-workout-created");
+  }, [navigate]);
+
   return (
     <>
       <NewWorkoutRoot>
@@ -223,7 +232,7 @@ const NewWorkout1 = () => {
           top = "100px"
           onOutsideClick={closePopupAreYouSureDeleteEx}
         >
-          <PopupAreYouSureDeleteEx onClose={closePopupAreYouSureDeleteEx} />
+          <PopUp onClose={closePopupAreYouSureDeleteEx} text="Are you sure you want to delete exercise?" top="86px" left="523px" checkMarkClick={closePopupAreYouSureDeleteEx} onXMarkCloseClick={areYouSureDeletePopupX} deleteImage="deleteImage.svg"/>
         </PortalPopup>
       )}
       {isPopupWorkoutUpdatedOpen && (
@@ -232,7 +241,7 @@ const NewWorkout1 = () => {
           placement="Centered"
           onOutsideClick={closePopupWorkoutUpdated}
         >
-          <PopupWorkoutUpdated onClose={closePopupWorkoutUpdated} />
+        <PopUp onClose={closePopupWorkoutUpdated} text="Workout updated!" top="86px" left="523px" checkMarkClick={finishCheckMarkClick} />
         </PortalPopup>
       )}
     </>

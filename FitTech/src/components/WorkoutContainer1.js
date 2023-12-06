@@ -4,6 +4,7 @@ import PortalPopup from "./PortalPopup";
 import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
+import PopUp from "./PopUp";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -84,6 +85,7 @@ const CancelWrapper = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size-3xl);
+  display: ${(props) => (props.delete ? 'none' : 'block')};
 `;
 const WorkoutScreenRoot = styled.div`
   position: absolute;
@@ -102,9 +104,15 @@ const WorkoutScreenRoot = styled.div`
   font-family: var(--community);
 `;
 
+const WorkoutWrapper = styled.div `
+  display: ${(props) => (props.delete ? 'none' : 'block')};
+`;
+
 const WorkoutContainer1 = () => {
   const [isPopupAreYouSureDeleteWoOpen, setPopupAreYouSureDeleteWoOpen] =
     useState(false);
+
+  const [isDeleteWorkout, setIsDeleteWorkout] = useState(false);
   const navigate = useNavigate();
 
   const onBackCom2IconClick = useCallback(() => {
@@ -127,6 +135,12 @@ const WorkoutContainer1 = () => {
     navigate("/workout-screen-workout-created");
   }, [navigate]);
 
+  const onCheckMarkClick = () => {
+    closePopupAreYouSureDeleteWo();
+    setIsDeleteWorkout(true);
+  }
+
+
   return (
     <>
       <WorkoutScreenRoot>
@@ -140,14 +154,16 @@ const WorkoutContainer1 = () => {
           src="/back-com2.svg"
           onClick={onBackCom2IconClick}
         />
-        <WorkoutScreenChild onClick={onRectangleClick} />
-        <ChestDay>Chest Day</ChestDay>
-        <MdigarbageCanOutlineIcon
-          alt=""
-          src="/mdigarbagecanoutline.svg"
-          onClick={openPopupAreYouSureDeleteWo}
-        />
-        <CancelWrapper onClick={onFrameContainerClick}>
+        <WorkoutWrapper delete={isDeleteWorkout}>
+          <WorkoutScreenChild onClick={onRectangleClick} />
+          <ChestDay>Chest Day</ChestDay>
+          <MdigarbageCanOutlineIcon
+            alt=""
+            src="/mdigarbagecanoutline.svg"
+            onClick={openPopupAreYouSureDeleteWo}
+          />
+        </WorkoutWrapper>
+        <CancelWrapper onClick={onFrameContainerClick} delete={isDeleteWorkout}>
           <Cancel>Cancel</Cancel>
         </CancelWrapper>
       </WorkoutScreenRoot>
@@ -157,7 +173,7 @@ const WorkoutContainer1 = () => {
           placement="Centered"
           onOutsideClick={closePopupAreYouSureDeleteWo}
         >
-          <PopupAreYouSureDeleteWo onClose={closePopupAreYouSureDeleteWo} />
+          <PopUp onClose={closePopupAreYouSureDeleteWo} text="Workout updated!" top="86px" left="523px" checkMarkClick={onCheckMarkClick} />
         </PortalPopup>
       )}
     </>

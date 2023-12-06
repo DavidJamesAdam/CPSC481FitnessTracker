@@ -28,8 +28,11 @@ const PopupWrapper = styled.div`
     font-size: var(--font-size-3xl);
     color: var(--black);
     font-family: var(--community);
-    top: ${(props) => props.top};
-    left: ${(props) => props.left};
+    // top: ${(props) => props.top};
+    // left: ${(props) => props.left};
+    position: absolute;
+    top: 100px;
+    left: 550px;
 `;
 
 const CheckMark = styled.img`
@@ -71,6 +74,7 @@ const PopUp = ({ text, top, left, checkMarkClick, deleteImage, onXMarkCloseClick
     )
 }
 
+//<PopUp onClose={onCreatePopupCloseHandler} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={onCreatePopupCloseHandler} />
 
 
 export default PopUp;

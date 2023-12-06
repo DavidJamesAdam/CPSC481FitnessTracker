@@ -5,6 +5,7 @@ import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
 import HelpFormInput from "./HelpFormInput";
+import PopUp from "./PopUp";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -289,7 +290,8 @@ const UserSettingsForm = () => {
           placement="Centered"
           onOutsideClick={closePopupHelpRequestReceived}
         >
-          <PopupHelpRequestReceived onClose={closePopupHelpRequestReceived} />
+          
+          <PopUp onClose={closePopupHelpRequestReceived} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={closePopupHelpRequestReceived} />
         </PortalPopup>
       )}
     </>

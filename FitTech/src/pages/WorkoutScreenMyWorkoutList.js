@@ -47,7 +47,7 @@ const VectorIcon2 = styled.img`
 const Bottombar = styled.div`
   position: absolute;
   top: 869px;
-  left: 550px;
+  left: 523px;
   background-color: var(--white);
   box-shadow: var(--shadow);
   width: 393px;

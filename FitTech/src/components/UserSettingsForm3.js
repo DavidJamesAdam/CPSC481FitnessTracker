@@ -5,6 +5,7 @@ import styled from "styled-components";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import { useNavigate } from "react-router-dom";
 import HelpFormInput from "./HelpFormInput";
+import PopUp from "./PopUp";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -146,7 +147,7 @@ const Bottombar = styled.div`
 const SettingsScreenRoot = styled.div`
   position: absolute;
   top: 86px;
-  left: 547px;
+  left: 523px;
   background-color: var(--color-darkslategray);
   border: 1px solid var(--black);
   box-sizing: border-box;
@@ -224,9 +225,9 @@ const UserSettingsForm3 = () => {
           onClick={onBackClick}
         />
         <ForgotPasswordWrapper>
-          <HelpFormInput titleText="Reset Password" placeholder="Ex: example123@email.com"/>
+          <HelpFormInput titleText="Enter email to reset password" placeholder="Ex: example123@email.com"/>
           <SaveChangesWrapper onClick={openPopupResetPasswordEmailC}>
-            <SaveChanges> Save Changes</SaveChanges>
+            <SaveChanges> Send Email</SaveChanges>
           </SaveChangesWrapper>
           <CancelWrapper onClick={onFrameContainer1Click}>
             <SaveChanges>Cancel</SaveChanges>
@@ -248,7 +249,7 @@ const UserSettingsForm3 = () => {
           placement="Centered"
           onOutsideClick={closePopupResetPasswordEmailC}
         >
-          <PopupResetPasswordEmailC onClose={closePopupResetPasswordEmailC} />
+        <PopUp onClose={closePopupResetPasswordEmailC} text="Check email for password reset" top="86px" left="523px" checkMarkClick={closePopupResetPasswordEmailC} />
         </PortalPopup>
       )}
     </>

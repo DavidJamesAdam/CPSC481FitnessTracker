@@ -140,9 +140,12 @@ const BackCom2Icon = styled.img`
   cursor: pointer;
 `;
 const WorkoutexercisesScreenRoot = styled.div`
+  // position: absolute;
+  // top: calc(50% - 426px);
+  // left: calc(50% - 196px);
   position: absolute;
-  top: calc(50% - 426px);
-  left: calc(50% - 196px);
+  top: 86px;
+  left: 523px;
   background-color: var(--color-darkslategray);
   border: 1px solid var(--black);
   box-sizing: border-box;

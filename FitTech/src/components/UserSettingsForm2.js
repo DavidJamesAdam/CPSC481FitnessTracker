@@ -223,7 +223,7 @@ const VectorIcon7 = styled.img`
 const SettingsScreenRoot = styled.div`
   position: absolute;
   top: 86px;
-  left: 547px;
+  left: 523px;
   background-color: var(--color-darkslategray);
   border: 1px solid var(--black);
   box-sizing: border-box;
