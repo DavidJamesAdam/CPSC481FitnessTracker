@@ -41,6 +41,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const UileditIcon = styled.img`
   position: absolute;
@@ -83,8 +88,14 @@ const FinishWorkout = styled.div`
   padding: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
+  cursor: pointer;
   background-color: var(--color-dodgerblue);
   border-radius: var(--br-8xs);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const FinishWorkoutWrapper = styled.div`
   position: absolute;

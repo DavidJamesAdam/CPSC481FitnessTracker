@@ -129,6 +129,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Community = styled.b`
   position: absolute;
@@ -153,6 +158,11 @@ const TestworkoutChild = styled.div`
   width: 58px;
   height: 58px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ShareIcon = styled.img`
   position: absolute;
@@ -162,6 +172,7 @@ const ShareIcon = styled.img`
   height: 35px;
   object-fit: cover;
   cursor: pointer;
+  
 `;
 const TestworkoutRoot = styled.div`
   position: absolute;
@@ -189,6 +200,11 @@ const DoneButton = styled.button`
   color: white; // White text
   cursor: pointer; // Cursor changes to pointer on hover
   font-size: 16px; // Adjust font size as needed
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 

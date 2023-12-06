@@ -122,6 +122,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ExerciseNameWrapper = styled.div`
   position: absolute;
@@ -252,6 +257,7 @@ const UploadMediaText = styled.div`
 `;
 
 const UploadMediaImage = styled.img`
+  cursor: pointer;
 `;
 
 const UploadMediaWrapper2 = styled.div`
@@ -288,6 +294,11 @@ const SaveChangesButton = styled.div`
   padding-top: 15px;
   padding-bottom: 15px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const Exercises4 = ({ exerciseEdited }) => {

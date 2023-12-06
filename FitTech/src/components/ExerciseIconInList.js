@@ -27,6 +27,7 @@ const DeleteButton = styled.img`
     cursor: pointer;
     align-self: flex-start;
     margin: -10px;
+    
 `;
 
 const Button = styled.div`
@@ -41,6 +42,11 @@ const Button = styled.div`
   width: 75px;
 
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const ColumnWrapper = styled.div`

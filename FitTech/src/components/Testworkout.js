@@ -103,6 +103,11 @@ const Parent1 = styled.div`
   height: 180px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Icon1 = styled.img`
   position: absolute;
@@ -122,6 +127,11 @@ const Group = styled.div`
   height: 180px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Container = styled.div`
   position: absolute;
@@ -133,6 +143,11 @@ const Container = styled.div`
   height: 180px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 // ... (previous imports)
 
@@ -145,12 +160,8 @@ const Scrollframe1 = styled.div`
   overflow-y: auto;
   text-align: left;
   font-size: var(--community-size);
-<<<<<<< HEAD
-  color: var(--white);
-=======
   color: var(--black);
   padding-top: 0px;
->>>>>>> Community-Screen
 `;
 
 // ... (rest of your component)
@@ -164,6 +175,11 @@ const TestworkoutChild = styled.div`
   width: 45px;
   height: 45px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const TestworkoutItem = styled.div`
   position: absolute;

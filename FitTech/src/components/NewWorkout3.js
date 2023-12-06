@@ -52,6 +52,11 @@ const NewWorkoutChild = styled.div`
   box-sizing: border-box;
   width: 112px;
   height: 62px;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Finish = styled.div`
   position: absolute;
@@ -68,6 +73,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const UileditIcon = styled.img`
   position: absolute;
@@ -76,6 +86,13 @@ const UileditIcon = styled.img`
   width: 47px;
   height: 45px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
+  background-color: var(--color-dodgerblue);
+  border-radius: 10px;
 `;
 const NewWorkoutRoot = styled.div`
   position: absolute;
