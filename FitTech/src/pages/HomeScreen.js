@@ -197,6 +197,11 @@ const ViewButton = styled.div`
   font-size: 16px;
   margin-bottom: 10px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const Wrapper = styled.div `

@@ -8,6 +8,7 @@ import PortalPopup from "./PortalPopup";
 import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
 import PopUp from "./PopUp";
 import LoggedExerciseView from "./LoggedExerciseView";
+import Bottombar2 from "./Bottombar2";
 
 const IosstatusBarblack = styled.div`
   position: absolute;
@@ -42,6 +43,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const UileditIcon = styled.img`
   position: absolute;
@@ -173,6 +179,7 @@ const LoggingForm = () => {
           <LoggedExerciseView exerciseTitle="Incline Bench" />
         </LoggingBackground1>
       </Scrollframe1>
+      <Bottombar2 />
     </WorkoutScreenRoot>
   );
 };

@@ -86,6 +86,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const UileditIcon = styled.img`
   position: absolute;
@@ -188,6 +193,12 @@ const ViewButton = styled.div`
   margin: auto;
   margin-top: 25px;
   margin-botton: 10px;
+  cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const WorkoutTitle = styled.div `
