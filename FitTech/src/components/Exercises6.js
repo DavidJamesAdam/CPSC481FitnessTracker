@@ -1,12 +1,13 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import PopupAreYouSureDeleteEx from "./PopupAreYouSureDeleteEx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import WorkoutItemNo from "./WorkoutItemNo";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import ExerciseIconInList from "./ExerciseIconInList";
 import PopUp from "./PopUp";
 import PortalPopup from "./PortalPopup";
+import { v4 as uuidv4 } from 'uuid';
 
 const A = styled.b`
   position: relative;
@@ -347,7 +348,11 @@ const UL = styled.ul`
   padding: 0;
 `;
 
-const Exercises6 = () => {
+const StyledLi = styled.li`
+  padding-bottom: 10px;
+`;
+
+const Exercises6 = ({ data }) => {
 
   const navigate = useNavigate();
 
@@ -377,12 +382,12 @@ const Exercises6 = () => {
     setPopupAreYouSureDelete(false);
   }, []);
 
-  const onEditContainer1Click = useCallback(() => {
-    navigate("/exercise-screen-edit");
+  const onEditContainer1Click = useCallback((exercise) => {
+    navigate("/exercise-screen-edit", { state: { data: exercise } });
   }, [navigate]);
 
-  const onViewContainer1Click = useCallback(() => {
-    navigate("/exercise-screen-view");
+  const onViewContainer1Click = useCallback((exercise) => {
+    navigate("/exercise-screen-view", { state: { data: exercise } });
   }, [navigate]);
 
   const onProgressNavClick = useCallback(() => {
@@ -401,45 +406,112 @@ const Exercises6 = () => {
     setAreYouSureDeletePopup(false);
   }, []);
 
-  const deleteClick = () => {
-    console.log("hello");
+  const [itemToDelete, setItemToDelete] = useState('');
+
+
+  const deleteClick = (name) => {
+    setItemToDelete(name);
     openPopupAreYouSureDeleteEx();
   }
 
+  const { state } = useLocation();
+
+
+  const [alphabetHashtable, setAlphabetHashtable] = useState(() => {
+    // Create arrays for each letter
+    let newHashtable = {};
+    for (let i = 65; i <= 90; i++) {
+      const letter = String.fromCharCode(i);
+      newHashtable[letter] = [];
+    }
+    newHashtable['B'].push({name: "Barbell Bench", element: <ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={"Barbell Bench"} viewClick={() => onViewContainer1Click("Barbell Bench")}
+      editClick={() => onEditContainer1Click("Barbell Bench")} deleteClick={() => deleteClick('Barbell Bench')} />});
+    newHashtable['C'].push({name: 'Crunches', element: <ExerciseIconInList imagePreview={"crunchimage@2x.png"} exerciseName={"Crunches"} viewClick={() => onViewContainer1Click("Crunches")}
+      editClick={() => onEditContainer1Click("Crunches")} deleteClick={() => deleteClick('Crunches')}/>});
+
+    const data = state?.data;
+    if (data !== undefined) {
+      const letter = data.charAt(0).toUpperCase();
+      newHashtable[letter].push({name: data, element: <ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={data} viewClick={() => onViewContainer1Click(data)}
+      editClick={() => onEditContainer1Click(data)} deleteClick={() => deleteClick(data)} />})
+    }
+    return newHashtable;
+  });
+
   const onCloseHandler = useCallback(() => {
     closePopupAreYouSureDelete();
+    const editedAlphabetHashtable = alphabetHashtable;
+    const letter = itemToDelete.charAt(0).toUpperCase();
+    console.log(`letter ${letter}`);
+    console.log(`item to delete ${itemToDelete}`);
+    editedAlphabetHashtable[letter].filter(item => {
+      console.log(`item name ${item.name}`);
+      console.log(item.name !== itemToDelete);
+      return item.name !== itemToDelete;
+    });
+    console.log(editedAlphabetHashtable);
 
-    navigate(0);
-  }, [navigate])
+    setAlphabetHashtable(editedAlphabetHashtable);
+  }, [itemToDelete, alphabetHashtable])
 
   const onXMarkCloseHandler = useCallback(() => {
     navigate(0);
   }, [navigate]);
 
 
-  const alphabetHashtable = {};
+  // // Check if the value of data1 has changed
+  // if (previousDataRef.current !== data) {
+  //   console.log('Data1 has changed:', data);
 
-  // Create arrays for each letter
-  for (let i = 65; i <= 90; i++) {
-    const letter = String.fromCharCode(i);
-    alphabetHashtable[letter] = [];
-  }
+  //   // Your logic or side effects when data1 changes
 
-  alphabetHashtable['B'].push(<ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={"Barbell Bench"} viewClick={onViewContainer1Click}
-    editClick={onEditContainer1Click} deleteClick={deleteClick} />);
-  alphabetHashtable['C'].push(<ExerciseIconInList imagePreview={"crunchimage@2x.png"} exerciseName={"Crunches"} viewClick={onViewContainer1Click}
-    editClick={onEditContainer1Click} />);
+  //   setAlphabetHashtable((prevHashtable) => {
+  //     const updatedHashtable = { ...prevHashtable };
+  //     const letter = data.charAt(0).toUpperCase();
+  //     updatedHashtable[letter].push(<ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={data} viewClick={() => onViewContainer1Click(data)}
+  //       editClick={() => onEditContainer1Click(data)} deleteClick={deleteClick} />)
+  //     console.log(`data: ${data}`)
+  //     console.log(updatedHashtable);
+  //   });
+  //   // Update the previousDataRef to the new value of data1
+  //   previousDataRef.current = data;
+  // }
+
+  // const data = state?.data;
+
+  // useEffect(() => {
+  //   setNewExercise(data);
+  // }, [data])
+
+  // useEffect (() => {
+  //   if (data !== undefined) setAlphabetHashtable((prevHashtable) => {
+  //     const updatedHashtable = {...prevHashtable};
+  //     const letter = data.charAt(0).toUpperCase();
+  //     updatedHashtable[letter].push(<ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={data} viewClick={() => onViewContainer1Click(data)}
+  //       editClick={() => onEditContainer1Click(newExercise)} deleteClick={deleteClick} />)
+  //     console.log(`data: ${newExercise}`)
+  //     console.log(updatedHashtable);
+  //     return updatedHashtable;
+  //   });  
+  // }, [newExercise, alphabetHashtable]);
 
   return (
     <>
       <ExercisesRoot>
+        <IosstatusBarblack>
+          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+          <IOSStatusBarBlackIcon />
+        </IosstatusBarblack>
+        <MyExercisesWrapper>
+          <MyExercises>My Exercises</MyExercises>
+        </MyExercisesWrapper>
         <Scrollframe1>
           {Object.keys(alphabetHashtable).map((letter) => (
             <div key={letter}>
               <h2>{letter}</h2>
               <UL>
-                {alphabetHashtable[letter].map((word) => (
-                  <li key={word}>{word}</li>
+                {alphabetHashtable[letter].map(({name, element}) => (
+                  <StyledLi key={name}>{element}</StyledLi>
                 ))}
               </UL>
             </div>
@@ -451,139 +523,14 @@ const Exercises6 = () => {
             placement="Centered"
             onOutsideClick={onXMarkCloseHandler}
           >
-            <PopUp onClose={onCloseHandler} text="Delete Exercise?" top="86px" left="523px" checkMarkClick={onCloseHandler} onXMarkCloseClick={onXMarkCloseHandler}  deleteImage="deleteImage.svg"/>
+            <PopUp onClose={onCloseHandler} text="Delete Exercise?" top="86px" left="523px" checkMarkClick={onCloseHandler} onXMarkCloseClick={onXMarkCloseHandler} deleteImage="deleteImage.svg" />
           </PortalPopup>
         )}
-        {/* <Letters>
-          <Letters1>
-            <>
-
-              {Object.from(alphabetHashtable.entries()).map(([letter, exercises]) => (
-              <A key={letter}>
-                <h2>{letter}</h2>
-                {exercises.map((exercise) => (
-                  <Exercise key={exercise.name}>
-                    {exercise.name} - {exercise.category}
-                  </Exercise>
-                ))}
-              </A>))}
-            </>
-            <A>A</A>
-            <B>
-              <B1>B</B1>
-              <BarbellBench>
-                <BarbellBenchChild />
-                <Crunches>Barbell Bench</Crunches>
-                <BarbellBenchIcon alt="" src="/barbell-bench2@2x.png" />
-                <Edit onClick={onEditContainerClick}>
-                  <Edit1>
-                    <Edit2>Edit</Edit2>
-                  </Edit1>
-                </Edit>
-                <View2 onClick={onViewContainerClick}>
-                  <View1>View</View1>
-                </View2>
-                <MdigarbageCanOutlineIcon
-                  alt=""
-                  src="/mdigarbagecanoutline1.svg"
-                  onClick={openPopupAreYouSureDeleteEx}
-                />
-              </BarbellBench>
-            </B>
-            <B>
-              <B1>C</B1>
-              <BarbellBench2>
-                <BarbellBenchChild />
-                <Crunches>Crunches</Crunches>
-                <Edit onClick={onEditContainer1Click}>
-                  <Edit1>
-                    <Edit2>Edit</Edit2>
-                  </Edit1>
-                </Edit>
-                <View2 onClick={onViewContainer1Click}>
-                  <View1>View</View1>
-                </View2>
-                <BarbellBenchIcon alt="" src="/crunchimage@2x.png" />
-                <MdigarbageCanOutlineIcon
-                  alt=""
-                  src="/mdigarbagecanoutline1.svg"
-                  onClick={openPopupAreYouSureDeleteEx1}
-                />
-              </BarbellBench2>
-            </B>
-            <A>D</A>
-            <A>E</A>
-            <A>F</A>
-            <A>G</A>
-            <A>H</A>
-            <A>I</A>
-            <A>J</A>
-            <A>K</A>
-            <A>L</A>
-            <A>M</A>
-            <A>N</A>
-            <A>O</A>
-            <A>P</A>
-            <A>Q</A>
-            <A>R</A>
-            <A>S</A>
-            <A>T</A>
-            <A>U</A>
-            <A>V</A>
-            <A>W</A>
-            <A>X</A>
-            <A>Y</A>
-            <A>Z</A>
-          </Letters1>
-        </Letters>
-        <NavigationBar>
-          <HomeItem>
-            <HomeComponentIcon alt="" src="/home-component.svg" />
-            <Home>Home</Home>
-          </HomeItem>
-          <WorkoutItemNo
-            workoutexercisesComponent="/workoutexercises-component1.svg"
-            workoutItemNoWidth="unset"
-            workoutItemNoPadding="unset"
-            workoutItemNoBoxSizing="unset"
-            workoutItemNoFlex="1"
-            workoutItemNoBackgroundColor="1px solid #000"
-            workoutItemNoCursor="pointer"
-            onWorkoutItemNoContainerClick={onWorkoutItemNoContainerClick}
-            onWorkoutexercisesComponentIconClick={
-              onWorkoutexercisesComponentIconClick
-            }
-          />
-          <ProgressItem onClick={onProgressNavClick}>
-            <HomeComponentIcon alt="" src="/progress-component.svg" />
-            <Progress>Progress</Progress>
-          </ProgressItem>
-          <CommunityItem>
-            <HomeComponentIcon alt="" src="/community-component1.svg" />
-            <Home>Community</Home>
-          </CommunityItem>
-          <CommunityItem>
-            <SettingsComponentIcon alt="" src="/settings-component1.svg" />
-            <Settings>Settings</Settings>
-          </CommunityItem>
-        </NavigationBar>
-        <IosstatusBarblack>
-          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
-          <IOSStatusBarBlackIcon />
-        </IosstatusBarblack>
-        <ExercisesChild /> */}
-        {/* <ScrollBar>
-          <ScrollBarChild />
-          <ScrollBarItem />
-        </ScrollBar> */}
         <AddItemComponent
           alt=""
           src="/add-item-component.svg"
           onClick={onAddItemComponentClick}
         />
-        <MyExercisesWrapper>
-          <MyExercises>My Exercises</MyExercises>
-        </MyExercisesWrapper>
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"

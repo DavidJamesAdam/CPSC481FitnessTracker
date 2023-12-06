@@ -2,6 +2,7 @@ import styled from "styled-components";
 import LineMdconfirmCircleTwotoneIcon from "./LineMdconfirmCircleTwotoneIcon";
 
 const WorkoutText = styled.div`
+    text-align: center;
 `;
 
 const PopUpBackground = styled.div`

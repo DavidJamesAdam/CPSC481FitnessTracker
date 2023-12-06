@@ -33,6 +33,7 @@ import WorkoutExerciseMainScreen from "./pages/WorkoutExerciseMainScreen";
 import ProgressScreenMain from "./pages/ProgressScreenMain";
 import LoggingWorkoutList from "./pages/LoggingWorkoutList";
 import LoggingLogScreen from "./pages/LoggingLogScreen";
+import LogViewExercise from "./pages/LogViewExercise";
 
 function App() {
   const action = useNavigationType();
@@ -242,6 +243,7 @@ function App() {
       />
       <Route path="/logging-workout-list" element={<LoggingWorkoutList />}/>
       <Route path="/logging-log-screen" element={<LoggingLogScreen />}/>
+      <Route path="/progress-view-workout" element={<LogViewExercise />}></Route>
     </Routes>
   );
 }

@@ -17,11 +17,14 @@ const Wrapper = styled.div `
     flex-direction: column;
 `;
 
-const HelpFormInput = ({titleText, placeholder, inputHeight, inputWidth}) => {
+const HelpFormInput = ({titleText, placeholder, inputHeight, inputWidth, onChange}) => {
+    const sendDataToParent = (event) => {
+        onChange(event.target.value);
+    }
     return (
         <Wrapper>
         <FormTitle>{titleText}</FormTitle>
-        <Input input="text" placeholder={placeholder} inputHeight={inputHeight} inputWidth={inputWidth}/>
+        <Input input="text" placeholder={placeholder} inputHeight={inputHeight} inputWidth={inputWidth} onChange={sendDataToParent}/>
         </Wrapper>
     )
 }

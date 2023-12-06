@@ -42,8 +42,8 @@ const Bottombar2 = () => {
   const navigate = useNavigate();
 
   const onVectorIcon1Click = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   const onVectorIcon2Click = useCallback(() => {
     navigate("/community-screen-main");

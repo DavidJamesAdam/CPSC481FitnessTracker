@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect} from "react";
 import PopupExerciseCreated from "./PopupExerciseCreated";
 import PortalPopup from "./PortalPopup";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,7 @@ import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
 import InputDropdownActive from "./InputDropdownActive";
 import HelpFormInput from "./HelpFormInput";
+import PopUp from "./PopUp";
 
 const HomeComponentIcon = styled.img`
   position: relative;
@@ -223,13 +224,27 @@ const UploadMediaWrapper2 = styled.div`
 
 const CreateExerciseTitle = styled.div`
   text-align: center;
-  margin-top: 50px;
-  font-size: 32px;
+  margin-top: 60px;
+  font-size: var(--title);
+  text-decoration: underline;
+  font-family: var(--community);
+  font-weight: 600;
+`;
+
+const CreateButton = styled.div`
+  background-color: var(--color-dodgerblue);
+  text-align: center;
+  border-radius: var(--button-radius);
+  margin-top: 20px;
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
 `;
 
 const Exercises5 = () => {
-  const [isPopupExerciseCreatedOpen, setPopupExerciseCreatedOpen] =
-    useState(false);
+  const [isUploadMediaPopup, setIsUploadMediaPopup] = useState(false);
+
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
@@ -256,6 +271,55 @@ const Exercises5 = () => {
     setPopupExerciseCreatedOpen(false);
   }, []);
 
+  // const handleCreateButtonClick = useCallback(() => {
+    
+  //   navigate(-1);
+  // }, []);
+
+  const closePopupUploadMedia = useCallback(() => {
+    setIsUploadMediaPopup(false);
+  }, []);
+
+  const openPopupUploadMedia = useCallback(() => {
+    setIsUploadMediaPopup(true);
+  }, []);
+
+  const uploadMediaButtonClick = () => {
+    openPopupUploadMedia();
+  }
+
+  const onCloseHandler = useCallback(() => {
+    closePopupUploadMedia();
+
+    navigate(0);
+  }, [navigate])
+
+  const [nameInput, setNameInput] = useState('');
+
+  const [isCreatePopup, setIsCreatePopup] = useState(false);
+
+  const closeCreatePopup = useCallback(() => {
+    setIsCreatePopup(false);
+  }, []);
+
+
+  const onCreatePopupCloseHandler = () => {
+    console.log(nameInput);
+    const output = nameInput;
+    setNameInput("");
+    setIsCreatePopup(false);
+    navigate("/exercise-screen-list", {state: {data: output}});
+  }
+
+  const openCreatePopup = useCallback(() => {
+    setIsCreatePopup(true);
+  }, []);
+
+  const handleNameInput = (name) => {
+    setNameInput(name);
+    console.log(`name input ${nameInput}`);
+  }
+
   return (
     <>
       <ExercisesRoot>
@@ -270,18 +334,12 @@ const Exercises5 = () => {
         />
         <CreateExerciseTitle>Create Exercise</CreateExerciseTitle>
         <HelpWrapper>
-          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" />
+          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" onChange={handleNameInput}/>
           <HelpFormInput titleText="Description" placeholder="Ex: This is a description" inputHeight="100px" inputWidth="300px" />
-          {/* <SaveChangesWrapper onClick={openPopupPasswordChanged}>
-            <ConfirmNewPassword1> Save Changes</ConfirmNewPassword1>
-          </SaveChangesWrapper>
-          <CancelWrapper onClick={onFrameContainer2Click}>
-            <ConfirmNewPassword1>Cancel</ConfirmNewPassword1>
-          </CancelWrapper> */}
           <UploadMediaWrapper>
             <UploadMediaWrapper2>
-              <UploadMediaText>Upload Media</UploadMediaText>
-              <UploadMediaImage src="uploadImage.svg" />
+              <UploadMediaText>Upload Cover Image</UploadMediaText>
+              <UploadMediaImage src="uploadImage.svg" onClick={uploadMediaButtonClick} />
             </UploadMediaWrapper2>
           </UploadMediaWrapper>
           <Tags>
@@ -292,15 +350,25 @@ const Exercises5 = () => {
               inputDropdownActiveWidth="105px"
             />
           </Tags>
+          <CreateButton onClick={openCreatePopup}>Create!</CreateButton>
         </HelpWrapper>
       </ExercisesRoot>
-      {isPopupExerciseCreatedOpen && (
+      {isUploadMediaPopup && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
           placement="Centered"
-          onOutsideClick={closePopupExerciseCreated}
+          onOutsideClick={onCloseHandler}
         >
-          <PopupExerciseCreated onClose={closePopupExerciseCreated} />
+          <PopUp onClose={onCloseHandler} text="Feature Currently Underdevelopment" top="86px" left="523px" checkMarkClick={onCloseHandler} />
+        </PortalPopup>
+      )}
+      {isCreatePopup && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={onCreatePopupCloseHandler}
+        >
+          <PopUp onClose={onCreatePopupCloseHandler} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={onCreatePopupCloseHandler} />
         </PortalPopup>
       )}
     </>
