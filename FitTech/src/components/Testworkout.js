@@ -275,8 +275,8 @@ const Testworkout = () => {
   }, [navigate]);
 
   const onProgressCom2IconClick = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   const onCommunityItemContainerClick = useCallback(() => {
     navigate("/community");

@@ -175,8 +175,8 @@ const WorkoutexercisesScreen = () => {
   }, [navigate]);
 
   const progressNavClick = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
   const communityNavClick = useCallback(() => {
     navigate("/community-screen-main");

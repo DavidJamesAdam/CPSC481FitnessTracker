@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import WorkoutItemNo1 from "./WorkoutItemNo1";
 import SelectedYes from "./SelectedYes";
+import { useCallback } from "react";
+import Bottombar2 from "../components/Bottombar2";
+import { useNavigate } from "react-router-dom";
 
 const HomeCom2Icon = styled.img`
   position: absolute;
