@@ -13,8 +13,9 @@ const IosstatusBarblackIcon1 = styled.img`
 `;
 const Community = styled.b`
   position: absolute;
-  top: 63px;
-  left: 18px;
+  font-size: 30px;
+  top: 80px;
+  left: 50px;
   letter-spacing: 0.5px;
   line-height: 16px;
   display: flex;
@@ -133,17 +134,27 @@ const Container = styled.div`
   overflow: hidden;
   cursor: pointer;
 `;
+// ... (previous imports)
+
 const Scrollframe1 = styled.div`
   position: absolute;
-  top: 130px;
+  top: 145px; /* Adjust the top position to create a 10-pixel gap */
   left: 10px;
   width: 375px;
-  height: 653px;
+  height: 600px;
   overflow-y: auto;
   text-align: left;
   font-size: var(--community-size);
+<<<<<<< HEAD
   color: var(--white);
+=======
+  color: var(--black);
+  padding-top: 0px;
+>>>>>>> Community-Screen
 `;
+
+// ... (rest of your component)
+
 const TestworkoutChild = styled.div`
   position: absolute;
   top: 90px;
@@ -370,7 +381,7 @@ const Testworkout = () => {
         onCommunityItemContainerClick={onCommunityItemContainerClick}
         onSettingsCom2IconClick={onSettingsCom2IconClick}
       />
-      <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
+      {/* <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} /> */}
     </TestworkoutRoot>
   );
 };

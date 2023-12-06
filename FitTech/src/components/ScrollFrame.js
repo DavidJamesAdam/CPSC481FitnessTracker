@@ -17,7 +17,11 @@ const JennaSwitzer = styled.div`
   align-items: center;
   width: 188px;
   height: 39px;
+  color: orange; // Keeps the text color green
+  font-weight: bold; // Makes the text bold
+  font-size: 20px; // Increase the font size (you can adjust this value as needed)
 `;
+
 const WorkoutName = styled.div`
   position: absolute;
   top: 102px;
@@ -88,9 +92,9 @@ const ScrollFrame = () => {
     <ScrollframeRoot>
       <LikeeIcon alt="" src="/likee.svg" />
       <JennaSwitzer>Jenna Switzer</JennaSwitzer>
-      <WorkoutName>{`Workout Name `}</WorkoutName>
-      <WorkoutGoalAchieved>Workout Goal achieved</WorkoutGoalAchieved>
-      <TimeTakenTo>Time taken to achieve the target</TimeTakenTo>
+      <WorkoutName>{`Bicep Curls `}</WorkoutName>
+      <WorkoutGoalAchieved>100 sets of 20 Kg</WorkoutGoalAchieved>
+      <TimeTakenTo>In less than 3 days!</TimeTakenTo>
       <Div>13</Div>
       <Icon alt="" src="/5-3@2x.png" />
     </ScrollframeRoot>

@@ -16,14 +16,16 @@ const WorkoutType = styled.div`
   letter-spacing: 0.5px;
   line-height: 16px;
 `;
-const Input = styled.div`
+const Input = styled.input`
   align-self: stretch;
   border-radius: var(--br-8xs);
   background-color: var(--white);
   border: 1px solid var(--white);
   box-sizing: border-box;
   height: 36px;
+  padding: 0 10px; // Add some padding for better text visibility
 `;
+
 const TextFieldFill = styled.div`
   position: absolute;
   top: 38px;
@@ -73,6 +75,10 @@ const TextFieldFill3 = styled.div`
   justify-content: flex-start;
   gap: var(--gap-6xs);
 `;
+
+// Inside your Testworkout1 component's return statement
+
+
 const TextFieldFill4 = styled.div`
   position: absolute;
   top: 382px;
@@ -173,6 +179,18 @@ const TestworkoutRoot = styled.div`
   color: var(--white);
   font-family: var(--community);
 `;
+const DoneButton = styled.button`
+  margin-top: 30px;
+  margin-left: 115px; // Adds some space above the button
+  padding: 10px 20px; // Adjust padding as needed
+  border-radius: 5px; // Rounded corners
+  border: none; // No border
+  background-color: #4CAF50; // Green background color
+  color: white; // White text
+  cursor: pointer; // Cursor changes to pointer on hover
+  font-size: 16px; // Adjust font size as needed
+`;
+
 
 const Testworkout1 = () => {
   const navigate = useNavigate();
@@ -198,8 +216,8 @@ const Testworkout1 = () => {
   }, [navigate]);
 
   const onBackCom2IconClick = useCallback(() => {
-    navigate("/community");
-  }, [navigate]);
+    navigate("/community-screen-main"); // Updated path
+  }, [navigate]);  
 
   const onEllipseClick = useCallback(() => {
     navigate("/community-screen-main");
@@ -224,29 +242,18 @@ const Testworkout1 = () => {
       />
       <TextFieldFillParent>
         <TextFieldFill>
-          <WorkoutType>Workout Type</WorkoutType>
+          <WorkoutType>Workout type:</WorkoutType>
           <Input />
         </TextFieldFill>
         <TextFieldFill1>
-          <WorkoutType>Workout Average</WorkoutType>
+          <WorkoutType>Workout target achieved:</WorkoutType>
           <Input />
         </TextFieldFill1>
-        <TextFieldFill2>
-          <WorkoutType>Sets Today</WorkoutType>
-          <Input />
-        </TextFieldFill2>
         <TextFieldFill3>
-          <WorkoutType>Sets Average</WorkoutType>
+          <WorkoutType>Time in which workout target was achieved:</WorkoutType>
           <Input />
-        </TextFieldFill3>
-        <TextFieldFill4>
-          <WorkoutType>Workout Today</WorkoutType>
-          <Input />
-        </TextFieldFill4>
-        <TextFieldFill5>
-          <WorkoutType>Workout Target achieved:</WorkoutType>
-        </TextFieldFill5>
-        <Div>70%</Div>
+          <DoneButton onClick={() => navigate("/community-screen-main")}>Done</DoneButton>
+      </TextFieldFill3>
       </TextFieldFillParent>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <Community>Community</Community>
