@@ -184,7 +184,7 @@ const SettingsScreen4 = () => {
   }, [navigate]);
 
   const onProgressNavClick = useCallback(() => {
-    navigate("/progress-main-screen");
+    navigate("/progress-screen-main");
   }, [navigate]);
 
   const onCommunityNavClick = useCallback(() => {
