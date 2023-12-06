@@ -37,6 +37,7 @@ const LogLastSetButton = styled.div`
   height: 114px;
   margin: 15px; 
   padding: var(--padding-3xs);
+  cursor: pointer;
 `;
 const LogLastSetButton1 = styled.div`
   border-radius: var(--br-10xs);
@@ -146,6 +147,7 @@ const RecentLogged = styled.div`
   height: 100px;
   margin: 15px;
   padding-top: 15px;
+  cursor: pointer;
 `;
 
 const Text = styled.div `
@@ -179,6 +181,7 @@ const ViewButton = styled.div`
   margin-top: 10px;
   font-size: 16px;
   margin-bottom: 10px;
+  cursor: pointer;
 `;
 
 const Wrapper = styled.div `
@@ -224,7 +227,7 @@ const HomeScreen = () => {
           <Wrapper>
             <RecentLoggedContainer>
               <RecentLoggedText>Recently Logged</RecentLoggedText>
-              <RecentLogged>
+              <RecentLogged onClick={onViewClick}>
                 <Title>Chest Day</Title>
                 <Date>November 25th 2023</Date>
                 <ViewButton onClick={onViewClick}>View</ViewButton>

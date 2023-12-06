@@ -428,10 +428,13 @@ const Exercises6 = ({ data }) => {
       editClick={() => onEditContainer1Click("Barbell Bench")} deleteClick={() => deleteClick('Barbell Bench')} />});
     newHashtable['C'].push({name: 'Crunches', element: <ExerciseIconInList imagePreview={"crunchimage@2x.png"} exerciseName={"Crunches"} viewClick={() => onViewContainer1Click("Crunches")}
       editClick={() => onEditContainer1Click("Crunches")} deleteClick={() => deleteClick('Crunches')}/>});
+    newHashtable['P'].push({name: 'Pulldowns', element: <ExerciseIconInList imagePreview={"crunchimage@2x.png"} exerciseName={"Pulldowns"} viewClick={() => onViewContainer1Click("Pulldowns")}
+      editClick={() => onEditContainer1Click("Pulldowns")} deleteClick={() => deleteClick('Pulldowns')}/>});
 
     const data = state?.data;
-    if (data !== undefined) {
+    if (/^[a-zA-Z]$/.test(data)) {
       const letter = data.charAt(0).toUpperCase();
+      console.log(`data: ${data}`)
       newHashtable[letter].push({name: data, element: <ExerciseIconInList imagePreview={"barbell-bench@2x.png"} exerciseName={data} viewClick={() => onViewContainer1Click(data)}
       editClick={() => onEditContainer1Click(data)} deleteClick={() => deleteClick(data)} />})
     }
@@ -444,12 +447,16 @@ const Exercises6 = ({ data }) => {
     const letter = itemToDelete.charAt(0).toUpperCase();
     console.log(`letter ${letter}`);
     console.log(`item to delete ${itemToDelete}`);
-    editedAlphabetHashtable[letter].filter(item => {
+    editedAlphabetHashtable[letter] = editedAlphabetHashtable[letter].filter(item => {
       console.log(`item name ${item.name}`);
+      console.log(`test ${itemToDelete}`);
       console.log(item.name !== itemToDelete);
       return item.name !== itemToDelete;
     });
     console.log(editedAlphabetHashtable);
+    
+    // console.log(`edited: ${editedAlphabetHashtable[letter][0].name}`);
+    // console.log(editedAlphabetHashtable);
 
     setAlphabetHashtable(editedAlphabetHashtable);
   }, [itemToDelete, alphabetHashtable])
