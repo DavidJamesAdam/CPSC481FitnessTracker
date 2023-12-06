@@ -9,6 +9,7 @@ import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
 import PopUp from "./PopUp";
 import LoggedExerciseView from "./LoggedExerciseView";
 import Bottombar2 from "./Bottombar2";
+import Bottombar3 from "./Bottombar3";
 
 const IosstatusBarblack = styled.div`
   position: absolute;
@@ -179,7 +180,7 @@ const LoggingForm = () => {
           <LoggedExerciseView exerciseTitle="Incline Bench" />
         </LoggingBackground1>
       </Scrollframe1>
-      <Bottombar2 />
+      <Bottombar3 />
     </WorkoutScreenRoot>
   );
 };
