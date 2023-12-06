@@ -79,7 +79,6 @@ const LoggedExerciseView = ({ exerciseTitle }) => {
                         <Titles>Set</Titles>
                         <Titles margin="20px">Rep</Titles>
                         <Titles>Weight</Titles>
-                        <Empty></Empty>
                     </RowWrapper>
                     {sets.map((set, index) => (
                         <React.Fragment key={index}>{set}</React.Fragment>
@@ -89,7 +88,6 @@ const LoggedExerciseView = ({ exerciseTitle }) => {
                     <SetWrapper setNumber='3'/> */}
                 </FormWrapper>
                 {console.log(sets)}
-                <AddSetButton onClick={addSetClick}>Add Set</AddSetButton>
             </ExerciseBackground>
         </>
     )

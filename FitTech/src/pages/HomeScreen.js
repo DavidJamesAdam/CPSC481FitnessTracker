@@ -4,6 +4,7 @@ import IOSStatusBarBlackIcon from "../components/IOSStatusBarBlackIcon";
 import SocialArea from "../components/SocialArea";
 import Bottombar2 from "../components/Bottombar2";
 import { useNavigate } from "react-router-dom";
+import LoggedExerciseView from "../components/LoggedExerciseView";
 
 const IosstatusBarblack1 = styled.div`
   position: absolute;
@@ -28,25 +29,16 @@ const LogLastSet = styled.div`
   font-weight: 900;
 `;
 const LogLastSetButton = styled.div`
-  position: absolute;
-  top: 89px;
-  left: 2px;
-  border-radius: var(--br-10xs);
+  border-radius: 5px;
   background-color: var(--color-dodgerblue);
   border: 1px solid var(--black);
   box-sizing: border-box;
-  width: 196px;
-  height: 134px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  width: 160px;
+  height: 114px;
+  margin: 15px; 
   padding: var(--padding-3xs);
 `;
 const LogLastSetButton1 = styled.div`
-  position: absolute;
-  top: 89px;
-  left: 198px;
   border-radius: var(--br-10xs);
   background-color: var(--color-dodgerblue);
   border: 1px solid var(--black);
@@ -56,6 +48,7 @@ const LogLastSetButton1 = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-radius: 10px;
   justify-content: center;
   padding: var(--padding-3xs);
   cursor: pointer;
@@ -137,6 +130,62 @@ const HomeScreenRoot = styled.div`
   font-family: var(--community);
 `;
 
+const Title = styled.div`
+  text-align: center;
+  font-size: 18px;
+  margin-top: 0px;
+`;
+
+const RecentLogged = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-slategray-200);
+  border-radius: var(--br-8xs);
+  background-color: var(--color-slategray-100);
+  width: 160px;
+  height: 100px;
+  margin: 15px;
+  padding-top: 15px;
+`;
+
+const Text = styled.div `
+  text-align: center;
+  margin-top: 30px;
+`;
+
+const Date = styled.div`
+  text-align: center;
+  font-size: 14px;
+`;
+
+const RecentLoggedText = styled.div`
+  margin-left: 15px;
+`;
+
+const RecentLoggedContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+`;
+
+const ViewButton = styled.div`
+  background-color: var(--color-dodgerblue);
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  margin-top: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+`;
+
+const Wrapper = styled.div `
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
 /*
   const onFrameContainerClick = useCallback(() => {
     navigate("/workout-screen-my-workout-list");
@@ -156,6 +205,14 @@ const HomeScreen = () => {
     navigate("/progress-screen-main");
   }, [navigate]);
 
+  const onViewClick = useCallback(() => {
+    navigate("/progress-view-workout");
+  }, [navigate])
+
+  const logButtonClick = useCallback(() => {
+    navigate("/logging-workout-list");
+  }, [navigate]);
+
   return (
     <HomeScreenRoot>
       <HomeScreen1>
@@ -164,12 +221,26 @@ const HomeScreen = () => {
             <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
             <IOSStatusBarBlackIcon />
           </IosstatusBarblack>
-          <LogLastSetButton>
+          <Wrapper>
+            <RecentLoggedContainer>
+              <RecentLoggedText>Recently Logged</RecentLoggedText>
+              <RecentLogged>
+                <Title>Chest Day</Title>
+                <Date>November 25th 2023</Date>
+                <ViewButton onClick={onViewClick}>View</ViewButton>
+              </RecentLogged>
+            </RecentLoggedContainer>
+            <RecentLoggedContainer>
+              <RecentLoggedText>Log New Workout</RecentLoggedText>
+              <LogLastSetButton onClick={logButtonClick}><Text>Log</Text></LogLastSetButton>
+            </RecentLoggedContainer>
+          </Wrapper>
+          {/* <LogLastSetButton>
             <LogLastSet>Log Last Set</LogLastSet>
           </LogLastSetButton>
           <LogLastSetButton1 onClick={onLogLastSetButton1Click}>
             <LogLastSet>Log</LogLastSet>
-          </LogLastSetButton1>
+          </LogLastSetButton1> */}
           <Progress>
             <ProgressChild />
             <ProgressBox onClick={onProgressBoxContainerClick}>

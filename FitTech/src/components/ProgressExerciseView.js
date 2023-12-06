@@ -173,19 +173,6 @@ const LoggingForm = () => {
           <LoggedExerciseView exerciseTitle="Incline Bench" />
         </LoggingBackground1>
       </Scrollframe1>
-      <FinishWorkoutWrapper>
-        <FinishWorkout>Add Exercise +</FinishWorkout>
-        <FinishWorkout onClick={finishWorkoutClick}>Finish Workout</FinishWorkout>
-      </FinishWorkoutWrapper>
-      {isPopupWorkoutUpdatedOpen && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closePopupWorkoutUpdated}
-        >
-          <PopUp onClose={closePopupWorkoutUpdated} text="Workout Successfully Logged" top="86px" left="523px" checkMarkClick={finishWorkoutClickNavigate}/>
-        </PortalPopup>
-      )}
     </WorkoutScreenRoot>
   );
 };

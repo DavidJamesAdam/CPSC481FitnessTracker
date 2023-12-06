@@ -47,8 +47,7 @@ const LoggedSetWrapper = ({ setNumber, removeClick}) => {
             <Wrapper>
                 <SetBox>{setNumber}</SetBox>
                 <RepBox type="number">10</RepBox>
-                <RepBox type="number">100</RepBox>
-                <RemoveSetButton onClick={() => handleClick(removeClick, setNumber)}>Remove set</RemoveSetButton>
+                <RepBox type="number">100 lbs</RepBox>
             </Wrapper>
         </>
     )
