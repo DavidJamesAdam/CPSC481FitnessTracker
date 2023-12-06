@@ -27,7 +27,7 @@ Vadlamudi, Vihari
 30123338
 vihari.vadlamudi@ucalgary.ca
 
-#What functions we implemented
+# What functions we implemented
 We have 6 main functions in our prototype:
 - Create a new workout
 - Create a new exersice
@@ -36,8 +36,8 @@ We have 6 main functions in our prototype:
 - Interact with the community
 - Settings that would allow the user to change info such as passwords and request help
 
-#Walkthrough
-###For creating a workout:
+# Walkthrough
+### For creating a workout:
 - From workout screen, click "Workouts"
 - The list will be empty, click the plus button to create a new workout
 - When typing in the name of the workout, "Chest Day" should be entered, description is optional
@@ -50,16 +50,16 @@ We have 6 main functions in our prototype:
 - Regardless of deleting or not, click the finish icon in the bottom right corner to finish creating a workout
 - You will be redirected to the workout list with the newly created workout
 
-###For creating an exercise
+### For creating an exercise
 
 
-###For logging information during a workout
+### For logging information during a workout
 
 
-###FOr tracking progress
+### For tracking progress
 
 
-###For interacting with the community
+### For interacting with the community
 
 
-###For adjusting settings
+### For adjusting settings
