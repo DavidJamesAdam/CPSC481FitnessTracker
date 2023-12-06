@@ -14,6 +14,20 @@ const HomeIcon = styled.img`
   `}
 `;
 
+const ProgressIcon = styled.img`
+  position: relative;
+  width: 35px; // Increased width
+  height: 35px; // Increased height
+  cursor: pointer;
+  padding: 5px; // Optional padding to make the clickable area larger
+  box-sizing: border-box; // Ensure the padding doesn't affect the overall dimensions
+
+  ${props => props.selected && css`
+    background-color: black; // Black background for selected state
+    border-width: 20px; // Optional, to make the background rounded
+  `}
+`;
+
 const VectorIcon = styled.img`
   position: relative;
   width: 28.9px;
@@ -69,18 +83,24 @@ const Bottombar2 = () => {
   }, [navigate]);
 
   const isHomeSelected = location.pathname === "/"; // Check if the home route is selected
+  const isProgressSelected = location.pathname === "/progress-screen-main"; // Check if the progress route is selected
 
 
   return (
     <BottombarRoot>
       <HomeIcon
-        src="/home-component1.svg"
+        src="/home-component.svg"
         alt="Home"
         onClick={onHomeIconClick}
-        selected={isHomeSelected} // Pass the selected prop based on the current route
+        selected={isHomeSelected}
       />
       <WorkoutItemSelected3 />
-      <VectorIcon alt="" src="/vector4.svg" onClick={onVectorIcon1Click} />
+      <ProgressIcon
+        src={isProgressSelected ? "/progress-component-selected.svg" : "/progress-component.svg"}
+        alt="Progress"
+        onClick={onVectorIcon1Click}
+        selected={isProgressSelected}
+      />
       <VectorIcon1 alt="" src="/vector11.svg" onClick={onVectorIcon2Click} />
       <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon3Click} />
     </BottombarRoot>

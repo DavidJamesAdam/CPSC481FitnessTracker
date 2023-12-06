@@ -86,8 +86,8 @@ const FormContainer = ({
       <SelectedYes
         communityComponent="/community-component2.svg"
         showCommunity={false}
-        selectedYesWidth="51px"
-        selectedYesHeight="43px"
+        selectedYesWidth="20px"
+        selectedYesHeight="20px"
         selectedYesCursor="pointer"
         onCommunityItemContainerClick={onCommunityItemContainerClick}
       />

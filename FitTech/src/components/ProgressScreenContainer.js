@@ -8,6 +8,9 @@ import PortalPopup from "./PortalPopup";
 import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
 import PopUp from "./PopUp";
 import Bottombar2 from "./Bottombar2";
+import Bottombar1 from "./Bottombar1";
+import Bottombar3 from "./Bottombar3";
+import ProgressNavTabYes from "./ProgressNavTabYes";
 
 const HomeIcon = styled.img`
   position: relative;
@@ -296,12 +299,13 @@ const LoggingForm = () => {
             <WorkoutDate>Wednesday November 26th 2023</WorkoutDate>
             <ViewButton>View</ViewButton>
           </EntryBackground>
+          
           {/* <LogExerciseForm exerciseTitle="Barbell Bench Press" />
           <LogExerciseForm exerciseTitle="Chest Fly" />
           <LogExerciseForm exerciseTitle="Incline Bench" /> */}
         </LoggingBackground1>
       </Scrollframe1>
-      <Bottombar2 />
+      <Bottombar3 />
       {isPopupWorkoutUpdatedOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"

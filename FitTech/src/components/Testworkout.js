@@ -145,12 +145,8 @@ const Scrollframe1 = styled.div`
   overflow-y: auto;
   text-align: left;
   font-size: var(--community-size);
-<<<<<<< HEAD
-  color: var(--white);
-=======
   color: var(--black);
   padding-top: 0px;
->>>>>>> Community-Screen
 `;
 
 // ... (rest of your component)
