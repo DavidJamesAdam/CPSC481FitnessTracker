@@ -60,12 +60,16 @@ We have 6 main functions in our prototype:
 6. Click back to go to exercise list
 7. Click View on Barbell Bench to view more information about that exercise
 8. Click blue back button in top left corner from view screen to go back to exercise list
-9. At the bottom, click the plus icon to create a new exercise
-10. Here, user can input info regarding exercise name, description, and tags that relate to that exercise
-11. Click create when done
-12. User will be prompted with popup confirming exercise was created successfully
-13. Click green checkmark
-14. User will be redirected to exercise list screen
+9. Scroll down to "Pulldowns"
+10. Click the red x idont on the top right
+11. User will be prompted if they would like to delete exercise
+12. Click green checkmark to delete pulldown exercise
+13. At the bottom, click the plus icon to create a new exercise
+14. In "Exercise Name" type "Pulldowns"
+15. Click create when done
+16. User will be prompted with popup confirming exercise was created successfully
+17. Click green checkmark
+18. User will be redirected to exercise list screen with Pulldowns created
 
 ### For logging information during a workout
 1. From the home screen, click "Log"
