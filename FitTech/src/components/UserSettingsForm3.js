@@ -56,6 +56,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ResetPassword = styled.b`
   position: absolute;
@@ -79,6 +84,11 @@ const SaveChangesWrapper = styled.div`
   padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
   box-sizing: border-box;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const CancelWrapper = styled.div`
   border-radius: var(--br-xl);
@@ -92,6 +102,11 @@ const CancelWrapper = styled.div`
   padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
   box-sizing: border-box;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const HomeIcon = styled.img`
   position: relative;

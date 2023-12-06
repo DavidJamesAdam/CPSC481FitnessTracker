@@ -43,6 +43,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ChestDayChild = styled.div`
   position: absolute;
@@ -70,6 +75,11 @@ const ChestDay = styled.div`
   left: 28px;
   width: 338px;
   height: 62px;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const UileditIcon = styled.img`
   position: absolute;
@@ -78,6 +88,13 @@ const UileditIcon = styled.img`
   width: 47px;
   height: 45px;
   cursor: pointer;
+  background-color: var(--color-dodgerblue);
+  border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const WorkoutBackground = styled.div`
   position: absolute;
@@ -105,6 +122,12 @@ const ChestDay2 = styled.div`
   left: 26px;
   width: 340px;
   height: 62px;
+  cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const WorkoutScreenRoot = styled.div`
   position: absolute;

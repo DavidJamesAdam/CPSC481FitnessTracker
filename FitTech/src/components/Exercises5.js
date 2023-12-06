@@ -1,4 +1,4 @@
-import { useState, useCallback, useRef, useEffect} from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import PopupExerciseCreated from "./PopupExerciseCreated";
 import PortalPopup from "./PortalPopup";
 import { useNavigate } from "react-router-dom";
@@ -271,8 +271,12 @@ const Exercises5 = () => {
     setPopupExerciseCreatedOpen(false);
   }, []);
 
+  const onCloseInputError = useCallback(() => {
+    setIsCreatePopupInputError(false);
+  }, []);
+
   // const handleCreateButtonClick = useCallback(() => {
-    
+
   //   navigate(-1);
   // }, []);
 
@@ -298,6 +302,8 @@ const Exercises5 = () => {
 
   const [isCreatePopup, setIsCreatePopup] = useState(false);
 
+  const [isCreatePopupInputError, setIsCreatePopupInputError] = useState(false);
+
   const closeCreatePopup = useCallback(() => {
     setIsCreatePopup(false);
   }, []);
@@ -308,12 +314,18 @@ const Exercises5 = () => {
     const output = nameInput;
     setNameInput("");
     setIsCreatePopup(false);
-    navigate("/exercise-screen-list", {state: {data: output}});
+    navigate("/exercise-screen-list", { state: { data: output } });
   }
 
   const openCreatePopup = useCallback(() => {
+    console.log(nameInput);
+    if (!/^[a-zA-Z]/.test(nameInput.charAt(0))) {
+      console.log('hi');
+      setIsCreatePopupInputError(true);
+      return;
+    }
     setIsCreatePopup(true);
-  }, []);
+  }, [nameInput, setIsCreatePopupInputError, setIsCreatePopup]);
 
   const handleNameInput = (name) => {
     setNameInput(name);
@@ -334,7 +346,7 @@ const Exercises5 = () => {
         />
         <CreateExerciseTitle>Create Exercise</CreateExerciseTitle>
         <HelpWrapper>
-          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" onChange={handleNameInput}/>
+          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" onChange={handleNameInput} />
           <HelpFormInput titleText="Description" placeholder="Ex: This is a description" inputHeight="100px" inputWidth="300px" />
           <UploadMediaWrapper>
             <UploadMediaWrapper2>
@@ -369,6 +381,14 @@ const Exercises5 = () => {
           onOutsideClick={onCreatePopupCloseHandler}
         >
           <PopUp onClose={onCreatePopupCloseHandler} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={onCreatePopupCloseHandler} />
+        </PortalPopup>
+      )}
+      {isCreatePopupInputError && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+        >
+          <PopUp onClose={onCloseInputError} text="Exercise name must start with a letter" top="86px" left="523px" checkMarkClick={onCloseInputError} />
         </PortalPopup>
       )}
     </>

@@ -8,6 +8,7 @@ import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
 import InputDropdownActive from "./InputDropdownActive";
 import HelpFormInput from "./HelpFormInput";
+import PopUp from "./PopUp";
 
 const Bxx = styled.div`
   position: absolute;
@@ -121,6 +122,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ExerciseNameWrapper = styled.div`
   position: absolute;
@@ -195,6 +201,7 @@ const Tags = styled.div`
   justify-content: center;
   padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
   gap: var(--gap-21xl);
+  margin-top: 40px;
 `;
 const VectorIcon = styled.img`
   position: relative;
@@ -216,6 +223,7 @@ const ChestTag = styled.div`
   gap: var(--gap-sm);
   font-size: var(--body-1-size);
   font-family: var(--input-field-label);
+  margin-top: 40px;
 `;
 const ExercisesRoot = styled.div`
   position: absolute;
@@ -249,6 +257,7 @@ const UploadMediaText = styled.div`
 `;
 
 const UploadMediaImage = styled.img`
+  cursor: pointer;
 `;
 
 const UploadMediaWrapper2 = styled.div`
@@ -277,8 +286,25 @@ const CreateButton = styled.div`
   cursor: pointer;
 `;
 
-const Exercises4 = ({exerciseEdited}) => {
+const SaveChangesButton = styled.div`
+  background-color: var(--color-dodgerblue);
+  text-align: center;
+  border-radius: var(--button-radius);
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
+`;
+
+const Exercises4 = ({ exerciseEdited }) => {
   const [isPopupChangesSavedOpen, setPopupChangesSavedOpen] = useState(false);
+
+  const [isDiscardChanges, setIsDiscardChanges] = useState(false);
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
@@ -294,8 +320,8 @@ const Exercises4 = ({exerciseEdited}) => {
   }, []);
 
   const onBackClick = useCallback(() => {
-    navigate("/exercise-screen-list");
-  }, [navigate]);
+    setIsDiscardChanges(true);
+  }, []);
 
   const openPopupChangesSaved = useCallback(() => {
     setPopupChangesSavedOpen(true);
@@ -303,7 +329,17 @@ const Exercises4 = ({exerciseEdited}) => {
 
   const closePopupChangesSaved = useCallback(() => {
     setPopupChangesSavedOpen(false);
-  }, []);
+    setIsDiscardChanges(false);
+    navigate(-1);
+  }, [navigate]);
+
+  const saveChangesClick = useCallback(() => {
+    setPopupChangesSavedOpen(true);
+  })
+
+  const checkMarkClick = useCallback(() => {
+    setIsDiscardChanges(false);
+  })
 
 
   return (
@@ -325,9 +361,10 @@ const Exercises4 = ({exerciseEdited}) => {
           <UploadMediaWrapper>
             <UploadMediaWrapper2>
               <UploadMediaText>Upload Cover Image</UploadMediaText>
-              <UploadMediaImage src="uploadImage.svg" onClick={() => {}} />
+              <UploadMediaImage src="uploadImage.svg" onClick={() => { }} />
             </UploadMediaWrapper2>
           </UploadMediaWrapper>
+          <SaveChangesButton onClick={saveChangesClick}>Save Changes</SaveChangesButton>
         </HelpWrapper>
         <Tags>
           <Home>Category Tags</Home>
@@ -348,7 +385,16 @@ const Exercises4 = ({exerciseEdited}) => {
           placement="Centered"
           onOutsideClick={closePopupChangesSaved}
         >
-          <PopupChangesSaved onClose={closePopupChangesSaved} />
+          <PopUp onClose={closePopupChangesSaved} text="Changes Saved" top="86px" left="523px" checkMarkClick={closePopupChangesSaved} />
+        </PortalPopup>
+      )}
+      {isDiscardChanges && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closePopupChangesSaved}
+        >
+          <PopUp onClose={closePopupChangesSaved} text="Discard Changes?" top="86px" left="523px" checkMarkClick={closePopupChangesSaved} onXMarkCloseClick={checkMarkClick} deleteImage={"deleteImage.svg"}/>
         </PortalPopup>
       )}
     </>

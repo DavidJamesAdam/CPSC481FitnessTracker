@@ -18,8 +18,14 @@ const Wrapper = styled.div `
 `;
 
 const HelpFormInput = ({titleText, placeholder, inputHeight, inputWidth, onChange}) => {
-    const sendDataToParent = (event) => {
-        onChange(event.target.value);
+    let sendDataToParent;
+    if (onChange !== undefined){
+        sendDataToParent = (event) => {
+            onChange(event.target.value);
+        }
+    }
+    else {
+        sendDataToParent = (() => {})
     }
     return (
         <Wrapper>

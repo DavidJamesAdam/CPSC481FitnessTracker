@@ -35,9 +35,14 @@ const LogLastSetButton = styled.div`
   box-sizing: border-box;
   width: 160px;
   height: 114px;
-  margin: 15px; 
+  margin: 10px; 
   padding: var(--padding-3xs);
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const LogLastSetButton1 = styled.div`
   border-radius: var(--br-10xs);
@@ -79,6 +84,11 @@ const ProgressBox = styled.div`
   width: 360px;
   height: 261px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Progress1 = styled.div`
   position: absolute;
@@ -146,8 +156,13 @@ const RecentLogged = styled.div`
   width: 160px;
   height: 100px;
   margin: 15px;
-  padding-top: 15px;
+  padding-top: 10px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const Text = styled.div `
@@ -182,6 +197,11 @@ const ViewButton = styled.div`
   font-size: 16px;
   margin-bottom: 10px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 const Wrapper = styled.div `

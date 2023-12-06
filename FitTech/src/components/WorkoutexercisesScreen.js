@@ -36,6 +36,11 @@ const Button = styled.div`
   align-items: center;
   justify-content: center;
   padding: var(--padding-mini) var(--padding-xl);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const ButtonWrapper = styled.div`
   position: absolute;
@@ -138,6 +143,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const WorkoutexercisesScreenRoot = styled.div`
   // position: absolute;

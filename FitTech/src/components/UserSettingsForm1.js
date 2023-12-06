@@ -56,6 +56,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const NewPasswordChild = styled.div`
   position: absolute;
@@ -112,6 +117,11 @@ const SaveChangesWrapper = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size-3xl);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const HomeIcon = styled.img`
   position: relative;
@@ -177,6 +187,11 @@ const CancelWrapper = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size-3xl);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const SettingsScreenRoot = styled.div`
   position: absolute;
@@ -283,7 +298,7 @@ const UserSettingsForm1 = () => {
           placement="Centered"
           onOutsideClick={closePopupPasswordChanged}
         >
-          <PopUp onClose={closePopupPasswordChanged} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={closePopupPasswordChanged} />
+          <PopUp onClose={closePopupPasswordChanged} text="Password Changed Successfully" top="86px" left="523px" checkMarkClick={closePopupPasswordChanged} />
         </PortalPopup>
       )}
     </>

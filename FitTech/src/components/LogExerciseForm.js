@@ -49,6 +49,11 @@ const AddSetButton = styled.div`
   text-align: left;
   margin-top: 20px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 
 
