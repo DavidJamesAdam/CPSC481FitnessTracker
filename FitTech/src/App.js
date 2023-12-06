@@ -13,7 +13,7 @@ import WorkoutEdit from "./pages/WorkoutEdit";
 import SettingsScreenHelp from "./pages/SettingsScreenHelp";
 import SettingsScreenAccount from "./pages/SettingsScreenAccount";
 import WorkoutScreenWorkoutCreate from "./pages/WorkoutScreenWorkoutCreate";
-import WorkoutScreenChestCategor from "./pages/WorkoutScreenChestCategor";
+import WorkoutScreenChestCategor from "./pages/WorkoutScreenChestCategory";
 import WorkoutScreenExerciseAdde from "./pages/WorkoutScreenExerciseAdde";
 import ExerciseScreenGallery from "./pages/ExerciseScreenGallery";
 import WorkoutScreenChooseExerci from "./pages/WorkoutScreenChooseExerci";

@@ -156,7 +156,11 @@ const Exercises = () => {
     // Please sync "Progresss screen" to the project
   }, []);
 
+<<<<<<< HEAD
   const onBackClick = useCallback(() => {
+=======
+  const onBackCom2IconClick = useCallback(() => {
+>>>>>>> Create-Workout
     navigate(-1);
   }, [navigate]);
 
@@ -202,10 +206,10 @@ const Exercises = () => {
       <YourListAppears>Your list appears to be empty</YourListAppears>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
       <ChestExeriseList
-        muscle="Chest"
-        rectangleIcon
+        muscle="Test"
+        showRectangleIcon = "true"
         muscle1
-        chestExeriseListPosition="absolute"
+        chestExeriseListPosition="relative"
         chestExeriseListTop="199px"
         chestExeriseListLeft="24px"
       />

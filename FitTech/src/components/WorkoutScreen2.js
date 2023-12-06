@@ -48,9 +48,9 @@ const UileditIcon = styled.img`
   height: 45px;
 `;
 const WorkoutScreenRoot = styled.div`
-  position: absolute;
+  position: relative;
   top: 86px;
-  left: 523px;
+  left: 550px;
   background-color: var(--color-darkslategray);
   border: 1px solid var(--black);
   box-sizing: border-box;

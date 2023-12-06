@@ -68,7 +68,7 @@ const WorkoutScreenChestCategorRoot = styled.div`
   overflow: hidden;
 `;
 
-const WorkoutScreenChestCategor = () => {
+const WorkoutScreenChestCategory = () => {
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
@@ -111,4 +111,4 @@ const WorkoutScreenChestCategor = () => {
   );
 };
 
-export default WorkoutScreenChestCategor;
+export default WorkoutScreenChestCategory;

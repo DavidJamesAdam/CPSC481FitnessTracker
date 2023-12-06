@@ -19,10 +19,10 @@ const ViewRoot = styled.div`border-radius: var(--br-31xl);
   font-size: var(--font-size-3xl);
   color: var(--white);
   font-family: var(--community);
-  position: ${(p) => p.viewPosition}
-  top: ${(p) => p.viewTop}
-  left: ${(p) => p.viewLeft}
-  cursor: ${(p) => p.viewCursor}
+  position: ${(p) => p.viewPosition};
+  top: ${(p) => p.viewTop};
+  left: ${(p) => p.viewLeft};
+  cursor: ${(p) => p.viewCursor};
 `;
 
 const View = ({

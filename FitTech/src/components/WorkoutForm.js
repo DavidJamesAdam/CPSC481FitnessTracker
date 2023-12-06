@@ -72,24 +72,18 @@ const WorkoutForm = ({
         <IOSStatusBarBlackIcon />
       </IosstatusBarblack>
       <WorkoutName>Workout Name</WorkoutName>
-      {/* <WorkoutDescriptionOptional>
-        Workout Description (Optional)
-      </WorkoutDescriptionOptional> */}
       <InputTextActive
         workoutNamePlaceholder="Enter workout name here"
-        propTop="152px"
-        propLeft="96px"
-        propWidth="200px"
-        propHeight="unset"
-        propFlex="unset"
-      />
+        />
+      <WorkoutDescriptionOptional>
+        Workout Description (Optional)
+      </WorkoutDescriptionOptional>
       <InputTextActive
-        workoutNamePlaceholder="Enter workout description here"
-        propTop="294px"
-        propLeft="42px"
-        propWidth="316px"
-        propHeight="182px"
-        propFlex="1"
+        workoutNamePlaceholder="Enter work description"
+          propTop="294px"
+          propLeft="42px"
+          propWidth="316px"
+          propHeight="382px"
       />
       <LineMdconfirmCircleTwotoneIcon
         propTop="680px"

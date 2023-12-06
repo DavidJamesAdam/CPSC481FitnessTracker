@@ -19,9 +19,9 @@ const Property1defaultRoot = styled.div`border-radius: var(--br-8xs);
   font-size: var(--font-size-13xl);
   color: var(--white);
   font-family: var(--community);
-  position: ${(p) => p.property1DefaultPosition}
-  top: ${(p) => p.property1DefaultTop}
-  left: ${(p) => p.property1DefaultLeft}
+  position: ${(p) => p.property1DefaultPosition};
+  top: ${(p) => p.property1DefaultTop};
+  left: ${(p) => p.property1DefaultLeft};
 `;
 
 const Property1Default2 = ({

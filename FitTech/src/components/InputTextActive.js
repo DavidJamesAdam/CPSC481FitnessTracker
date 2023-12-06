@@ -16,7 +16,8 @@ const Textbox = styled.div`
   padding: var(--padding-5xs);
   flex: ${(p) => p.propFlex};
 `;
-const InputtextactiveRoot = styled.div`position: absolute;
+const InputtextactiveRoot = styled.div`
+  position: absolute;
   top: 152px;
   left: 96px;
   width: 200px;
@@ -28,10 +29,10 @@ const InputtextactiveRoot = styled.div`position: absolute;
   font-size: var(--body-1-size);
   color: var(--gray);
   font-family: var(--input-field-label);
-  top: ${(p) => p.propTop}
-  left: ${(p) => p.propLeft}
-  width: ${(p) => p.propWidth}
-  height: ${(p) => p.propHeight}
+  top: ${(p) => p.propTop};
+  left: ${(p) => p.propLeft};
+  width: ${(p) => p.propWidth};
+  height: ${(p) => p.propHeight};
 `;
 
 const InputTextActive = ({
