@@ -156,11 +156,7 @@ const Exercises = () => {
     // Please sync "Progresss screen" to the project
   }, []);
 
-<<<<<<< HEAD
-  const onBackClick = useCallback(() => {
-=======
   const onBackCom2IconClick = useCallback(() => {
->>>>>>> Create-Workout
     navigate(-1);
   }, [navigate]);
 
