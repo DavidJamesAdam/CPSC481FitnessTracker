@@ -268,7 +268,7 @@ const Testworkout1 = () => {
         <TextFieldFill3>
           <WorkoutType>Time in which workout target was achieved:</WorkoutType>
           <Input />
-          <DoneButton onClick={() => navigate("/community-screen-main")}>Done</DoneButton>
+          {/* <DoneButton onClick={() => navigate("/community-screen-main")}>Done</DoneButton> */}
       </TextFieldFill3>
       </TextFieldFillParent>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
