@@ -7,6 +7,7 @@ import WorkoutItemNo from "./WorkoutItemNo";
 import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
 import InputDropdownActive from "./InputDropdownActive";
+import HelpFormInput from "./HelpFormInput";
 
 const Bxx = styled.div`
   position: absolute;
@@ -145,13 +146,10 @@ const DescriptionWrapper = styled.div`
   font-family: var(--input-field-label);
 `;
 const UploadMediaWrapper = styled.div`
-  position: absolute;
-  top: 0px;
-  left: 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: var(--padding-3xs) 0px;
 `;
 const MaterialSymbolsuploadIcon = styled.img`
@@ -236,7 +234,50 @@ const ExercisesRoot = styled.div`
   font-family: var(--community);
 `;
 
-const Exercises4 = () => {
+const HelpWrapper = styled.div`
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  top: 160px;
+  left: 46px;
+  margin-top: 25px;
+`;
+
+
+const UploadMediaText = styled.div`
+`;
+
+const UploadMediaImage = styled.img`
+`;
+
+const UploadMediaWrapper2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+`;
+
+const CreateExerciseTitle = styled.div`
+  text-align: center;
+  margin-top: 60px;
+  font-size: var(--title);
+  text-decoration: underline;
+  font-family: var(--community);
+  font-weight: 600;
+`;
+
+const CreateButton = styled.div`
+  background-color: var(--color-dodgerblue);
+  text-align: center;
+  border-radius: var(--button-radius);
+  margin-top: 20px;
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+`;
+
+const Exercises4 = ({exerciseEdited}) => {
   const [isPopupChangesSavedOpen, setPopupChangesSavedOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -264,82 +305,30 @@ const Exercises4 = () => {
     setPopupChangesSavedOpen(false);
   }, []);
 
+
   return (
     <>
       <ExercisesRoot>
-        <Bxx />
-        <NavigationBar>
-          <HomeItem>
-            <HomeComponentIcon alt="" src="/home-component.svg" />
-            <Home>Home</Home>
-          </HomeItem>
-          <WorkoutItemNo
-            workoutexercisesComponent="/workoutexercises-component1.svg"
-            workoutItemNoWidth="unset"
-            workoutItemNoPadding="unset"
-            workoutItemNoBoxSizing="unset"
-            workoutItemNoFlex="1"
-            workoutItemNoBackgroundColor="1px solid #000"
-            workoutItemNoCursor="pointer"
-            onWorkoutItemNoContainerClick={onWorkoutItemNoContainerClick}
-            onWorkoutexercisesComponentIconClick={
-              onWorkoutexercisesComponentIconClick
-            }
-          />
-          <ProgressItem onClick={onProgressNavClick}>
-            <HomeComponentIcon alt="" src="/progress-component.svg" />
-            <Progress>Progress</Progress>
-          </ProgressItem>
-          <CommunityItem>
-            <HomeComponentIcon alt="" src="/community-component1.svg" />
-            <Home>Community</Home>
-          </CommunityItem>
-          <CommunityItem>
-            <SettingsComponentIcon alt="" src="/settings-component1.svg" />
-            <Settings>Settings</Settings>
-          </CommunityItem>
-        </NavigationBar>
-        <IosstatusBarblack>
-          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
-          <IOSStatusBarBlackIcon />
-        </IosstatusBarblack>
-        <ExercisesChild />
         <BackCom2Icon
           alt=""
           src="/back-com2.svg"
           onClick={onBackClick}
         />
-        <ExerciseNameWrapper>
-          <Home>Exercise Name</Home>
-        </ExerciseNameWrapper>
-        <InputTextActive
-          workoutNamePlaceholder="Enter workout name here"
-          propTop="175px"
-          propLeft="43px"
-          propWidth="306px"
-          propHeight="unset"
-          propFlex="unset"
-        />
-        <InputTextActive
-          workoutNamePlaceholder="Enter workout name here"
-          propTop="284px"
-          propLeft="43px"
-          propWidth="306px"
-          propHeight="173px"
-          propFlex="1"
-        />
-        <DescriptionWrapper>
-          <Home>Description</Home>
-        </DescriptionWrapper>
-        <Upload>
+        <IosstatusBarblack>
+          <IosstatusBarblack1>iOS/Status Bar/Black</IosstatusBarblack1>
+          <IOSStatusBarBlackIcon />
+        </IosstatusBarblack>
+        <CreateExerciseTitle>Editing {exerciseEdited}</CreateExerciseTitle>
+        <HelpWrapper>
+          <HelpFormInput titleText="Exercise Name" placeholder="Ex: exercise1" inputWidth="300px" />
+          <HelpFormInput titleText="Description" placeholder="Ex: This is a description" inputHeight="100px" inputWidth="300px" />
           <UploadMediaWrapper>
-            <Home>Upload Media</Home>
+            <UploadMediaWrapper2>
+              <UploadMediaText>Upload Cover Image</UploadMediaText>
+              <UploadMediaImage src="uploadImage.svg" onClick={() => {}} />
+            </UploadMediaWrapper2>
           </UploadMediaWrapper>
-          <MaterialSymbolsuploadIcon alt="" src="/materialsymbolsupload.svg" />
-        </Upload>
-        <SaveChangesWrapper onClick={openPopupChangesSaved}>
-          <Home> Save Changes</Home>
-        </SaveChangesWrapper>
+        </HelpWrapper>
         <Tags>
           <Home>Category Tags</Home>
           <InputDropdownActive

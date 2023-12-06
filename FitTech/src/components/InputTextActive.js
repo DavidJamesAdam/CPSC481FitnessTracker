@@ -16,8 +16,8 @@ const Textbox = styled.div`
   padding: var(--padding-5xs);
   flex: ${(p) => p.propFlex};
 `;
-const InputtextactiveRoot = styled.div`
-  position: absolute;
+const InputtextactiveRoot = styled.div
+  `position: absolute;
   top: 152px;
   left: 96px;
   width: 200px;

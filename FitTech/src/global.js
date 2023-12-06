@@ -20,6 +20,7 @@ export default createGlobalStyle`
 --font-size-xl: 20px;
 --font-size-base: 16px;
 --community-size: 14px;
+--title: 24px;
 
 /* Colors */
 --black: #000;
@@ -57,6 +58,7 @@ export default createGlobalStyle`
 
 /* Border radiuses */
 --br-8xs: 5px;
+--button-radius: 5px;
 --br-9xs: 4px;
 --br-31xl: 50px;
 --br-xl: 20px;

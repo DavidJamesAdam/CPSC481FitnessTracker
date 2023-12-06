@@ -7,50 +7,6 @@ import LogExerciseForm from "./LogExerciseForm";
 import PortalPopup from "./PortalPopup";
 import PopupWorkoutUpdated from "./PopupWorkoutUpdated";
 import PopUp from "./PopUp";
-import Bottombar2 from "./Bottombar2";
-
-const HomeIcon = styled.img`
-  position: relative;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  flex-shrink: 0;
-  cursor: pointer;
-`;
-const VectorIcon = styled.img`
-  position: relative;
-  width: 28.9px;
-  height: 30px;
-  cursor: pointer;
-`;
-const VectorIcon1 = styled.img`
-  position: relative;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-`;
-const VectorIcon2 = styled.img`
-  position: relative;
-  width: 31.3px;
-  height: 32.7px;
-  cursor: pointer;
-`;
-
-const Bottombar = styled.div`
-  position: absolute;
-  top: 869px;
-  left: 523px;
-  background-color: var(--white);
-  box-shadow: var(--shadow);
-  width: 393px;
-  height: 69px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--padding-3xs) var(--padding-base);
-  box-sizing: border-box;
-`;
 
 const IosstatusBarblack = styled.div`
   position: absolute;
@@ -76,7 +32,6 @@ const ChestDay = styled.div`
   font-size: var(--font-size-13xl);
   color: var(--white);
   text-align: center;
-  font-size: 38px;
 `;
 const BackCom2Icon = styled.img`
   position: absolute;
@@ -157,49 +112,6 @@ const WorkoutScreenRoot = styled.div`
   font-family: var(--body-1);
 `;
 
-const WorkoutItem = styled.div`
-  background-color: var(--black);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const WorkoutexercisesIcon = styled.img`
-  position: relative;
-  width: 30px;
-  height: 30px;
-  overflow: hidden;
-  flex-shrink: 0;
-`;
-
-const EntryBackground = styled.div`
-    background-color: #D9D9D9;
-    padding: 10px;
-    width: 90%;
-`;
-
-const ViewButton = styled.div`
-  padding: var(--padding-3xs);
-  background-color: var(--color-dodgerblue);
-  align-self: center
-  border-radius: var(--button-radius);
-  width: 50px;
-  margin: auto;
-  margin-top: 25px;
-  margin-botton: 10px;
-`;
-
-const WorkoutTitle = styled.div `
-  text-align: center;
-  font-size: 28px;
-  margin-top: 10px;
-`;
-
-const WorkoutDate = styled.div `
-  text-align: center;
-`;
-
 
 const LoggingForm = () => {
   // const [exercises, setExercises] = useState([<SetWrapper setNumber='1' removeClick={removeSetClick}/>, <SetWrapper setNumber='2' removeClick={removeSetClick}/>, <SetWrapper setNumber='3' removeClick={removeSetClick}/>])
@@ -228,10 +140,6 @@ const LoggingForm = () => {
     setPopupWorkoutUpdatedOpen(false);
   }, []);
 
-  const onHomeIconClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
-
   const onLoggingBackgroundClick = useCallback(() => {
     navigate("/community-screen-main");
   }, [navigate]);
@@ -242,18 +150,6 @@ const LoggingForm = () => {
 
   const onUileditIconClick = useCallback(() => {
     navigate("/workout-screen-delete-workout");
-  }, [navigate]);
-
-  const onVectorIcon1Click = useCallback(() => {
-    navigate("/community-screen-main");
-  }, [navigate]);
-
-  const onVectorIcon2Click = useCallback(() => {
-    navigate("/settings-screen-main");
-  }, [navigate]);
-
-  const onViewClick = useCallback(() => {
-    navigate("/progress-view-workout")
   }, [navigate]);
 
   return (
@@ -267,41 +163,19 @@ const LoggingForm = () => {
         />
       </IosstatusBarblack>
       <LoggingBackground onClick={onLoggingBackgroundClick} />
-      <ChestDay>Log book</ChestDay>
+      <ChestDay>Chest Day</ChestDay>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <Scrollframe1>
         <LoggingBackground1>
-          <EntryBackground>
-            <WorkoutTitle>Chest Day</WorkoutTitle>
-            <WorkoutDate>Wednesday November 22nd 2023</WorkoutDate>
-            <ViewButton onClick={onViewClick}>View</ViewButton>
-          </EntryBackground>
-          <EntryBackground>
-            <WorkoutTitle>Back Day</WorkoutTitle>
-            <WorkoutDate>Wednesday November 23rd 2023</WorkoutDate>
-            <ViewButton>View</ViewButton>
-          </EntryBackground>
-          <EntryBackground>
-            <WorkoutTitle>Leg Day</WorkoutTitle>
-            <WorkoutDate>Wednesday November 24th 2023</WorkoutDate>
-            <ViewButton>View</ViewButton>
-          </EntryBackground>
-          <EntryBackground>
-            <WorkoutTitle>Chest Day</WorkoutTitle>
-            <WorkoutDate>Wednesday November 25th 2023</WorkoutDate>
-            <ViewButton>View</ViewButton>
-          </EntryBackground>
-          <EntryBackground>
-            <WorkoutTitle>Back Day</WorkoutTitle>
-            <WorkoutDate>Wednesday November 26th 2023</WorkoutDate>
-            <ViewButton>View</ViewButton>
-          </EntryBackground>
-          {/* <LogExerciseForm exerciseTitle="Barbell Bench Press" />
+          <LogExerciseForm exerciseTitle="Barbell Bench Press" />
           <LogExerciseForm exerciseTitle="Chest Fly" />
-          <LogExerciseForm exerciseTitle="Incline Bench" /> */}
+          <LogExerciseForm exerciseTitle="Incline Bench" />
         </LoggingBackground1>
       </Scrollframe1>
-      <Bottombar2 />
+      <FinishWorkoutWrapper>
+        <FinishWorkout>Add Exercise +</FinishWorkout>
+        <FinishWorkout onClick={finishWorkoutClick}>Finish Workout</FinishWorkout>
+      </FinishWorkoutWrapper>
       {isPopupWorkoutUpdatedOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"
@@ -313,6 +187,24 @@ const LoggingForm = () => {
       )}
     </WorkoutScreenRoot>
   );
-}
+};
+/*
+  const openPopupWorkoutUpdated = useCallback(() => {
+    setPopupWorkoutUpdatedOpen(true);
+  }, []);
+
+  const [isPopupWorkoutUpdatedOpen, setPopupWorkoutUpdatedOpen] =
+  useState(false);
+
+  {isPopupWorkoutUpdatedOpen && (
+    <PortalPopup
+      overlayColor="rgba(113, 113, 113, 0.3)"
+      placement="Centered"
+      onOutsideClick={closePopupWorkoutUpdated}
+    >
+      <PopupWorkoutUpdated onClose={closePopupWorkoutUpdated} />
+    </PortalPopup>
+  )}
+ */
 
 export default LoggingForm;

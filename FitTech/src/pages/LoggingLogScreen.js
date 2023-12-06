@@ -1,6 +1,6 @@
-import { useCallback, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import Exercises4 from "../components/Exercises4";
+import { useCallback } from "react";
+import LoggingForm from "../components/LoggingForm";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const HomeIcon = styled.img`
@@ -20,6 +20,8 @@ const WorkoutexercisesIcon = styled.img`
 `;
 const WorkoutItem = styled.div`
   background-color: var(--black);
+  width: 35px;
+  height: 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,59 +60,47 @@ const Bottombar = styled.div`
   padding: var(--padding-3xs) var(--padding-base);
   box-sizing: border-box;
 `;
-const ExerciseScreenEditRoot = styled.div`
+const LoggingLogScreenRoot = styled.div`
   position: relative;
-  background-color: var(--white);
+  background-color: var(--surface);
   width: 100%;
   height: 1024px;
   overflow: hidden;
 `;
 
-const ExerciseScreenEdit = () => {
+const LoggingLogScreen = () => {
   const navigate = useNavigate();
-
-  const onWorkoutItemNoContainerClick = useCallback(() => {
-    navigate("/workoutexercises-screen");
-  }, [navigate]);
-
-  const onWorkoutexercisesComponentIconClick = useCallback(() => {
-    navigate("/workoutexercise-main-screen");
-  }, [navigate]);
 
   const onHomeIconClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
-  const onVectorIcon1Click = useCallback(() => {
-    // Please sync "Progress screen - Main" to the project
-  }, []);
+  const onVectorIconClick = useCallback(() => {
+    navigate("/progress-screen-main");
+  }, [navigate]);
 
-  const onVectorIcon2Click = useCallback(() => {
+  const onVectorIcon1Click = useCallback(() => {
     navigate("/community-screen-main");
   }, [navigate]);
 
-  const onVectorIcon3Click = useCallback(() => {
+  const onVectorIcon2Click = useCallback(() => {
     navigate("/settings-screen-main");
   }, [navigate]);
 
-  const { state } = useState();
-
-  const data = state?.data;
-
   return (
-    <ExerciseScreenEditRoot>
-      <Exercises4 exerciseEdited={data}/>
+    <LoggingLogScreenRoot>
+      <LoggingForm />
       <Bottombar>
         <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
         <WorkoutItem>
-          <WorkoutexercisesIcon alt="" src="/workoutexercises1.svg" />
+          <WorkoutexercisesIcon alt="" src="/workoutexercises.svg" />
         </WorkoutItem>
-        <VectorIcon alt="" src="/vector8.svg" onClick={onVectorIcon1Click} />
-        <VectorIcon1 alt="" src="/vector9.svg" onClick={onVectorIcon2Click} />
-        <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon3Click} />
+        <VectorIcon alt="" src="/vector4.svg" onClick={onVectorIconClick} />
+        <VectorIcon1 alt="" src="/vector5.svg" onClick={onVectorIcon1Click} />
+        <VectorIcon2 alt="" src="/vector6.svg" onClick={onVectorIcon2Click} />
       </Bottombar>
-    </ExerciseScreenEditRoot>
+    </LoggingLogScreenRoot>
   );
 };
 
-export default ExerciseScreenEdit;
+export default LoggingLogScreen;

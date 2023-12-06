@@ -1,5 +1,5 @@
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useCallback, useEffect, useRef } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import Exercises6 from "../components/Exercises6";
 import styled from "styled-components";
 
@@ -93,9 +93,15 @@ const ExerciseScreenList = () => {
     navigate("/settings-screen-main");
   }, [navigate]);
 
+  const { state } = useLocation();
+
+  const data = state?.data;
+
+  // console.log(`data1: ${data}`);
+
   return (
     <ExerciseScreenListRoot>
-      <Exercises6 />
+      <Exercises6 data={data}/>
       <Bottombar>
         <HomeIcon alt="" src="/home.svg" onClick={onHomeIconClick} />
         <WorkoutItem>

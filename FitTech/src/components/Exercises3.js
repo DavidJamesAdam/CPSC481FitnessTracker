@@ -254,7 +254,7 @@ const ExercisesRoot = styled.div`
   font-family: var(--community);
 `;
 
-const Exercises3 = () => {
+const Exercises3 = ({ exerciseName }) => {
   const navigate = useNavigate();
 
   const onWorkoutItemNoContainerClick = useCallback(() => {
@@ -318,7 +318,7 @@ const Exercises3 = () => {
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackClick} />
       <ExercisesItem />
       <BarbellBenchIcon alt="" src="/barbell-bench1@2x.png" />
-      <BarbellBench>Barbell Bench</BarbellBench>
+      <BarbellBench>Viewing {exerciseName}</BarbellBench>
       <Description>Description</Description>
       <BarbellBench1>
         <BarbellBenchChild />

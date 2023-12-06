@@ -24,17 +24,17 @@ const FullNameInputRoot = styled.div`
   font-size: var(--font-size-5xl);
   color: var(--white);
   font-family: var(--community);
-  top: ${(p) => p.propTop};
+  top: ${(p) => p.propTop2};
 `;
 
-const FormContainer1 = ({ userInfo, userFullName, propTop }) => {
+const FormContainer1 = ({ userInfo, userFullName, propTop2 }) => {
   return (
-    <FullNameInputRoot propTop={propTop}>
+    <FullNameInputRoot propTop2={propTop2}>
       <FullNameWrapper>
         <FullName>{userInfo}</FullName>
       </FullNameWrapper>
       <InputTextActive
-        workoutNamePlaceholder="Name"
+        workoutNamePlaceholder={userFullName}
         propTop="42px"
         propLeft="0px"
         propWidth="200px"
