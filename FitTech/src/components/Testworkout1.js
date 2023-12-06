@@ -16,14 +16,16 @@ const WorkoutType = styled.div`
   letter-spacing: 0.5px;
   line-height: 16px;
 `;
-const Input = styled.div`
+const Input = styled.input`
   align-self: stretch;
   border-radius: var(--br-8xs);
   background-color: var(--white);
   border: 1px solid var(--white);
   box-sizing: border-box;
   height: 36px;
+  padding: 0 10px; // Add some padding for better text visibility
 `;
+
 const TextFieldFill = styled.div`
   position: absolute;
   top: 38px;
@@ -243,10 +245,6 @@ const Testworkout1 = () => {
           <WorkoutType>Workout Today</WorkoutType>
           <Input />
         </TextFieldFill4>
-        <TextFieldFill5>
-          <WorkoutType>Workout Target achieved:</WorkoutType>
-        </TextFieldFill5>
-        <Div>70%</Div>
       </TextFieldFillParent>
       <BackCom2Icon alt="" src="/back-com2.svg" onClick={onBackCom2IconClick} />
       <Community>Community</Community>
