@@ -55,6 +55,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const HomeIcon = styled.img`
   position: relative;
@@ -109,6 +114,7 @@ const Bottombar = styled.div`
 `;
 const Message = styled.div`
   position: relative;
+  
 `;
 const MessageWrapper = styled.div`
   position: absolute;
@@ -172,6 +178,11 @@ const SendButton = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size-3xl);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const Help = styled.div`
   font-size: var(--font-size-3xl);
@@ -192,6 +203,11 @@ const CancelWrapper = styled.div`
   box-sizing: border-box;
   cursor: pointer;
   font-size: var(--font-size-3xl);
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const SettingsScreenRoot = styled.div`
   position: absolute;

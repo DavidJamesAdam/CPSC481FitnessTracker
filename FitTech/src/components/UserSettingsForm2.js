@@ -52,6 +52,11 @@ const BackCom2Icon = styled.img`
   height: 24px;
   overflow: hidden;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const HomeIcon = styled.img`
   position: relative;
@@ -150,6 +155,11 @@ const SettingsScreenInner = styled.div`
   width: 349px;
   height: 38px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const RectangleDiv = styled.div`
   position: absolute;
@@ -190,6 +200,11 @@ const SettingsScreenChild1 = styled.div`
   width: 349px;
   height: 38px;
   cursor: pointer;
+    box-shadow: 3px 3px 5px black;
+
+  &:hover {
+    box-shadow: 3px 3px 15px black;
+  }
 `;
 const SettingsScreenChild2 = styled.div`
   position: absolute;
