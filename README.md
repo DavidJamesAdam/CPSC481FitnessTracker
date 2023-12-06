@@ -38,26 +38,47 @@ We have 6 main functions in our prototype:
 
 # Walkthrough
 ### For creating a workout:
-1. From workout screen, click "Workouts"
-2. The list will be empty, click the plus button to create a new workout
-3. When typing in the name of the workout, "Chest Day" should be entered, description is optional
-4. Click the checkmark in the bottom left
-5. Feel free to view category view or list view, but "Chest category" is what is functional
-6. When selecting from category view, select "Chest" category
-7. This will bring you to a menu with chest exercises, click the "+" icon on the top right of the benchpress item, which will add an exercise to your list.
-8. Currently cannot add more exercises, but theoretically, the processes would be the exact same; click the plus icon, select an exercise to add it to the workout
-9. You can delete an exercise by clicking the red garbage can. There will be a popup with a green check mark and a red x. Click the green check mark to delete, or click out of the popup to cancel. We were just having trouble getting the red x to cancel the delete, something that can be fixed if given more time
-10. Regardless of deleting or not, click the finish icon in the bottom right corner to finish creating a workout
-11. You will be redirected to the workout list with the newly created workout
+1. From home screen, click guy lifting weights icon, second from left
+2. From workout screen, click "Workouts"
+3. The list will be empty, click the plus button to create a new workout
+4. When typing in the name of the workout, "Chest Day" should be entered, description is optional
+5. Click the checkmark in the bottom left
+6. Feel free to view category view or list view, but "Chest category" is what is functional
+7. When selecting from category view, select "Chest" category
+8. This will bring you to a menu with chest exercises, click the "+" icon on the top right of the benchpress item, which will add an exercise to your list.
+9. Currently cannot add more exercises, but theoretically, the processes would be the exact same; click the plus icon, select an exercise to add it to the workout
+10. You can delete an exercise by clicking the red garbage can. There will be a popup with a green check mark and a red x. Click the green check mark to delete, or click out of the popup to cancel. We were just having trouble getting the red x to cancel the delete, something that can be fixed if given more time
+11. Regardless of deleting or not, click the finish icon in the bottom right corner to finish creating a workout
+12. You will be redirected to the workout list with the newly created workout
 
 ### For creating an exercise
-1. 
+1. From home screen, click guy lifting weights icon, second from left.
+2. Then click exercises (bottom option)
+3. From here, user will be shown a databank of exercises
+4. On barbell bench, click edit
+5. Here, user will be able to edit info if the so choose
+6. Click back to go to exercise list
+7. Click View on Barbell Bench to view more information about that exercise
+8. Click blue back button in top left corner from view screen to go back to exercise list
+9. At the bottom, click the plus icon to create a new exercise
+10. Here, user can input info regarding exercise name, description, and tags that relate to that exercise
+11. Click create when done
+12. User will be prompted with popup confirming exercise was created successfully
+13. Click green checkmark
+14. User will be redirected to exercise list screen
 
 ### For logging information during a workout
-
+1. From the home screen, click "Log"
+2. Click "Chest Day" to log for that created workout
+3. From here, we can enter values for reps and weight lifted
+4. If user chooses to, they cana also click "Remove set" or "Add set" if they want to change the number of sets for that exerrcise
+5. Click finish workout
+6. A popup will come up prompting user "Workout Successfully Logged"
+7. Click green checkmark
+8. User will be redirected back to home screen
 
 ### For tracking progress
-1. Click small graph icon (centre bottom icon)
+1. From home screen, click small graph icon (centre bottom icon)
 2. From here you can check previous workouts
 3. Click "View" under the first chest day (Nov 22nd 2023)
 4. Here the user can see their progress from that workout
@@ -65,7 +86,7 @@ We have 6 main functions in our prototype:
 6. To go back to progress menu, just click back button on top left of screen
 
 ### For interacting with the community
-1. Click grou of people icon (second from right)
+1. From home screen, click group of people icon (second from right)
 2. Click on the top post (Jenna)
 3. You'll be brought to Jenna's workout that she shared
 4. Click blue back button on top left of screen to go back to main community screen
