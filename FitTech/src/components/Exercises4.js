@@ -8,6 +8,7 @@ import IOSStatusBarBlackIcon from "./IOSStatusBarBlackIcon";
 import InputTextActive from "./InputTextActive";
 import InputDropdownActive from "./InputDropdownActive";
 import HelpFormInput from "./HelpFormInput";
+import PopUp from "./PopUp";
 
 const Bxx = styled.div`
   position: absolute;
@@ -195,6 +196,7 @@ const Tags = styled.div`
   justify-content: center;
   padding: var(--padding-3xs) var(--padding-3xs) var(--padding-3xs) 0px;
   gap: var(--gap-21xl);
+  margin-top: 40px;
 `;
 const VectorIcon = styled.img`
   position: relative;
@@ -216,6 +218,7 @@ const ChestTag = styled.div`
   gap: var(--gap-sm);
   font-size: var(--body-1-size);
   font-family: var(--input-field-label);
+  margin-top: 40px;
 `;
 const ExercisesRoot = styled.div`
   position: absolute;
@@ -277,6 +280,16 @@ const CreateButton = styled.div`
   cursor: pointer;
 `;
 
+const SaveChangesButton = styled.div `
+  background-color: var(--color-dodgerblue);
+  text-align: center;
+  border-radius: var(--button-radius);
+  width: 150px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+`;
+
 const Exercises4 = ({exerciseEdited}) => {
   const [isPopupChangesSavedOpen, setPopupChangesSavedOpen] = useState(false);
   const navigate = useNavigate();
@@ -303,7 +316,12 @@ const Exercises4 = ({exerciseEdited}) => {
 
   const closePopupChangesSaved = useCallback(() => {
     setPopupChangesSavedOpen(false);
-  }, []);
+    navigate(-1);
+  }, [navigate]);
+
+  const saveChangesClick = useCallback(() => {
+    setPopupChangesSavedOpen(true);
+  })
 
 
   return (
@@ -328,6 +346,7 @@ const Exercises4 = ({exerciseEdited}) => {
               <UploadMediaImage src="uploadImage.svg" onClick={() => {}} />
             </UploadMediaWrapper2>
           </UploadMediaWrapper>
+          <SaveChangesButton onClick={saveChangesClick}>Save Changes</SaveChangesButton>
         </HelpWrapper>
         <Tags>
           <Home>Category Tags</Home>
@@ -348,7 +367,7 @@ const Exercises4 = ({exerciseEdited}) => {
           placement="Centered"
           onOutsideClick={closePopupChangesSaved}
         >
-          <PopupChangesSaved onClose={closePopupChangesSaved} />
+          <PopUp onClose={closePopupChangesSaved} text="Changes Saved" top="86px" left="523px" checkMarkClick={closePopupChangesSaved} />
         </PortalPopup>
       )}
     </>

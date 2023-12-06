@@ -291,7 +291,7 @@ const UserSettingsForm = () => {
           onOutsideClick={closePopupHelpRequestReceived}
         >
           
-          <PopUp onClose={closePopupHelpRequestReceived} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={closePopupHelpRequestReceived} />
+          <PopUp onClose={closePopupHelpRequestReceived} text="Help request sent" top="86px" left="523px" checkMarkClick={closePopupHelpRequestReceived} />
         </PortalPopup>
       )}
     </>

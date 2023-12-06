@@ -283,7 +283,7 @@ const UserSettingsForm1 = () => {
           placement="Centered"
           onOutsideClick={closePopupPasswordChanged}
         >
-          <PopUp onClose={closePopupPasswordChanged} text="Exercise Created Successfully" top="86px" left="523px" checkMarkClick={closePopupPasswordChanged} />
+          <PopUp onClose={closePopupPasswordChanged} text="Password Changed Successfully" top="86px" left="523px" checkMarkClick={closePopupPasswordChanged} />
         </PortalPopup>
       )}
     </>
