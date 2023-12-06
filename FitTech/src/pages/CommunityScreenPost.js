@@ -108,8 +108,6 @@ const CommunityScreenPost = () => {
         <BackCom3Icon alt="" src="/back-com2.svg" onClick={onBackCom3IconClick} />
         <ScrollFrame />
         <Bottombar1 />
-        <TestworkoutChild onClick={onRectangleClick} />
-        <ToFeed onClick={onToFeedClick}>To feed</ToFeed>
       </Testworkout2>
     </CommunityScreenPostRoot>
   );
